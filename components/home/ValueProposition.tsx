@@ -5,25 +5,25 @@ const values = [
     icon: Users,
     title: "Family-Owned Since 1985",
     description:
-      "Three generations of expertise in foodservice equipment. We're not just vendors—we're partners invested in your success.",
+      "40 years. Same commitment. When you call, you talk to people who actually care whether your machine is working.",
   },
   {
     icon: Wrench,
     title: "Red Cape Service",
     description:
-      "Industry-leading service response times. Our factory-trained technicians keep your equipment running at peak performance.",
+      "When your freezer goes down on a Saturday night, we answer the phone. Our factory-trained techs get you back up fast.",
   },
   {
     icon: TrendingUp,
-    title: "Profit Solutions",
+    title: "We Help You Make Money",
     description:
-      "We don't just sell machines—we help you build profitable programs with menu development, training, and ongoing support.",
+      "Menu ideas, staff training, profit calculators—we're invested in your success long after the machine is installed.",
   },
   {
     icon: Award,
-    title: "Authorized Distributor",
+    title: "Genuine Taylor Parts & Support",
     description:
-      "As an authorized Taylor Company distributor, you get genuine parts, factory warranties, and direct manufacturer support.",
+      "Direct access to factory parts, warranties, and the people who built your machine. No third-party runaround.",
   },
 ];
 
@@ -40,9 +40,9 @@ export function ValueProposition() {
             What Makes Us Different
           </h2>
           <p className="text-[var(--gray-600)] text-lg">
-            For nearly 40 years, we&apos;ve helped restaurants, convenience stores,
-            and foodservice operators across the mid-Atlantic build profitable
-            frozen dessert and hot food programs.
+            We&apos;re a family business that&apos;s been helping local operators succeed since 1985.
+            From ice cream shops to convenience stores, we don&apos;t just sell equipment—we
+            help you build a program that actually makes money.
           </p>
         </div>
 
@@ -79,25 +79,25 @@ export function ValueProposition() {
               <p className="font-[family-name:var(--font-outfit)] font-bold text-4xl text-[var(--blue-500)] mb-2">
                 40+
               </p>
-              <p className="text-[var(--gray-600)] text-sm">Years Experience</p>
+              <p className="text-[var(--gray-600)] text-sm">Years in Business</p>
             </div>
             <div>
               <p className="font-[family-name:var(--font-outfit)] font-bold text-4xl text-[var(--blue-500)] mb-2">
                 4
               </p>
-              <p className="text-[var(--gray-600)] text-sm">States Covered</p>
+              <p className="text-[var(--gray-600)] text-sm">States We Call Home</p>
             </div>
             <div>
               <p className="font-[family-name:var(--font-outfit)] font-bold text-4xl text-[var(--blue-500)] mb-2">
                 100+
               </p>
-              <p className="text-[var(--gray-600)] text-sm">Machine Models</p>
+              <p className="text-[var(--gray-600)] text-sm">Models to Choose From</p>
             </div>
             <div>
               <p className="font-[family-name:var(--font-outfit)] font-bold text-4xl text-[var(--blue-500)] mb-2">
                 2
               </p>
-              <p className="text-[var(--gray-600)] text-sm">Showroom Locations</p>
+              <p className="text-[var(--gray-600)] text-sm">Showrooms — Come Visit!</p>
             </div>
           </div>
         </div>

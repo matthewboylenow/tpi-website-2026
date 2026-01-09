@@ -31,15 +31,17 @@ export default function AboutPage() {
               <p className="text-[var(--orange-400)] font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4">
                 Our Story
               </p>
-              <h1 className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl lg:text-5xl text-white leading-tight mb-6">
+              <h1
+                className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
+                style={{ color: 'white' }}
+              >
                 Family-Owned, Customer-Focused Since 1985
               </h1>
               <div className="w-20 h-1 bg-[var(--orange-500)] rounded-full mb-6" />
               <p className="text-lg text-gray-300 leading-relaxed">
-                For nearly four decades, Taylor Products has been the trusted
-                partner for foodservice operators across the mid-Atlantic
-                region. We don&apos;t just sell equipment—we help build profitable
-                programs and provide the ongoing support to keep them running.
+                Not just a vendor—a committed partner. As a family-owned business,
+                our promise to each and every customer is a strong commitment to
+                service, dependability, and profit solutions to help drive all of your goals.
               </p>
             </div>
           </div>
@@ -53,12 +55,11 @@ export default function AboutPage() {
                 More Than Equipment—A Partnership
               </h2>
               <div className="prose prose-lg max-w-none text-[var(--gray-700)] space-y-6">
-                <p>
-                  Taylor Products was founded with a simple mission: help
-                  foodservice operators succeed with profitable frozen dessert
-                  and hot food programs. Over the years, that mission has grown
-                  into a comprehensive partnership that goes far beyond selling
-                  equipment.
+              <p>
+                  Not only are we trusted by some of the biggest brands in the food
+                  industry, but we also are strong supporters of local businesses.
+                  Over the years, our mission has grown into a comprehensive
+                  partnership that goes far beyond selling equipment.
                 </p>
                 <p>
                   As an authorized Taylor Company distributor, we provide access
@@ -110,8 +111,8 @@ export default function AboutPage() {
                   Family Values
                 </h3>
                 <p className="text-[var(--gray-600)]">
-                  Three generations of expertise and integrity. We treat every
-                  customer like family.
+                  As a family-owned and operated business, we bring personal
+                  commitment to every relationship.
                 </p>
               </div>
 
@@ -281,7 +282,10 @@ export default function AboutPage() {
         {/* CTA */}
         <section className="section bg-gradient-to-r from-[var(--blue-600)] to-[var(--navy-700)]">
           <div className="container text-center">
-            <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl md:text-3xl text-white mb-4">
+            <h2
+              className="font-[family-name:var(--font-outfit)] font-bold text-2xl md:text-3xl mb-4"
+              style={{ color: 'white' }}
+            >
               Ready to Start a Conversation?
             </h2>
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto">

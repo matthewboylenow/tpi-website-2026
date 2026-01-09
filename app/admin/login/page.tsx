@@ -50,7 +50,10 @@ export default function AdminLoginPage() {
               TP
             </span>
           </div>
-          <h1 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-white">
+          <h1
+            className="font-[family-name:var(--font-outfit)] font-bold text-2xl"
+            style={{ color: 'white' }}
+          >
             Admin Login
           </h1>
           <p className="text-[var(--gray-400)] mt-2">

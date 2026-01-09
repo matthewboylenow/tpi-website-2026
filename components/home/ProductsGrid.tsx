@@ -1,78 +1,77 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { CATEGORY_CARDS, HEROES } from "@/lib/assets";
+import { type Category } from "@/lib/schema";
 
-const productCategories = [
-  {
-    name: "Soft Serve & Frozen Yogurt",
-    href: "/soft-serve-frozen-yogurt",
-    description: "23+ models from countertop to floor units",
-    featured: true,
+// Visual config for categories - maps slug to display properties
+const categoryConfig: Record<
+  string,
+  { image?: string; gradient: string; featured?: boolean }
+> = {
+  "soft-serve-frozen-yogurt": {
+    image: CATEGORY_CARDS.softServe,
     gradient: "from-blue-500 to-blue-600",
+    featured: true,
   },
-  {
-    name: "Icetro Soft Serve",
-    href: "/icetro-soft-serve",
-    description: "Budget-friendly alternatives with premium quality",
+  "icetro-soft-serve": {
+    image: HEROES.icetro,
     gradient: "from-cyan-500 to-blue-500",
   },
-  {
-    name: "Two Sided Grills",
-    href: "/two-sided-grills",
-    description: "Crown Series and classic clamshell grills",
+  "two-sided-grills": {
+    image: CATEGORY_CARDS.grills,
     gradient: "from-orange-500 to-red-500",
   },
-  {
-    name: "Milkshakes",
-    href: "/milkshakes",
-    description: "Single to multi-flavor shake freezers",
+  milkshakes: {
+    image: CATEGORY_CARDS.milkshakes,
     gradient: "from-pink-500 to-purple-500",
   },
-  {
-    name: "Ice Cream & Gelato Batch",
-    href: "/ice-cream-gelato-batch",
-    description: "Taylor & Emery Thompson batch freezers",
+  "ice-cream-gelato-batch": {
+    image: CATEGORY_CARDS.batch,
     gradient: "from-indigo-500 to-purple-500",
   },
-  {
-    name: "FlavorBurst Programs",
-    href: "/flavorburst-programs",
-    description: "Add 8+ flavors to your soft serve",
+  "flavorburst-programs": {
+    image: CATEGORY_CARDS.flavorburst,
     gradient: "from-green-500 to-teal-500",
   },
-  {
-    name: "Frozen Cocktails",
-    href: "/frozen-cocktails",
-    description: "Commercial frozen beverage machines",
+  "frozen-cocktails": {
+    image: CATEGORY_CARDS.cocktails,
     gradient: "from-amber-500 to-orange-500",
   },
-  {
-    name: "Frozen Custard",
-    href: "/frozen-custard",
-    description: "Premium custard freezers",
+  "frozen-custard": {
+    image: CATEGORY_CARDS.custard,
     gradient: "from-yellow-500 to-amber-500",
   },
-  {
-    name: "Premium Slush",
-    href: "/premium-slush",
-    description: "High-margin slush programs",
+  "premium-slush": {
+    image: CATEGORY_CARDS.slush,
     gradient: "from-blue-400 to-cyan-400",
   },
-  {
-    name: "Cool Chiller / FCB",
-    href: "/frozen-soda-cool-chiller",
-    description: "Frozen carbonated beverage systems",
+  "frozen-soda-cool-chiller": {
+    image: CATEGORY_CARDS.coolChiller,
     gradient: "from-sky-500 to-blue-500",
   },
-  {
-    name: "Smoothies & Frozen Cappuccino",
-    href: "/smoothies-frozen-cappuccino",
-    description: "Versatile frozen beverage solutions",
+  "smoothies-frozen-cappuccino": {
+    image: CATEGORY_CARDS.smoothies,
     gradient: "from-emerald-500 to-green-500",
   },
-];
+};
 
-export function ProductsGrid() {
+interface ProductsGridProps {
+  categories: Category[];
+}
+
+export function ProductsGrid({ categories }: ProductsGridProps) {
+  // Merge database categories with visual config
+  const productCategories = categories.map((cat) => ({
+    name: cat.name,
+    href: `/${cat.slug}`,
+    description: cat.description || "",
+    image: categoryConfig[cat.slug]?.image,
+    gradient: categoryConfig[cat.slug]?.gradient || "from-gray-500 to-gray-600",
+    featured: categoryConfig[cat.slug]?.featured || false,
+  }));
+
   const featuredCategory = productCategories.find((c) => c.featured);
   const otherCategories = productCategories.filter((c) => !c.featured);
 
@@ -85,11 +84,11 @@ export function ProductsGrid() {
             Our Equipment
           </p>
           <h2 className="font-[family-name:var(--font-outfit)] font-bold text-3xl sm:text-4xl text-[var(--navy-800)] mb-4">
-            Industry-Leading Equipment Categories
+            Find Your Perfect Machine
           </h2>
           <p className="text-[var(--gray-600)] text-lg">
-            From soft serve machines to two-sided grills, we carry the complete
-            range of Taylor Company and partner brand equipment.
+            Soft serve, shakes, grills, batch freezers—we&apos;ve got the equipment
+            to match your menu and your budget.
           </p>
         </div>
 
@@ -106,27 +105,36 @@ export function ProductsGrid() {
                   "relative h-full min-h-[280px] rounded-xl overflow-hidden",
                   "bg-gradient-to-br",
                   featuredCategory.gradient,
-                  "p-8 flex flex-col justify-end",
                   "transition-all duration-300",
                   "hover:shadow-xl hover:-translate-y-1"
                 )}
               >
-                {/* Pattern overlay */}
-                <div className="absolute inset-0 opacity-10">
-                  <div
-                    className="absolute inset-0"
-                    style={{
-                      backgroundImage: `radial-gradient(circle at 50% 50%, white 1px, transparent 1px)`,
-                      backgroundSize: "24px 24px",
-                    }}
+                {/* Background Image */}
+                {featuredCategory.image && (
+                  <Image
+                    src={featuredCategory.image}
+                    alt={featuredCategory.name}
+                    fill
+                    className="object-cover opacity-30 group-hover:opacity-40 transition-opacity"
                   />
-                </div>
+                )}
 
-                <div className="relative z-10">
+                {/* Gradient overlay */}
+                <div
+                  className={cn(
+                    "absolute inset-0 bg-gradient-to-t",
+                    "from-black/70 via-black/30 to-transparent"
+                  )}
+                />
+
+                <div className="relative z-10 h-full p-8 flex flex-col justify-end">
                   <p className="text-white/80 text-sm font-medium mb-2">
                     Most Popular
                   </p>
-                  <h3 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-white mb-2">
+                  <h3
+                    className="font-[family-name:var(--font-outfit)] font-bold text-2xl mb-2"
+                    style={{ color: 'white' }}
+                  >
                     {featuredCategory.name}
                   </h3>
                   <p className="text-white/80 mb-4">
@@ -149,29 +157,36 @@ export function ProductsGrid() {
                   "relative h-full min-h-[180px] rounded-xl overflow-hidden",
                   "bg-gradient-to-br",
                   category.gradient,
-                  "p-6 flex flex-col justify-end",
                   "transition-all duration-300",
                   "hover:shadow-lg hover:-translate-y-1"
                 )}
               >
-                {/* Pattern overlay */}
-                <div className="absolute inset-0 opacity-10">
-                  <div
-                    className="absolute inset-0"
-                    style={{
-                      backgroundImage: `radial-gradient(circle at 50% 50%, white 1px, transparent 1px)`,
-                      backgroundSize: "20px 20px",
-                    }}
+                {/* Background Image */}
+                {category.image && (
+                  <Image
+                    src={category.image}
+                    alt={category.name}
+                    fill
+                    className="object-cover opacity-25 group-hover:opacity-35 transition-opacity"
                   />
-                </div>
+                )}
 
-                <div className="relative z-10">
-                  <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-white mb-1">
+                {/* Gradient overlay */}
+                <div
+                  className={cn(
+                    "absolute inset-0 bg-gradient-to-t",
+                    "from-black/60 via-black/20 to-transparent"
+                  )}
+                />
+
+                <div className="relative z-10 h-full p-6 flex flex-col justify-end">
+                  <h3
+                    className="font-[family-name:var(--font-outfit)] font-semibold text-lg mb-1"
+                    style={{ color: 'white' }}
+                  >
                     {category.name}
                   </h3>
-                  <p className="text-white/80 text-sm">
-                    {category.description}
-                  </p>
+                  <p className="text-white/80 text-sm">{category.description}</p>
                 </div>
               </div>
             </Link>
@@ -181,7 +196,8 @@ export function ProductsGrid() {
         {/* Machine Finder CTA */}
         <div className="mt-12 text-center">
           <p className="text-[var(--gray-600)] mb-4">
-            Not sure which machine is right for you?
+            Not sure where to start? Our interactive finder asks a few quick questions
+            and recommends the perfect machine for your business.
           </p>
           <a
             href="https://finder.taylorproducts.net/wizard"
@@ -189,7 +205,7 @@ export function ProductsGrid() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-[var(--blue-500)] font-semibold hover:text-[var(--blue-700)] transition-colors"
           >
-            Try our Machine Finder
+            Let&apos;s Find Your Machine
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

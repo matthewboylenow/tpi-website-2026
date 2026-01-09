@@ -41,15 +41,40 @@ export function ContactSection() {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [isSuccess, setIsSuccess] = React.useState(false);
 
+  const [error, setError] = React.useState<string | null>(null);
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
-    // Simulate form submission - in production this would send to API/HubSpot
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      phone: formData.get("phone"),
+      county: formData.get("county"),
+      message: formData.get("message"),
+    };
 
-    setIsSubmitting(false);
-    setIsSuccess(true);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) {
+        const result = await response.json();
+        throw new Error(result.error || "Failed to send message");
+      }
+
+      setIsSuccess(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Failed to send message");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -62,12 +87,11 @@ export function ContactSection() {
               Get In Touch
             </p>
             <h2 className="font-[family-name:var(--font-outfit)] font-bold text-3xl sm:text-4xl text-[var(--navy-800)] mb-6">
-              Ready to Build Your Profit Program?
+              Let&apos;s Talk About Your Business
             </h2>
             <p className="text-[var(--gray-600)] text-lg mb-8 leading-relaxed">
-              Whether you&apos;re looking for new equipment, need service on existing
-              machines, or want to explore profit-building opportunities, we&apos;re
-              here to help.
+              Whether you&apos;re buying your first machine or adding to your lineup,
+              we&apos;d love to hear what you&apos;re working on. No pressure—just a conversation.
             </p>
 
             {/* Contact Info Cards */}
@@ -187,6 +211,12 @@ export function ContactSection() {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {error && (
+                    <div className="p-4 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">
+                      {error}
+                    </div>
+                  )}
+
                   <Input
                     label="Your Name"
                     name="name"

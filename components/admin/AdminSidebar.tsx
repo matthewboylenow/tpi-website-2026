@@ -16,6 +16,8 @@ import {
   Star,
   Menu,
   X,
+  MapPin,
+  Upload,
 } from "lucide-react";
 
 const navItems = [
@@ -40,6 +42,11 @@ const navItems = [
     icon: Users,
   },
   {
+    name: "Territories",
+    href: "/admin/counties",
+    icon: MapPin,
+  },
+  {
     name: "Blog Posts",
     href: "/admin/blog",
     icon: FileText,
@@ -58,6 +65,11 @@ const navItems = [
     name: "Contact Forms",
     href: "/admin/contacts",
     icon: MessageSquare,
+  },
+  {
+    name: "Import",
+    href: "/admin/import",
+    icon: Upload,
   },
   {
     name: "Settings",

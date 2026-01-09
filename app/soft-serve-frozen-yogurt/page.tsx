@@ -1,8 +1,11 @@
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { CategoryHero, MachineGrid, type Subcategory } from "@/components/category";
+import { CategoryHero, MachineGrid } from "@/components/category";
 import { ContactSection } from "@/components/home/ContactSection";
+import { getCategoryWithMachines } from "@/lib/data";
+import { HEROES } from "@/lib/assets";
 
 export const metadata: Metadata = {
   title: "Soft Serve & Frozen Yogurt Machines",
@@ -15,224 +18,35 @@ export const metadata: Metadata = {
   },
 };
 
-// Sample data - in production this would come from the database
-const subcategories: Subcategory[] = [
-  {
-    id: 1,
-    name: "28HT Heat Treatment Models",
-    machines: [
-      {
-        id: 1,
-        modelNumber: "C606",
-        name: "Shake & Soft Serve Freezer",
-        slug: "c606-shake-soft-serve",
-        shortDescription: "Combination shake and soft serve with 28HT technology",
-        flavorCount: "Single Flavor",
-        machineType: "28HT",
-        isInStock: true,
-      },
-      {
-        id: 2,
-        modelNumber: "C709",
-        name: "Single Flavor Soft Serve",
-        slug: "c709-single-flavor",
-        shortDescription: "High-capacity single flavor with heat treatment",
-        flavorCount: "Single Flavor",
-        machineType: "28HT",
-        isInStock: true,
-      },
-      {
-        id: 3,
-        modelNumber: "C708",
-        name: "Single Flavor Soft Serve",
-        slug: "c708-single-flavor",
-        shortDescription: "Popular single flavor with 28HT heat treatment",
-        flavorCount: "Single Flavor",
-        machineType: "28HT",
-        isInStock: true,
-        isFeatured: true,
-      },
-      {
-        id: 4,
-        modelNumber: "C717",
-        name: "Twin Twist Soft Serve",
-        slug: "c717-twin-twist",
-        shortDescription: "Two flavors plus twist with heat treatment",
-        flavorCount: "Twin Twist",
-        machineType: "28HT",
-        isInStock: true,
-      },
-      {
-        id: 5,
-        modelNumber: "C716",
-        name: "Twin Twist Soft Serve",
-        slug: "c716-twin-twist",
-        shortDescription: "Compact twin twist with 28HT",
-        flavorCount: "Twin Twist",
-        machineType: "28HT",
-        isInStock: false,
-      },
-    ],
-  },
-  {
-    id: 2,
-    name: "Single Flavor Models",
-    machines: [
-      {
-        id: 6,
-        modelNumber: "C707",
-        name: "Single Flavor Pump",
-        slug: "c707-single-pump",
-        shortDescription: "Pump-fed single flavor for high-volume operations",
-        flavorCount: "Single Flavor",
-        machineType: "Pump",
-        isInStock: true,
-      },
-      {
-        id: 7,
-        modelNumber: "C706",
-        name: "Single Flavor Pump",
-        slug: "c706-single-pump",
-        shortDescription: "Compact pump-fed single flavor",
-        flavorCount: "Single Flavor",
-        machineType: "Pump",
-        isInStock: true,
-      },
-      {
-        id: 8,
-        modelNumber: "8752",
-        name: "Single Flavor Pump",
-        slug: "8752-single-pump",
-        shortDescription: "Traditional single flavor pump freezer",
-        flavorCount: "Single Flavor",
-        machineType: "Pump",
-        isInStock: true,
-      },
-      {
-        id: 9,
-        modelNumber: "702",
-        name: "Single Flavor",
-        slug: "702-single",
-        shortDescription: "Entry-level single flavor soft serve",
-        flavorCount: "Single Flavor",
-        isInStock: true,
-      },
-      {
-        id: 10,
-        modelNumber: "C152",
-        name: "Taylormate Countertop",
-        slug: "c152-taylormate",
-        shortDescription: "Compact countertop for small spaces",
-        flavorCount: "Single Flavor",
-        machineType: "Countertop",
-        isInStock: true,
-      },
-    ],
-  },
-  {
-    id: 3,
-    name: "Multi Flavor Models",
-    machines: [
-      {
-        id: 11,
-        modelNumber: "C723",
-        name: "Twin Twist",
-        slug: "c723-twin-twist",
-        shortDescription: "Popular twin twist soft serve freezer",
-        flavorCount: "Twin Twist",
-        isInStock: true,
-      },
-      {
-        id: 12,
-        modelNumber: "C723ADA",
-        name: "Twin Twist ADA",
-        slug: "c723-ada-twin-twist",
-        shortDescription: "ADA-compliant twin twist freezer",
-        flavorCount: "Twin Twist",
-        isAdaCompliant: true,
-        isInStock: true,
-      },
-      {
-        id: 13,
-        modelNumber: "C161",
-        name: "Compact Twin Twist",
-        slug: "c161-compact-twin",
-        shortDescription: "Space-saving twin twist option",
-        flavorCount: "Twin Twist",
-        machineType: "Compact",
-        isInStock: true,
-      },
-      {
-        id: 14,
-        modelNumber: "8756",
-        name: "Twin Twist Pump",
-        slug: "8756-twin-pump",
-        shortDescription: "Pump-fed twin twist for high volume",
-        flavorCount: "Twin Twist",
-        machineType: "Pump",
-        isInStock: true,
-      },
-      {
-        id: 15,
-        modelNumber: "C722",
-        name: "Twin Twist Pump",
-        slug: "c722-twin-pump",
-        shortDescription: "Premium twin twist with pump feed",
-        flavorCount: "Twin Twist",
-        machineType: "Pump",
-        isInStock: true,
-      },
-      {
-        id: 16,
-        modelNumber: "C722ADA",
-        name: "Twin Twist Pump ADA",
-        slug: "c722-ada-twin-pump",
-        shortDescription: "ADA-compliant twin twist with pump",
-        flavorCount: "Twin Twist",
-        machineType: "Pump",
-        isAdaCompliant: true,
-        isInStock: false,
-      },
-      {
-        id: 17,
-        modelNumber: "772",
-        name: "Two Flavor",
-        slug: "772-two-flavor",
-        shortDescription: "Classic two flavor soft serve",
-        flavorCount: "Two Flavor",
-        isInStock: true,
-      },
-    ],
-  },
-  {
-    id: 4,
-    name: "Combination Freezers",
-    machines: [
-      {
-        id: 18,
-        modelNumber: "632",
-        name: "Single Shake + Single Soft Serve",
-        slug: "632-combo",
-        shortDescription: "Shake and soft serve combination unit",
-        flavorCount: "Combo",
-        isInStock: true,
-      },
-      {
-        id: 19,
-        modelNumber: "C612",
-        name: "Shake & Single Soft Serve",
-        slug: "c612-combo",
-        shortDescription: "Modern shake and soft serve combo",
-        flavorCount: "Combo",
-        isInStock: true,
-        isDemoUnit: true,
-        demoDiscountPercent: 15,
-      },
-    ],
-  },
-];
+export default async function SoftServePage() {
+  const category = await getCategoryWithMachines("soft-serve-frozen-yogurt");
 
-export default function SoftServePage() {
+  if (!category) {
+    notFound();
+  }
+
+  // Transform database data to match MachineGrid expected format
+  const subcategories = category.subcategories.map((sub) => ({
+    id: sub.id,
+    name: sub.name,
+    machines: sub.machines.map((machine) => ({
+      id: machine.id,
+      modelNumber: machine.modelNumber,
+      name: machine.name,
+      slug: machine.slug,
+      shortDescription: machine.shortDescription || undefined,
+      imageUrl: machine.imageUrl || undefined,
+      specSheetUrl: machine.specSheetUrl || undefined,
+      flavorCount: machine.flavorCount || undefined,
+      machineType: machine.machineType || undefined,
+      isAdaCompliant: machine.isAdaCompliant || false,
+      isFeatured: machine.isFeatured || false,
+      isInStock: machine.isInStock || true,
+      isDemoUnit: machine.isDemoUnit || false,
+      demoDiscountPercent: machine.demoDiscountPercent || undefined,
+    })),
+  }));
+
   return (
     <>
       <Header />
@@ -240,6 +54,7 @@ export default function SoftServePage() {
         <CategoryHero
           title="Soft Serve & Frozen Yogurt Machines"
           description="Taylor soft serve machines deliver the industry's fastest recovery time, simplest cleaning process, and lowest lifetime maintenance costs. Choose from 23+ models including revolutionary 28HT heat treatment technology that eliminates nightly breakdown and reduces labor costs."
+          backgroundImage={HEROES.softServe}
         />
 
         <MachineGrid subcategories={subcategories} />

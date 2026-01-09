@@ -3,57 +3,26 @@
 import * as React from "react";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { type Testimonial } from "@/lib/schema";
 
-// Sample testimonials - these would come from the database in production
-const testimonials = [
-  {
-    id: 1,
-    quote:
-      "Taylor Products has been an incredible partner for our ice cream shop. Their service team responds quickly, and Aaron helped us find the perfect machine for our volume. Couldn't be happier!",
-    customerName: "Maria Santos",
-    businessName: "Scoops Ice Cream Shop",
-    location: "Philadelphia, PA",
-  },
-  {
-    id: 2,
-    quote:
-      "We've been working with Taylor Products for over 15 years. Their knowledge of the equipment and commitment to service is unmatched. They truly care about our success.",
-    customerName: "James Patterson",
-    businessName: "Patterson's Family Restaurant",
-    location: "Cherry Hill, NJ",
-  },
-  {
-    id: 3,
-    quote:
-      "The FlavorBurst system Taylor Products installed has been a game-changer for our frozen yogurt shop. Customers love the variety, and our margins have improved significantly.",
-    customerName: "Linda Chen",
-    businessName: "FroYo Delight",
-    location: "Wilmington, DE",
-  },
-  {
-    id: 4,
-    quote:
-      "When our soft serve machine went down on a busy summer weekend, Taylor Products had a technician there within hours. That's the kind of service that keeps us loyal.",
-    customerName: "Robert Thompson",
-    businessName: "Beachside Treats",
-    location: "Long Beach Island, NJ",
-  },
-];
+interface TestimonialsProps {
+  testimonials: Testimonial[];
+}
 
-export function Testimonials() {
+export function Testimonials({ testimonials }: TestimonialsProps) {
   const [currentIndex, setCurrentIndex] = React.useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = React.useState(true);
 
   // Auto-advance testimonials
   React.useEffect(() => {
-    if (!isAutoPlaying) return;
+    if (!isAutoPlaying || testimonials.length === 0) return;
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % testimonials.length);
     }, 8000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying]);
+  }, [isAutoPlaying, testimonials.length]);
 
   const goToTestimonial = (index: number) => {
     setCurrentIndex(index);
@@ -71,6 +40,10 @@ export function Testimonials() {
     );
   };
 
+  if (testimonials.length === 0) {
+    return null;
+  }
+
   const testimonial = testimonials[currentIndex];
 
   return (
@@ -81,7 +54,10 @@ export function Testimonials() {
           <p className="text-[var(--orange-400)] font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4">
             Customer Stories
           </p>
-          <h2 className="font-[family-name:var(--font-outfit)] font-bold text-3xl sm:text-4xl text-white mb-4">
+          <h2
+            className="font-[family-name:var(--font-outfit)] font-bold text-3xl sm:text-4xl mb-4"
+            style={{ color: 'white' }}
+          >
             What Our Customers Say
           </h2>
         </div>
@@ -105,12 +81,11 @@ export function Testimonials() {
                   <p className="font-[family-name:var(--font-outfit)] font-semibold text-white">
                     {testimonial.customerName}
                   </p>
-                  <p className="text-[var(--gray-400)] text-sm">
-                    {testimonial.businessName}
-                  </p>
-                  <p className="text-[var(--gray-500)] text-sm">
-                    {testimonial.location}
-                  </p>
+                  {testimonial.businessName && (
+                    <p className="text-[var(--gray-400)] text-sm">
+                      {testimonial.businessName}
+                    </p>
+                  )}
                 </div>
 
                 {/* Navigation */}

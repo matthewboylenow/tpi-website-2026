@@ -98,8 +98,8 @@ export function Footer() {
             </div>
 
             <p className="text-[var(--gray-300)] mb-6 max-w-sm">
-              Family-owned foodservice equipment distributor serving New Jersey,
-              Pennsylvania, New York, and Delaware since 1985.
+              Family-owned since 1985. Serving NJ, PA, NY &amp; DE with equipment,
+              service, and the support to help your business grow.
             </p>
 
             {/* Contact Info */}
@@ -122,7 +122,10 @@ export function Footer() {
 
             {/* Showroom Locations */}
             <div className="mt-6 space-y-4">
-              <h4 className="font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider text-[var(--gray-400)]">
+              <h4
+                className="font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider"
+                style={{ color: 'var(--gray-400)' }}
+              >
                 Showroom Locations
               </h4>
               <div className="flex items-start gap-3 text-[var(--gray-300)]">
@@ -164,7 +167,10 @@ export function Footer() {
 
           {/* Products Links */}
           <div>
-            <h4 className="font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider text-[var(--gray-400)] mb-4">
+            <h4
+              className="font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4"
+              style={{ color: 'var(--gray-400)' }}
+            >
               Products
             </h4>
             <ul className="space-y-3">
@@ -183,7 +189,10 @@ export function Footer() {
 
           {/* Company Links */}
           <div>
-            <h4 className="font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider text-[var(--gray-400)] mb-4">
+            <h4
+              className="font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4"
+              style={{ color: 'var(--gray-400)' }}
+            >
               Company
             </h4>
             <ul className="space-y-3">
@@ -202,7 +211,10 @@ export function Footer() {
 
           {/* Support Links */}
           <div>
-            <h4 className="font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider text-[var(--gray-400)] mb-4">
+            <h4
+              className="font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4"
+              style={{ color: 'var(--gray-400)' }}
+            >
               Support
             </h4>
             <ul className="space-y-3">

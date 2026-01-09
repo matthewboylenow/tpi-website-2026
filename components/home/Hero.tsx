@@ -25,16 +25,15 @@ interface HeroSlide {
 
 const slides: HeroSlide[] = [
   {
-    title: "Industry-Leading Soft Serve",
-    subtitle: "Taylor Company Equipment",
+    title: "The Machines Behind Your Favorite Frozen Treats",
     description:
-      "Discover why Taylor machines deliver the industry's fastest recovery time, simplest cleaning process, and lowest lifetime maintenance costs.",
+      "Taylor equipment powers ice cream shops, restaurants, and convenience stores across New York City, New Jersey, Pennsylvania and Delaware. Fast recovery, easy cleaning, and built to last—so you can focus on what matters: making customers smile.",
     cta: {
-      text: "Explore Machines",
+      text: "See Our Machines",
       href: "/soft-serve-frozen-yogurt",
     },
     secondaryCta: {
-      text: "Find Your Perfect Machine",
+      text: "Find Your Perfect Fit",
       href: "https://finder.taylorproducts.net/wizard",
       external: true,
     },
@@ -45,7 +44,7 @@ const slides: HeroSlide[] = [
     title: "What's New at Taylor Products",
     subtitle: "Latest Updates",
     description:
-      "Stay up-to-date with the latest equipment, promotions, and industry news from your trusted foodservice partner.",
+      "New equipment, promotions, and tips to help your business grow. We're always finding new ways to help our customers succeed.",
     cta: {
       text: "See What's New",
       href: "/new",
@@ -54,10 +53,10 @@ const slides: HeroSlide[] = [
       "from-[var(--blue-900)] via-[var(--blue-800)] to-[var(--navy-700)]",
   },
   {
-    title: "Showroom Demo Sale",
-    subtitle: "Limited Availability",
+    title: "Showroom Demo Units Available",
+    subtitle: "Great Deals",
     description:
-      "Shop our gently used showroom demo units at special pricing. Full warranty included on select models.",
+      "Gently used demo units at special pricing. Same great equipment, friendlier price. Full warranty included on select models.",
     cta: {
       text: "View Demo Units",
       href: "/soft-serve-frozen-yogurt#demo",
@@ -66,10 +65,10 @@ const slides: HeroSlide[] = [
       "from-[var(--navy-800)] via-[var(--blue-700)] to-[var(--navy-900)]",
   },
   {
-    title: "Parts E-Commerce",
-    subtitle: "Order Online 24/7",
+    title: "Need Parts? Order Online 24/7",
+    subtitle: "Genuine Taylor Parts",
     description:
-      "Need genuine Taylor parts? Shop our online parts store for fast shipping and authentic components.",
+      "Shop our online parts store for fast shipping and authentic components. The right part, when you need it.",
     cta: {
       text: "Shop Parts",
       href: "https://parts.taylorproducts.net",
@@ -141,7 +140,10 @@ export function Hero() {
           )}
 
           {/* Title */}
-          <h1 className="font-[family-name:var(--font-outfit)] font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6 tracking-tight">
+          <h1
+            className="font-[family-name:var(--font-outfit)] font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6 tracking-tight"
+            style={{ color: 'white' }}
+          >
             {slide.title}
           </h1>
 
@@ -149,7 +151,7 @@ export function Hero() {
           <div className="w-20 h-1 bg-[var(--orange-500)] rounded-full mb-6" />
 
           {/* Description */}
-          <p className="text-lg text-gray-300 mb-8 max-w-2xl leading-relaxed">
+          <p className="text-lg mb-8 max-w-2xl leading-relaxed" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
             {slide.description}
           </p>
 

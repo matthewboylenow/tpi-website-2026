@@ -2,10 +2,12 @@
 
 import * as React from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Badge, HeatTreatmentBadge, AdaBadge, InStockBadge } from "@/components/ui/badge";
+import { Badge, HeatTreatmentBadge, AdaBadge } from "@/components/ui/badge";
 import { FileText, MessageSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { getMachineImage, getSpecSheet } from "@/lib/assets";
 
 // Machine type - this would come from the database in production
 export interface Machine {
@@ -74,6 +76,10 @@ function MachineGridCard({ machine }: { machine: Machine }) {
     tags.push(machine.machineType);
   }
 
+  // Get image and spec URLs from assets, falling back to provided URLs
+  const imageUrl = machine.imageUrl || getMachineImage(machine.modelNumber);
+  const specSheetUrl = machine.specSheetUrl || getSpecSheet(machine.modelNumber);
+
   return (
     <div className="group relative">
       <Link href={`/machines/${machine.slug}`}>
@@ -90,12 +96,12 @@ function MachineGridCard({ machine }: { machine: Machine }) {
         >
           {/* Image */}
           <div className="relative aspect-square bg-gradient-to-br from-[var(--gray-50)] to-[var(--gray-100)]">
-            {machine.imageUrl ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={machine.imageUrl}
+            {imageUrl ? (
+              <Image
+                src={imageUrl}
                 alt={`${machine.modelNumber} - ${machine.name}`}
-                className="w-full h-full object-contain p-6"
+                fill
+                className="object-contain p-6"
               />
             ) : (
               <div className="w-full h-full flex items-center justify-center text-[var(--gray-400)]">
@@ -117,7 +123,6 @@ function MachineGridCard({ machine }: { machine: Machine }) {
 
             {/* Badges Overlay */}
             <div className="absolute top-3 right-3 flex flex-col gap-2">
-              {machine.isInStock && <InStockBadge />}
               {machine.isDemoUnit && (
                 <Badge variant="secondary">
                   Demo -{machine.demoDiscountPercent}%
@@ -168,9 +173,9 @@ function MachineGridCard({ machine }: { machine: Machine }) {
       {/* Action Buttons - Appear on hover */}
       <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-white via-white to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <div className="flex gap-2">
-          {machine.specSheetUrl && (
+          {specSheetUrl && (
             <a
-              href={machine.specSheetUrl}
+              href={specSheetUrl}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}

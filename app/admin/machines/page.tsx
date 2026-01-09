@@ -1,68 +1,18 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Plus, Search, Edit, Trash2, Eye } from "lucide-react";
+import { Plus, Search, Edit, Eye } from "lucide-react";
+import { getAllMachinesForAdmin, getCategories } from "@/lib/data";
+import { getMachineImage } from "@/lib/assets";
+import { DeleteMachineButton } from "./DeleteMachineButton";
 
-// Sample machine data - would come from database in production
-const machines = [
-  {
-    id: 1,
-    modelNumber: "C708",
-    name: "Single Flavor Soft Serve",
-    category: "Soft Serve & Frozen Yogurt",
-    subcategory: "28HT Heat Treatment",
-    isInStock: true,
-    isFeatured: true,
-    isDemoUnit: false,
-    updatedAt: "2026-01-08",
-  },
-  {
-    id: 2,
-    modelNumber: "C717",
-    name: "Twin Twist Soft Serve",
-    category: "Soft Serve & Frozen Yogurt",
-    subcategory: "28HT Heat Treatment",
-    isInStock: true,
-    isFeatured: false,
-    isDemoUnit: false,
-    updatedAt: "2026-01-07",
-  },
-  {
-    id: 3,
-    modelNumber: "L858",
-    name: "Crown Series Electric Grill",
-    category: "Two Sided Grills",
-    subcategory: "Crown Series",
-    isInStock: true,
-    isFeatured: true,
-    isDemoUnit: false,
-    updatedAt: "2026-01-06",
-  },
-  {
-    id: 4,
-    modelNumber: "ISI-271",
-    name: "Self-Service Soft Serve",
-    category: "Icetro Soft Serve",
-    subcategory: null,
-    isInStock: false,
-    isFeatured: false,
-    isDemoUnit: false,
-    updatedAt: "2026-01-05",
-  },
-  {
-    id: 5,
-    modelNumber: "C612",
-    name: "Shake & Single Soft Serve",
-    category: "Soft Serve & Frozen Yogurt",
-    subcategory: "Combination Freezers",
-    isInStock: true,
-    isFeatured: false,
-    isDemoUnit: true,
-    updatedAt: "2026-01-04",
-  },
-];
+export default async function MachinesAdminPage() {
+  const [machines, categories] = await Promise.all([
+    getAllMachinesForAdmin(),
+    getCategories(),
+  ]);
 
-export default function MachinesAdminPage() {
   return (
     <div className="space-y-6">
       {/* Page Header */}
@@ -72,7 +22,7 @@ export default function MachinesAdminPage() {
             Machines
           </h1>
           <p className="text-[var(--gray-600)] mt-1">
-            Manage all equipment in the catalog
+            Manage all {machines.length} machines in the catalog
           </p>
         </div>
         <Link href="/admin/machines/new">
@@ -99,10 +49,11 @@ export default function MachinesAdminPage() {
           {/* Category Filter */}
           <select className="h-10 px-4 rounded-lg border border-[var(--gray-300)] bg-white focus:ring-2 focus:ring-[var(--blue-500)] focus:border-transparent">
             <option value="">All Categories</option>
-            <option value="soft-serve">Soft Serve & Frozen Yogurt</option>
-            <option value="icetro">Icetro Soft Serve</option>
-            <option value="grills">Two Sided Grills</option>
-            <option value="milkshakes">Milkshakes</option>
+            {categories.map((cat) => (
+              <option key={cat.id} value={cat.slug}>
+                {cat.name}
+              </option>
+            ))}
           </select>
 
           {/* Status Filter */}
@@ -140,83 +91,96 @@ export default function MachinesAdminPage() {
               </tr>
             </thead>
             <tbody className="divide-y divide-[var(--gray-200)]">
-              {machines.map((machine) => (
-                <tr
-                  key={machine.id}
-                  className="hover:bg-[var(--gray-50)] transition-colors"
-                >
-                  <td className="px-6 py-4">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-lg bg-[var(--gray-100)] flex items-center justify-center flex-shrink-0">
-                        <span className="text-xs font-bold text-[var(--gray-500)]">
-                          IMG
-                        </span>
+              {machines.map((machine) => {
+                const imageUrl =
+                  machine.imageUrl || getMachineImage(machine.modelNumber);
+                return (
+                  <tr
+                    key={machine.id}
+                    className="hover:bg-[var(--gray-50)] transition-colors"
+                  >
+                    <td className="px-6 py-4">
+                      <div className="flex items-center gap-4">
+                        <div className="w-12 h-12 rounded-lg bg-[var(--gray-100)] flex items-center justify-center flex-shrink-0 overflow-hidden relative">
+                          {imageUrl ? (
+                            <Image
+                              src={imageUrl}
+                              alt={machine.modelNumber}
+                              fill
+                              className="object-contain p-1"
+                            />
+                          ) : (
+                            <span className="text-xs font-bold text-[var(--gray-500)]">
+                              IMG
+                            </span>
+                          )}
+                        </div>
+                        <div>
+                          <p className="font-[family-name:var(--font-outfit)] font-semibold text-[var(--navy-800)]">
+                            {machine.modelNumber}
+                          </p>
+                          <p className="text-sm text-[var(--gray-600)]">
+                            {machine.name}
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="font-[family-name:var(--font-outfit)] font-semibold text-[var(--navy-800)]">
-                          {machine.modelNumber}
-                        </p>
-                        <p className="text-sm text-[var(--gray-600)]">
-                          {machine.name}
-                        </p>
-                      </div>
-                    </div>
-                  </td>
-                  <td className="px-6 py-4">
-                    <p className="text-sm text-[var(--gray-900)]">
-                      {machine.category}
-                    </p>
-                    {machine.subcategory && (
-                      <p className="text-xs text-[var(--gray-500)]">
-                        {machine.subcategory}
+                    </td>
+                    <td className="px-6 py-4">
+                      <p className="text-sm text-[var(--gray-900)]">
+                        {machine.categoryName || "—"}
                       </p>
-                    )}
-                  </td>
-                  <td className="px-6 py-4">
-                    <div className="flex flex-wrap gap-1">
-                      {machine.isInStock ? (
-                        <Badge variant="success">In Stock</Badge>
-                      ) : (
-                        <Badge variant="error">Out of Stock</Badge>
+                      {machine.subcategoryName && (
+                        <p className="text-xs text-[var(--gray-500)]">
+                          {machine.subcategoryName}
+                        </p>
                       )}
-                      {machine.isFeatured && (
-                        <Badge variant="primary">Featured</Badge>
-                      )}
-                      {machine.isDemoUnit && (
-                        <Badge variant="secondary">Demo</Badge>
-                      )}
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 text-sm text-[var(--gray-600)]">
-                    {machine.updatedAt}
-                  </td>
-                  <td className="px-6 py-4">
-                    <div className="flex items-center justify-end gap-2">
-                      <Link
-                        href={`/machines/${machine.modelNumber.toLowerCase()}`}
-                        target="_blank"
-                        className="p-2 text-[var(--gray-500)] hover:text-[var(--blue-500)] hover:bg-[var(--blue-50)] rounded-lg transition-colors"
-                        title="View on site"
-                      >
-                        <Eye className="w-4 h-4" />
-                      </Link>
-                      <Link
-                        href={`/admin/machines/${machine.id}`}
-                        className="p-2 text-[var(--gray-500)] hover:text-[var(--blue-500)] hover:bg-[var(--blue-50)] rounded-lg transition-colors"
-                        title="Edit"
-                      >
-                        <Edit className="w-4 h-4" />
-                      </Link>
-                      <button
-                        className="p-2 text-[var(--gray-500)] hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
-                        title="Delete"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </td>
-                </tr>
-              ))}
+                    </td>
+                    <td className="px-6 py-4">
+                      <div className="flex flex-wrap gap-1">
+                        {machine.isInStock ? (
+                          <Badge variant="success">In Stock</Badge>
+                        ) : (
+                          <Badge variant="error">Out of Stock</Badge>
+                        )}
+                        {machine.isFeatured && (
+                          <Badge variant="primary">Featured</Badge>
+                        )}
+                        {machine.isDemoUnit && (
+                          <Badge variant="secondary">Demo</Badge>
+                        )}
+                      </div>
+                    </td>
+                    <td className="px-6 py-4 text-sm text-[var(--gray-600)]">
+                      {machine.updatedAt
+                        ? new Date(machine.updatedAt).toLocaleDateString()
+                        : "—"}
+                    </td>
+                    <td className="px-6 py-4">
+                      <div className="flex items-center justify-end gap-2">
+                        <Link
+                          href={`/machines/${machine.slug}`}
+                          target="_blank"
+                          className="p-2 text-[var(--gray-500)] hover:text-[var(--blue-500)] hover:bg-[var(--blue-50)] rounded-lg transition-colors"
+                          title="View on site"
+                        >
+                          <Eye className="w-4 h-4" />
+                        </Link>
+                        <Link
+                          href={`/admin/machines/${machine.id}`}
+                          className="p-2 text-[var(--gray-500)] hover:text-[var(--blue-500)] hover:bg-[var(--blue-50)] rounded-lg transition-colors"
+                          title="Edit"
+                        >
+                          <Edit className="w-4 h-4" />
+                        </Link>
+                        <DeleteMachineButton
+                          id={machine.id}
+                          modelNumber={machine.modelNumber}
+                        />
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>
@@ -224,21 +188,9 @@ export default function MachinesAdminPage() {
         {/* Pagination */}
         <div className="px-6 py-4 border-t border-[var(--gray-200)] flex items-center justify-between">
           <p className="text-sm text-[var(--gray-600)]">
-            Showing <span className="font-medium">1</span> to{" "}
-            <span className="font-medium">5</span> of{" "}
-            <span className="font-medium">127</span> machines
+            Showing <span className="font-medium">{machines.length}</span>{" "}
+            machines
           </p>
-          <div className="flex items-center gap-2">
-            <button
-              disabled
-              className="px-4 py-2 text-sm font-medium text-[var(--gray-400)] bg-[var(--gray-100)] rounded-lg cursor-not-allowed"
-            >
-              Previous
-            </button>
-            <button className="px-4 py-2 text-sm font-medium text-white bg-[var(--blue-500)] rounded-lg hover:bg-[var(--blue-600)] transition-colors">
-              Next
-            </button>
-          </div>
         </div>
       </div>
     </div>

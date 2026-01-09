@@ -22,33 +22,39 @@ Rebuilding taylorproducts.net from WordPress to NextJS 15 with App Router, Neon 
 ### Phase 2: Public Pages
 - [x] Homepage with hero, products grid, testimonials
 - [x] Category page template (soft-serve-frozen-yogurt)
-- [x] Individual machine detail page
+- [x] All 11 category pages built
+- [x] Individual machine detail page (/machines/[slug])
 - [x] About page
 - [x] Meet Your Salesperson page
-- [ ] Blog listing and detail pages
-- [ ] Search page
-- [ ] Work with Us page
-- [ ] New Products page
-- [ ] Red Cape Service page
-- [ ] Genuine Parts page
+- [x] Blog listing page (/blog)
+- [x] Blog detail page (/blog/[slug])
+- [x] What's New page (/new)
+- [x] Search page with API (/search)
+- [x] Work with Us page with HubSpot form integration
+- [x] Red Cape Service page
+- [x] Genuine Parts page
+- [x] Privacy Policy page (/privacy)
+- [x] Terms of Service page (/terms)
 
 ### Phase 3: Admin Panel
-- [x] Admin authentication (login page)
+- [x] Admin authentication (login page with NextAuth)
 - [x] Admin layout with sidebar
-- [x] Admin dashboard
-- [x] Machines list page
-- [ ] Machine create/edit forms
-- [ ] Categories management
-- [ ] Salespeople management
-- [ ] Blog post editor
-- [ ] Settings page
+- [x] Admin dashboard with stats
+- [x] Machines management (list, create, edit, delete)
+- [x] Blog management (list, create, edit, delete)
+- [x] Salespeople management (list, create, edit, delete)
+- [x] Contact submissions viewer with delete
+- [ ] Categories management (future)
+- [ ] Navigation editor (future)
+- [ ] Settings page (future)
 
 ### Phase 4: Deployment
 - [x] Build passing
 - [x] Environment configuration (.env.example)
-- [ ] Database seeding scripts
-- [ ] Asset migration from WordPress
-- [ ] Vercel deployment
+- [x] Database seeding scripts (categories, machines, salespeople, blog)
+- [x] Asset migration from WordPress (197 assets to Vercel Blob)
+- [ ] Vercel production deployment
+- [ ] Domain configuration
 
 ### Tasks Completed
 
@@ -205,3 +211,122 @@ Rebuilding taylorproducts.net from WordPress to NextJS 15 with App Router, Neon 
 | 2026-01-09 | Admin dashboard | app/admin/page.tsx, app/admin/layout.tsx, components/admin/*.tsx |
 | 2026-01-09 | Admin machines list | app/admin/machines/page.tsx |
 | 2026-01-09 | Build fixes & deployment prep | lib/db.ts, types/next-auth.d.ts |
+| 2026-01-09 | Asset migration (197 assets) | scripts/migrate-assets.ts, lib/assets.ts |
+| 2026-01-09 | All 11 category pages | app/[category]/page.tsx for each |
+| 2026-01-09 | Database integration | Homepage, categories, machines using real data |
+| 2026-01-09 | Service pages | app/red-cape-service, app/genuine-parts |
+| 2026-01-09 | Legal pages | app/privacy, app/terms |
+| 2026-01-09 | Blog system | app/blog, app/blog/[slug], app/new |
+| 2026-01-09 | Work With Us page | app/work-with-us with HubSpot form |
+| 2026-01-09 | Search functionality | app/search, app/api/search |
+| 2026-01-09 | Admin CRUD - Contacts | app/admin/contacts, app/api/admin/contacts |
+| 2026-01-09 | Admin CRUD - Blog | app/admin/blog/*, app/api/admin/blog/* |
+| 2026-01-09 | Admin CRUD - Machines | app/admin/machines/*, app/api/admin/machines/* |
+| 2026-01-09 | Admin CRUD - Salespeople | app/admin/salespeople/*, app/api/admin/salespeople/* |
+
+---
+
+## Session 2 - January 9, 2026 (Continued)
+
+### Work Completed
+
+#### Asset Migration
+- Created `scripts/migrate-assets.ts` to migrate 197 assets from WordPress to Vercel Blob
+- Created `lib/assets.ts` with `getMachineImage()` helper function
+- All machine images, spec PDFs, hero images, and salesperson headshots migrated
+
+#### All 11 Category Pages
+- Built dedicated pages for all product categories:
+  - Soft Serve & Frozen Yogurt
+  - Icetro Soft Serve
+  - Two-Sided Grills
+  - Milkshakes
+  - Ice Cream & Gelato Batch
+  - FlavorBurst Programs
+  - Frozen Cocktails
+  - Frozen Custard
+  - Premium Slush
+  - Smoothies & Frozen Cappuccino
+  - Cool Chiller / Frozen Soda
+
+#### Database Integration
+- Homepage now pulls real data from database (categories, testimonials, machines)
+- Category pages display machines from database
+- Machine detail pages fully functional with real data
+
+#### Service & Legal Pages
+- `/red-cape-service` - Service program page (content from existing site)
+- `/genuine-parts` - Parts page linking to parts store
+- `/privacy` - Privacy Policy
+- `/terms` - Terms of Service
+
+#### Content Pages
+- `/blog` - Blog listing page with published posts
+- `/blog/[slug]` - Individual blog post pages
+- `/new` - What's New page (posts marked as isWhatsNew)
+- `/work-with-us` - Careers page with HubSpot form embed
+- `/search` - Site-wide search with API
+
+#### Complete Admin CRUD
+All admin sections now have full Create, Read, Update, Delete functionality:
+
+**Contacts** (`/admin/contacts`)
+- View all contact form submissions
+- Delete contacts with confirmation
+
+**Blog** (`/admin/blog`)
+- List all posts with status badges (published, draft, What's New)
+- Create new posts with rich form
+- Edit existing posts
+- Delete with confirmation
+- Fields: title, slug, excerpt, content, featured image, author, SEO fields
+
+**Machines** (`/admin/machines`)
+- List all machines with images, categories, status badges
+- Create new machines
+- Edit existing machines
+- Delete with confirmation
+- Fields: model number, name, descriptions, images, categories, subcategories, attributes, status flags, SEO fields
+
+**Salespeople** (`/admin/salespeople`)
+- Card grid view of team members
+- Create new salespeople
+- Edit existing salespeople
+- Delete with confirmation
+- Fields: name, contact info, headshot, bio, booking link, display order, active status
+
+### API Routes Created
+- `POST /api/admin/blog` - Create blog post
+- `GET/PUT/DELETE /api/admin/blog/[id]` - Blog post operations
+- `DELETE /api/admin/contacts/[id]` - Delete contact
+- `POST /api/admin/machines` - Create machine
+- `GET/PUT/DELETE /api/admin/machines/[id]` - Machine operations
+- `POST /api/admin/salespeople` - Create salesperson
+- `GET/PUT/DELETE /api/admin/salespeople/[id]` - Salesperson operations
+- `GET /api/search` - Site-wide search
+
+### Data Layer Functions Added
+Added to `lib/data.ts`:
+- `getAllContactSubmissions()`, `deleteContactSubmission()`
+- `getAllBlogPostsAdmin()`, `getBlogPostById()`, `createBlogPost()`, `updateBlogPost()`, `deleteBlogPost()`
+- `getMachineById()`, `createMachine()`, `updateMachine()`, `deleteMachine()`
+- `getAllSalespeople()`, `getSalespersonById()`, `createSalesperson()`, `updateSalesperson()`, `deleteSalesperson()`
+- `getAllSubcategories()`
+
+---
+
+## Remaining Work
+
+### High Priority
+- [ ] Vercel production deployment
+- [ ] Domain configuration (taylorproducts.net)
+- [ ] HubSpot form IDs integration
+- [ ] Fathom Analytics setup
+
+### Future Enhancements
+- [ ] Categories admin management
+- [ ] Navigation menu editor
+- [ ] Site settings page
+- [ ] Image upload to Vercel Blob in admin forms
+- [ ] Bulk import/export for machines
+- [ ] Territory/county management for salespeople

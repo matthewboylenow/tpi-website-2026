@@ -7,42 +7,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-
-// Dashboard stats - in production these would come from the database
-const stats = [
-  {
-    name: "Total Machines",
-    value: "127",
-    change: "+3",
-    changeType: "increase",
-    icon: Package,
-    href: "/admin/machines",
-  },
-  {
-    name: "Categories",
-    value: "11",
-    change: "0",
-    changeType: "neutral",
-    icon: FolderTree,
-    href: "/admin/categories",
-  },
-  {
-    name: "Salespeople",
-    value: "4",
-    change: "0",
-    changeType: "neutral",
-    icon: Users,
-    href: "/admin/salespeople",
-  },
-  {
-    name: "Blog Posts",
-    value: "24",
-    change: "+2",
-    changeType: "increase",
-    icon: FileText,
-    href: "/admin/blog",
-  },
-];
+import { getAdminStats, getRecentContactSubmissions } from "@/lib/data";
 
 const quickActions = [
   {
@@ -71,34 +36,39 @@ const quickActions = [
   },
 ];
 
-const recentActivity = [
-  {
-    type: "machine",
-    action: "added",
-    item: "C708 Soft Serve Freezer",
-    time: "2 hours ago",
-  },
-  {
-    type: "blog",
-    action: "published",
-    item: "New Crown Series Grills Available",
-    time: "Yesterday",
-  },
-  {
-    type: "contact",
-    action: "received",
-    item: "Quote request from ABC Restaurant",
-    time: "Yesterday",
-  },
-  {
-    type: "machine",
-    action: "updated",
-    item: "ISI-271 Icetro Soft Serve",
-    time: "3 days ago",
-  },
-];
+export default async function AdminDashboard() {
+  const [stats, recentContacts] = await Promise.all([
+    getAdminStats(),
+    getRecentContactSubmissions(5),
+  ]);
 
-export default function AdminDashboard() {
+  const statCards = [
+    {
+      name: "Total Machines",
+      value: stats.machines.toString(),
+      icon: Package,
+      href: "/admin/machines",
+    },
+    {
+      name: "Categories",
+      value: stats.categories.toString(),
+      icon: FolderTree,
+      href: "/admin/categories",
+    },
+    {
+      name: "Salespeople",
+      value: stats.salespeople.toString(),
+      icon: Users,
+      href: "/admin/salespeople",
+    },
+    {
+      name: "Contact Submissions",
+      value: stats.contacts.toString(),
+      icon: MessageSquare,
+      href: "/admin/contacts",
+    },
+  ];
+
   return (
     <div className="space-y-8">
       {/* Page Header */}
@@ -113,7 +83,7 @@ export default function AdminDashboard() {
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        {stats.map((stat) => (
+        {statCards.map((stat) => (
           <Link
             key={stat.name}
             href={stat.href}
@@ -123,19 +93,6 @@ export default function AdminDashboard() {
               <div className="w-12 h-12 rounded-lg bg-[var(--blue-50)] flex items-center justify-center">
                 <stat.icon className="w-6 h-6 text-[var(--blue-500)]" />
               </div>
-              {stat.change !== "0" && (
-                <span
-                  className={`text-sm font-medium ${
-                    stat.changeType === "increase"
-                      ? "text-green-600"
-                      : stat.changeType === "decrease"
-                      ? "text-red-600"
-                      : "text-[var(--gray-500)]"
-                  }`}
-                >
-                  {stat.change}
-                </span>
-              )}
             </div>
             <p className="font-[family-name:var(--font-outfit)] font-bold text-3xl text-[var(--navy-800)]">
               {stat.value}
@@ -178,32 +135,47 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        {/* Recent Activity */}
+        {/* Recent Contacts */}
         <div>
           <div className="bg-white rounded-xl shadow-sm border border-[var(--gray-200)] overflow-hidden">
             <div className="px-6 py-4 border-b border-[var(--gray-200)]">
               <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)]">
-                Recent Activity
+                Recent Contacts
               </h2>
             </div>
             <div className="divide-y divide-[var(--gray-200)]">
-              {recentActivity.map((activity, index) => (
-                <div key={index} className="px-6 py-4">
-                  <p className="text-sm text-[var(--gray-900)]">
-                    <span className="capitalize font-medium">
-                      {activity.type}
-                    </span>{" "}
-                    {activity.action}:{" "}
-                    <span className="text-[var(--blue-600)]">
-                      {activity.item}
-                    </span>
-                  </p>
-                  <p className="text-xs text-[var(--gray-500)] mt-1">
-                    {activity.time}
-                  </p>
+              {recentContacts.length === 0 ? (
+                <div className="px-6 py-8 text-center text-[var(--gray-500)]">
+                  No contact submissions yet
                 </div>
-              ))}
+              ) : (
+                recentContacts.map((contact) => (
+                  <div key={contact.id} className="px-6 py-4">
+                    <p className="text-sm font-medium text-[var(--gray-900)]">
+                      {contact.name}
+                    </p>
+                    <p className="text-xs text-[var(--gray-500)] truncate">
+                      {contact.email}
+                    </p>
+                    <p className="text-xs text-[var(--gray-400)] mt-1">
+                      {contact.createdAt
+                        ? new Date(contact.createdAt).toLocaleDateString()
+                        : "Unknown date"}
+                    </p>
+                  </div>
+                ))
+              )}
             </div>
+            {recentContacts.length > 0 && (
+              <div className="px-6 py-3 border-t border-[var(--gray-200)]">
+                <Link
+                  href="/admin/contacts"
+                  className="text-sm text-[var(--blue-500)] hover:text-[var(--blue-700)]"
+                >
+                  View all contacts →
+                </Link>
+              </div>
+            )}
           </div>
         </div>
       </div>

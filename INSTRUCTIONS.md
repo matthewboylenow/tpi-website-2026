@@ -2341,7 +2341,39 @@ Consider adding:
 ## Remaining Questions
 
 1. **HubSpot Form IDs** - Need the specific form embed codes/IDs for contact forms
+   - Work With Us form currently using: portalId `2780498`, formId `52142cec-0cd6-48ca-abef-bf47cbee9671`
 2. **Fathom Site ID** - Need the site ID once Fathom account is set up
 3. **Admin Users** - Who needs admin access? Just you, or Tom as well?
 4. **Domain/DNS** - Will this launch on taylorproducts.net directly or a subdomain first?
 5. **Calculator Integration** - Timeline for integrating the new profit calculator from /tpi-new-calculator/?
+
+---
+
+## Implementation Status
+
+### Completed
+- [x] NextJS 15 project with App Router
+- [x] Neon PostgreSQL with Drizzle ORM
+- [x] NextAuth authentication for admin
+- [x] All 11 category pages
+- [x] Individual machine detail pages
+- [x] Blog system (listing, detail, What's New)
+- [x] Search functionality with API
+- [x] Service pages (Red Cape Service, Genuine Parts)
+- [x] Legal pages (Privacy, Terms)
+- [x] Work With Us page with HubSpot form
+- [x] Asset migration (197 assets to Vercel Blob)
+- [x] Admin CRUD: Machines (list, create, edit, delete)
+- [x] Admin CRUD: Blog posts (list, create, edit, delete)
+- [x] Admin CRUD: Salespeople (list, create, edit, delete)
+- [x] Admin: Contact submissions viewer
+- [x] Database seeding scripts
+
+### Pending
+- [ ] Vercel production deployment
+- [ ] Domain configuration
+- [ ] Fathom Analytics integration
+- [ ] Categories admin management
+- [ ] Navigation menu editor
+- [ ] Site settings admin page
+- [ ] Image upload in admin forms (currently URL-based)

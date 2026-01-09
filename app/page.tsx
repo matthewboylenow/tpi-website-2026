@@ -7,16 +7,22 @@ import {
   Testimonials,
   ContactSection,
 } from "@/components/home";
+import { getCategories, getFeaturedTestimonials } from "@/lib/data";
 
-export default function Home() {
+export default async function Home() {
+  const [categories, testimonials] = await Promise.all([
+    getCategories(),
+    getFeaturedTestimonials(),
+  ]);
+
   return (
     <>
       <Header />
       <main id="main-content" className="pt-[120px]">
         <Hero />
         <ValueProposition />
-        <ProductsGrid />
-        <Testimonials />
+        <ProductsGrid categories={categories} />
+        <Testimonials testimonials={testimonials} />
         <ContactSection />
       </main>
       <Footer />
