@@ -1,0 +1,367 @@
+@import "tailwindcss";
+
+/* ========================================
+   Taylor Products Design System
+   "Elevated Industrial" Theme
+   ======================================== */
+
+/* Google Fonts imported via next/font in layout.tsx */
+
+:root {
+  /* --------------------------------
+     Primary Colors - Taylor Blue
+     -------------------------------- */
+  --blue-50: #E6F0F7;
+  --blue-100: #CCE1EF;
+  --blue-200: #99C3DF;
+  --blue-300: #66A5CF;
+  --blue-400: #3387BF;
+  --blue-500: #0066B2;  /* Primary brand blue */
+  --blue-600: #00528E;
+  --blue-700: #003D6B;
+  --blue-800: #002947;
+  --blue-900: #001424;
+
+  /* --------------------------------
+     Navy - Deep accents
+     -------------------------------- */
+  --navy-500: #1B4B7C;
+  --navy-600: #163D65;
+  --navy-700: #112F4E;
+  --navy-800: #0C2137;
+  --navy-900: #071320;
+
+  /* --------------------------------
+     Orange - Action/CTA
+     -------------------------------- */
+  --orange-50: #FFF4EB;
+  --orange-100: #FFE4CC;
+  --orange-200: #FFC999;
+  --orange-300: #FFAE66;
+  --orange-400: #FF9333;
+  --orange-500: #FF7B00;  /* Primary orange */
+  --orange-600: #CC6200;
+  --orange-700: #994A00;
+  --orange-800: #663100;
+  --orange-900: #331900;
+
+  /* --------------------------------
+     Neutrals - Warm gray tint
+     -------------------------------- */
+  --gray-50: #F8F9FA;
+  --gray-100: #F1F3F5;
+  --gray-200: #E9ECEF;
+  --gray-300: #DEE2E6;
+  --gray-400: #CED4DA;
+  --gray-500: #ADB5BD;
+  --gray-600: #868E96;
+  --gray-700: #495057;
+  --gray-800: #343A40;
+  --gray-900: #212529;
+
+  /* --------------------------------
+     Semantic Colors
+     -------------------------------- */
+  --success: #2E7D32;
+  --warning: #F57C00;
+  --error: #C62828;
+  --info: var(--blue-500);
+
+  /* --------------------------------
+     Spacing Scale (8px base)
+     -------------------------------- */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.5rem;    /* 24px */
+  --space-6: 2rem;      /* 32px */
+  --space-8: 3rem;      /* 48px */
+  --space-10: 4rem;     /* 64px */
+  --space-12: 5rem;     /* 80px */
+  --space-16: 8rem;     /* 128px */
+
+  /* --------------------------------
+     Container Widths
+     -------------------------------- */
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1440px;
+
+  /* --------------------------------
+     Section Padding
+     -------------------------------- */
+  --section-padding-y: clamp(4rem, 8vw, 8rem);
+  --section-padding-x: clamp(1rem, 5vw, 2rem);
+
+  /* --------------------------------
+     Shadows
+     -------------------------------- */
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.04), 0 4px 8px rgba(0, 0, 0, 0.04), 0 12px 24px rgba(0, 0, 0, 0.06);
+  --shadow-card-hover: 0 4px 8px rgba(0, 0, 0, 0.06), 0 12px 24px rgba(0, 0, 0, 0.08), 0 24px 48px rgba(0, 0, 0, 0.1);
+  --shadow-button: inset 0 1px 0 rgba(255, 255, 255, 0.1), 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-dropdown: 0 4px 12px rgba(0, 0, 0, 0.08), 0 12px 24px rgba(0, 0, 0, 0.08);
+
+  /* --------------------------------
+     Border Radius
+     -------------------------------- */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 100px;
+
+  /* --------------------------------
+     Transitions
+     -------------------------------- */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.2s ease;
+  --transition-slow: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================
+   Tailwind Theme Extension
+   ======================================== */
+@theme inline {
+  /* Colors */
+  --color-taylor-blue-50: var(--blue-50);
+  --color-taylor-blue-100: var(--blue-100);
+  --color-taylor-blue-200: var(--blue-200);
+  --color-taylor-blue-300: var(--blue-300);
+  --color-taylor-blue-400: var(--blue-400);
+  --color-taylor-blue-500: var(--blue-500);
+  --color-taylor-blue-600: var(--blue-600);
+  --color-taylor-blue-700: var(--blue-700);
+  --color-taylor-blue-800: var(--blue-800);
+  --color-taylor-blue-900: var(--blue-900);
+
+  --color-taylor-navy-500: var(--navy-500);
+  --color-taylor-navy-600: var(--navy-600);
+  --color-taylor-navy-700: var(--navy-700);
+  --color-taylor-navy-800: var(--navy-800);
+  --color-taylor-navy-900: var(--navy-900);
+
+  --color-taylor-orange-50: var(--orange-50);
+  --color-taylor-orange-100: var(--orange-100);
+  --color-taylor-orange-200: var(--orange-200);
+  --color-taylor-orange-300: var(--orange-300);
+  --color-taylor-orange-400: var(--orange-400);
+  --color-taylor-orange-500: var(--orange-500);
+  --color-taylor-orange-600: var(--orange-600);
+  --color-taylor-orange-700: var(--orange-700);
+  --color-taylor-orange-800: var(--orange-800);
+  --color-taylor-orange-900: var(--orange-900);
+
+  /* Fonts */
+  --font-heading: var(--font-outfit);
+  --font-body: var(--font-source-serif);
+  --font-ui: var(--font-outfit);
+
+  /* Shadows */
+  --shadow-card: var(--shadow-card);
+  --shadow-card-hover: var(--shadow-card-hover);
+}
+
+/* ========================================
+   Base Styles
+   ======================================== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body), Georgia, serif;
+  color: var(--gray-900);
+  background-color: white;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--navy-800);
+}
+
+/* Links */
+a {
+  color: var(--blue-500);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--blue-700);
+}
+
+/* ========================================
+   Utility Classes
+   ======================================== */
+.container {
+  width: 100%;
+  max-width: var(--container-xl);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--section-padding-x);
+  padding-right: var(--section-padding-x);
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: var(--container-2xl);
+  }
+}
+
+.section {
+  padding-top: var(--section-padding-y);
+  padding-bottom: var(--section-padding-y);
+}
+
+/* ========================================
+   Animation Classes
+   ======================================== */
+@keyframes shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes accentGrow {
+  from { width: 0; }
+  to { width: 80px; }
+}
+
+@keyframes skeleton {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.animate-card-reveal {
+  animation: cardReveal 0.6s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.4s ease forwards;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+
+/* Skeleton loading */
+.skeleton {
+  background: linear-gradient(90deg, var(--gray-100) 0%, var(--gray-50) 50%, var(--gray-100) 100%);
+  background-size: 200% 100%;
+  animation: skeleton 1.5s ease-in-out infinite;
+  border-radius: var(--radius-md);
+}
+
+/* ========================================
+   Reduced Motion Support
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ========================================
+   Focus Styles (Accessibility)
+   ======================================== */
+:focus-visible {
+  outline: 2px solid var(--blue-500);
+  outline-offset: 2px;
+}
+
+/* Skip to content link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--blue-500);
+  color: white;
+  padding: 8px 16px;
+  z-index: 1000;
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+@media print {
+  .no-print,
+  header,
+  footer,
+  nav,
+  .sidebar {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  .machine-specs {
+    page-break-inside: avoid;
+  }
+}
