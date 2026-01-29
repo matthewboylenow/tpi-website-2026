@@ -8,6 +8,11 @@ const nextConfig: NextConfig = {
         hostname: "xyxkftovdmpcozud.public.blob.vercel-storage.com",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "taylorproducts.net",
+        pathname: "/**",
+      },
     ],
   },
 };

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
   Facebook,
   Instagram,
@@ -8,44 +9,41 @@ import {
   Mail,
   MapPin,
 } from "lucide-react";
+import { getNavigationByLocation, getAllSiteSettings } from "@/lib/data";
 
-const productLinks = [
-  { name: "Soft Serve & Frozen Yogurt", href: "/soft-serve-frozen-yogurt" },
-  { name: "Icetro Soft Serve", href: "/icetro-soft-serve" },
-  { name: "Two Sided Grills", href: "/two-sided-grills" },
-  { name: "Milkshakes", href: "/milkshakes" },
-  { name: "Ice Cream & Gelato Batch", href: "/ice-cream-gelato-batch" },
-  { name: "FlavorBurst Programs", href: "/flavorburst-programs" },
-  { name: "Frozen Cocktails", href: "/frozen-cocktails" },
-  { name: "All Products", href: "#products" },
+// Types for navigation items
+interface NavItem {
+  label: string;
+  url: string;
+  isExternal?: boolean;
+}
+
+// Default navigation items (fallback if database is empty)
+const defaultProductLinks: NavItem[] = [
+  { label: "Soft Serve & Frozen Yogurt", url: "/soft-serve-frozen-yogurt" },
+  { label: "Icetro Soft Serve", url: "/icetro-soft-serve" },
+  { label: "Two Sided Grills", url: "/two-sided-grills" },
+  { label: "Milkshakes", url: "/milkshakes" },
+  { label: "Ice Cream & Gelato Batch", url: "/ice-cream-gelato-batch" },
+  { label: "FlavorBurst Programs", url: "/flavorburst-programs" },
+  { label: "Frozen Cocktails", url: "/frozen-cocktails" },
+  { label: "All Products", url: "#products" },
 ];
 
-const companyLinks = [
-  { name: "About Us", href: "/about" },
-  { name: "Meet Your Salesperson", href: "/meet-your-salesperson" },
-  { name: "Work With Us", href: "/work-with-us" },
-  { name: "Blog", href: "/blog" },
-  { name: "What's New", href: "/new" },
+const defaultCompanyLinks: NavItem[] = [
+  { label: "About Us", url: "/about" },
+  { label: "Meet Your Salesperson", url: "/meet-your-salesperson" },
+  { label: "Work With Us", url: "/work-with-us" },
+  { label: "Blog", url: "/blog" },
+  { label: "What's New", url: "/new" },
 ];
 
-const supportLinks = [
-  { name: "Red Cape Service", href: "/red-cape-service" },
-  { name: "Genuine Parts", href: "/genuine-parts" },
-  {
-    name: "Knowledge Base",
-    href: "https://support.taylorproducts.net",
-    external: true,
-  },
-  {
-    name: "Parts Store",
-    href: "https://parts.taylorproducts.net",
-    external: true,
-  },
-  {
-    name: "Machine Finder",
-    href: "https://finder.taylorproducts.net/wizard",
-    external: true,
-  },
+const defaultSupportLinks: NavItem[] = [
+  { label: "Red Cape Service", url: "/red-cape-service" },
+  { label: "Genuine Parts", url: "/genuine-parts" },
+  { label: "Knowledge Base", url: "https://support.taylorproducts.net", isExternal: true },
+  { label: "Parts Store", url: "https://parts.taylorproducts.net", isExternal: true },
+  { label: "Machine Finder", url: "https://finder.taylorproducts.net/wizard", isExternal: true },
 ];
 
 const socialLinks = [
@@ -71,8 +69,47 @@ const socialLinks = [
   },
 ];
 
-export function Footer() {
+const defaultLogoUrl = "https://taylorproducts.net/wp-content/uploads/2022/04/Artboard-2@2x-300x83.png";
+
+export async function Footer() {
   const currentYear = new Date().getFullYear();
+
+  // Fetch navigation data from database
+  const [productsNav, companyNav, supportNav, settings] = await Promise.all([
+    getNavigationByLocation("footer_products"),
+    getNavigationByLocation("footer_company"),
+    getNavigationByLocation("footer_support"),
+    getAllSiteSettings(),
+  ]);
+
+  // Transform database navigation items to NavItem format
+  // Use database items if available, otherwise fall back to defaults
+  const productLinks: NavItem[] = productsNav.length > 0
+    ? productsNav.map(item => ({
+        label: item.label,
+        url: item.url,
+        isExternal: item.isExternal || false,
+      }))
+    : defaultProductLinks;
+
+  const companyLinks: NavItem[] = companyNav.length > 0
+    ? companyNav.map(item => ({
+        label: item.label,
+        url: item.url,
+        isExternal: item.isExternal || false,
+      }))
+    : defaultCompanyLinks;
+
+  const supportLinks: NavItem[] = supportNav.length > 0
+    ? supportNav.map(item => ({
+        label: item.label,
+        url: item.url,
+        isExternal: item.isExternal || false,
+      }))
+    : defaultSupportLinks;
+
+  // Get logo from settings
+  const logoUrl = settings.site_logo_url || defaultLogoUrl;
 
   return (
     <footer className="bg-gradient-to-b from-[var(--navy-800)] to-[var(--navy-900)] text-white">
@@ -81,20 +118,14 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center">
-                <span className="text-[var(--blue-500)] font-bold text-xl font-[family-name:var(--font-outfit)]">
-                  TP
-                </span>
-              </div>
-              <div>
-                <p className="font-[family-name:var(--font-outfit)] font-bold text-lg leading-tight">
-                  Taylor Products
-                </p>
-                <p className="text-sm text-[var(--gray-400)]">
-                  Foodservice Equipment
-                </p>
-              </div>
+            <div className="mb-6">
+              <Image
+                src={logoUrl}
+                alt="Taylor Products"
+                width={200}
+                height={55}
+                className="h-12 w-auto brightness-0 invert"
+              />
             </div>
 
             <p className="text-[var(--gray-300)] mb-6 max-w-sm">
@@ -133,7 +164,7 @@ export function Footer() {
                 <div>
                   <p className="font-medium text-white">Pennsylvania</p>
                   <p className="text-sm">
-                    2851 Limestone Rd, Cochranville, PA 19330
+                    264 Welsh Pool Rd, Exton, PA 19341
                   </p>
                 </div>
               </div>
@@ -142,7 +173,7 @@ export function Footer() {
                 <div>
                   <p className="font-medium text-white">New Jersey</p>
                   <p className="text-sm">
-                    102 Gaither Dr, Suite 3, Mt Laurel, NJ 08054
+                    255 Raritan Center Pkwy, Edison, NJ 08837
                   </p>
                 </div>
               </div>
@@ -175,59 +206,15 @@ export function Footer() {
             </h4>
             <ul className="space-y-3">
               {productLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-[var(--gray-300)] hover:text-white transition-colors text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Company Links */}
-          <div>
-            <h4
-              className="font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4"
-              style={{ color: 'var(--gray-400)' }}
-            >
-              Company
-            </h4>
-            <ul className="space-y-3">
-              {companyLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-[var(--gray-300)] hover:text-white transition-colors text-sm"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Support Links */}
-          <div>
-            <h4
-              className="font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4"
-              style={{ color: 'var(--gray-400)' }}
-            >
-              Support
-            </h4>
-            <ul className="space-y-3">
-              {supportLinks.map((link) => (
-                <li key={link.href}>
-                  {"external" in link && link.external ? (
+                <li key={link.url}>
+                  {link.isExternal ? (
                     <a
-                      href={link.href}
+                      href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1 text-[var(--gray-300)] hover:text-white transition-colors text-sm"
                     >
-                      {link.name}
+                      {link.label}
                       <svg
                         className="w-3 h-3 opacity-50"
                         fill="none"
@@ -244,10 +231,102 @@ export function Footer() {
                     </a>
                   ) : (
                     <Link
-                      href={link.href}
+                      href={link.url}
                       className="text-[var(--gray-300)] hover:text-white transition-colors text-sm"
                     >
-                      {link.name}
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company Links */}
+          <div>
+            <h4
+              className="font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4"
+              style={{ color: 'var(--gray-400)' }}
+            >
+              Company
+            </h4>
+            <ul className="space-y-3">
+              {companyLinks.map((link) => (
+                <li key={link.url}>
+                  {link.isExternal ? (
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[var(--gray-300)] hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
+                      <svg
+                        className="w-3 h-3 opacity-50"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.url}
+                      className="text-[var(--gray-300)] hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Support Links */}
+          <div>
+            <h4
+              className="font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4"
+              style={{ color: 'var(--gray-400)' }}
+            >
+              Support
+            </h4>
+            <ul className="space-y-3">
+              {supportLinks.map((link) => (
+                <li key={link.url}>
+                  {link.isExternal ? (
+                    <a
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[var(--gray-300)] hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
+                      <svg
+                        className="w-3 h-3 opacity-50"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                        />
+                      </svg>
+                    </a>
+                  ) : (
+                    <Link
+                      href={link.url}
+                      className="text-[var(--gray-300)] hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
                     </Link>
                   )}
                 </li>
@@ -265,12 +344,12 @@ export function Footer() {
               &copy; {currentYear} Taylor Products Inc. All rights reserved.
             </p>
             <div className="flex items-center gap-6 text-sm text-[var(--gray-400)]">
-              <a href="/privacy" className="hover:text-white transition-colors">
+              <Link href="/privacy" className="hover:text-white transition-colors">
                 Privacy Policy
-              </a>
-              <a href="/terms" className="hover:text-white transition-colors">
+              </Link>
+              <Link href="/terms" className="hover:text-white transition-colors">
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>

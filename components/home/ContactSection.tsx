@@ -156,10 +156,10 @@ export function ContactSection() {
                     Showrooms
                   </h3>
                   <p className="text-[var(--gray-600)] text-sm">
-                    2851 Limestone Rd, Cochranville, PA 19330
+                    264 Welsh Pool Rd, Exton, PA 19341
                   </p>
                   <p className="text-[var(--gray-600)] text-sm">
-                    102 Gaither Dr, Suite 3, Mt Laurel, NJ 08054
+                    255 Raritan Center Pkwy, Edison, NJ 08837
                   </p>
                 </div>
               </div>

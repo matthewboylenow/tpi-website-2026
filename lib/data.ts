@@ -129,6 +129,61 @@ export async function getAllTestimonials(): Promise<Testimonial[]> {
   });
 }
 
+export async function getTestimonialById(id: number): Promise<Testimonial | undefined> {
+  return db.query.testimonials.findFirst({
+    where: eq(testimonials.id, id),
+  });
+}
+
+export async function createTestimonial(data: {
+  customerName: string;
+  businessName?: string;
+  quote: string;
+  isFeatured?: boolean;
+  displayOrder?: number;
+}): Promise<Testimonial> {
+  const [testimonial] = await db
+    .insert(testimonials)
+    .values({
+      customerName: data.customerName,
+      businessName: data.businessName || null,
+      quote: data.quote,
+      isFeatured: data.isFeatured ?? false,
+      displayOrder: data.displayOrder ?? 0,
+    })
+    .returning();
+  return testimonial;
+}
+
+export async function updateTestimonial(
+  id: number,
+  data: {
+    customerName?: string;
+    businessName?: string;
+    quote?: string;
+    isFeatured?: boolean;
+    displayOrder?: number;
+  }
+): Promise<Testimonial | undefined> {
+  const [testimonial] = await db
+    .update(testimonials)
+    .set({
+      ...(data.customerName !== undefined && { customerName: data.customerName }),
+      ...(data.businessName !== undefined && { businessName: data.businessName }),
+      ...(data.quote !== undefined && { quote: data.quote }),
+      ...(data.isFeatured !== undefined && { isFeatured: data.isFeatured }),
+      ...(data.displayOrder !== undefined && { displayOrder: data.displayOrder }),
+    })
+    .where(eq(testimonials.id, id))
+    .returning();
+  return testimonial;
+}
+
+export async function deleteTestimonial(id: number): Promise<boolean> {
+  const result = await db.delete(testimonials).where(eq(testimonials.id, id));
+  return (result.rowCount ?? 0) > 0;
+}
+
 // ================================
 // Salespeople
 // ================================

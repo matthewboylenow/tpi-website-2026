@@ -220,9 +220,9 @@ export default function TermsOfServicePage() {
                   Taylor Products Inc.
                 </p>
                 <p className="text-[var(--gray-600)]">
-                  2851 Limestone Rd
+                  264 Welsh Pool Rd
                   <br />
-                  Cochranville, PA 19330
+                  Exton, PA 19341
                 </p>
                 <p className="text-[var(--gray-600)] mt-2">
                   Phone:{" "}

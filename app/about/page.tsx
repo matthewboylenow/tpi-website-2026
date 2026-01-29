@@ -188,9 +188,9 @@ export default function AboutPage() {
                   </div>
                 </div>
                 <address className="not-italic text-[var(--gray-600)] mb-4">
-                  2851 Limestone Rd
+                  264 Welsh Pool Rd
                   <br />
-                  Cochranville, PA 19330
+                  Exton, PA 19341
                 </address>
                 <div className="flex items-center gap-2 text-[var(--gray-600)] mb-6">
                   <Phone className="w-4 h-4" />
@@ -202,7 +202,7 @@ export default function AboutPage() {
                   </a>
                 </div>
                 <a
-                  href="https://maps.google.com/?q=2851+Limestone+Rd+Cochranville+PA+19330"
+                  href="https://maps.google.com/?q=264+Welsh+Pool+Rd+Exton+PA+19341"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-[var(--blue-500)] hover:text-[var(--blue-700)]"
@@ -235,14 +235,14 @@ export default function AboutPage() {
                       New Jersey Showroom
                     </h3>
                     <p className="text-sm text-[var(--gray-500)]">
-                      South Jersey
+                      Central Jersey
                     </p>
                   </div>
                 </div>
                 <address className="not-italic text-[var(--gray-600)] mb-4">
-                  102 Gaither Dr, Suite 3
+                  255 Raritan Center Pkwy
                   <br />
-                  Mt Laurel, NJ 08054
+                  Edison, NJ 08837
                 </address>
                 <div className="flex items-center gap-2 text-[var(--gray-600)] mb-6">
                   <Phone className="w-4 h-4" />
@@ -254,7 +254,7 @@ export default function AboutPage() {
                   </a>
                 </div>
                 <a
-                  href="https://maps.google.com/?q=102+Gaither+Dr+Suite+3+Mt+Laurel+NJ+08054"
+                  href="https://maps.google.com/?q=255+Raritan+Center+Pkwy+Edison+NJ+08837"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-[var(--blue-500)] hover:text-[var(--blue-700)]"
