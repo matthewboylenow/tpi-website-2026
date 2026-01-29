@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CategoryHero, MachineGrid } from "@/components/category";
 import { ContactSection } from "@/components/home/ContactSection";
+import { BreadcrumbSchema, WebPageSchema } from "@/components/Schema";
 import { getCategoryWithMachines } from "@/lib/data";
 import { HEROES } from "@/lib/assets";
 
@@ -41,8 +42,21 @@ export default async function IcetroPage() {
     })),
   }));
 
+  const breadcrumbItems = [
+    { name: "Home", url: "https://taylorproducts.net" },
+    { name: "Icetro Soft Serve", url: "https://taylorproducts.net/icetro-soft-serve" },
+  ];
+
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <WebPageSchema
+        title="Icetro Soft Serve Machines"
+        description="Icetro soft serve machines offer budget-friendly alternatives with premium quality."
+        url="https://taylorproducts.net/icetro-soft-serve"
+      />
+      <BreadcrumbSchema items={breadcrumbItems} />
+
       <Header />
       <main id="main-content" className="pt-[120px]">
         <CategoryHero

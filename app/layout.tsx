@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Source_Serif_4 } from "next/font/google";
 import { getAllSiteSettings } from "@/lib/data";
+import { OrganizationSchema } from "@/components/Schema";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -105,6 +106,7 @@ export default function RootLayout({
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>
+        <OrganizationSchema />
         {children}
       </body>
     </html>

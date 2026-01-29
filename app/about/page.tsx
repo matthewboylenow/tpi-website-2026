@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import { LocalBusinessSchema, WebPageSchema } from "@/components/Schema";
 import Link from "next/link";
 import {
   Users,
@@ -22,6 +23,15 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <WebPageSchema
+        title="About Taylor Products"
+        description="Taylor Products is a family-owned foodservice equipment distributor serving NJ, PA, NY, and DE since 1985."
+        url="https://taylorproducts.net/about"
+      />
+      <LocalBusinessSchema location="exton" />
+      <LocalBusinessSchema location="edison" />
+
       <Header />
       <main id="main-content" className="pt-[120px]">
         {/* Hero Section */}

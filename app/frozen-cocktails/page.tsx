@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CategoryHero, MachineGrid } from "@/components/category";
 import { ContactSection } from "@/components/home/ContactSection";
+import { BreadcrumbSchema, WebPageSchema } from "@/components/Schema";
 import { getCategoryWithMachines } from "@/lib/data";
 import { HEROES } from "@/lib/assets";
 
@@ -41,8 +42,21 @@ export default async function FrozenCocktailsPage() {
     })),
   }));
 
+  const breadcrumbItems = [
+    { name: "Home", url: "https://taylorproducts.net" },
+    { name: "Frozen Cocktails", url: "https://taylorproducts.net/frozen-cocktails" },
+  ];
+
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <WebPageSchema
+        title="Frozen Cocktail Machines"
+        description="Commercial frozen cocktail and margarita machines. From countertop units to high-volume floor models for bars and restaurants."
+        url="https://taylorproducts.net/frozen-cocktails"
+      />
+      <BreadcrumbSchema items={breadcrumbItems} />
+
       <Header />
       <main id="main-content" className="pt-[120px]">
         <CategoryHero

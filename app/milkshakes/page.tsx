@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CategoryHero, MachineGrid } from "@/components/category";
 import { ContactSection } from "@/components/home/ContactSection";
+import { BreadcrumbSchema, WebPageSchema } from "@/components/Schema";
 import { getCategoryWithMachines } from "@/lib/data";
 import { HEROES } from "@/lib/assets";
 
@@ -41,8 +42,21 @@ export default async function MilkshakesPage() {
     })),
   }));
 
+  const breadcrumbItems = [
+    { name: "Home", url: "https://taylorproducts.net" },
+    { name: "Milkshakes", url: "https://taylorproducts.net/milkshakes" },
+  ];
+
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <WebPageSchema
+        title="Milkshake Machines"
+        description="Taylor milkshake machines from single flavor to multi-flavor configurations. Including 28HT heat treatment shake freezers."
+        url="https://taylorproducts.net/milkshakes"
+      />
+      <BreadcrumbSchema items={breadcrumbItems} />
+
       <Header />
       <main id="main-content" className="pt-[120px]">
         <CategoryHero

@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CategoryHero, MachineGrid } from "@/components/category";
 import { ContactSection } from "@/components/home/ContactSection";
+import { BreadcrumbSchema, WebPageSchema } from "@/components/Schema";
 import { getCategoryWithMachines } from "@/lib/data";
 import { HEROES } from "@/lib/assets";
 
@@ -41,8 +42,21 @@ export default async function SmoothiesPage() {
     })),
   }));
 
+  const breadcrumbItems = [
+    { name: "Home", url: "https://taylorproducts.net" },
+    { name: "Smoothies & Frozen Cappuccino", url: "https://taylorproducts.net/smoothies-frozen-cappuccino" },
+  ];
+
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <WebPageSchema
+        title="Smoothies & Frozen Cappuccino Machines"
+        description="Commercial smoothie and frozen cappuccino machines. Versatile frozen beverage equipment for coffee shops and foodservice."
+        url="https://taylorproducts.net/smoothies-frozen-cappuccino"
+      />
+      <BreadcrumbSchema items={breadcrumbItems} />
+
       <Header />
       <main id="main-content" className="pt-[120px]">
         <CategoryHero

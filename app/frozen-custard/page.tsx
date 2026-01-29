@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CategoryHero, MachineGrid } from "@/components/category";
 import { ContactSection } from "@/components/home/ContactSection";
+import { BreadcrumbSchema, WebPageSchema } from "@/components/Schema";
 import { getCategoryWithMachines } from "@/lib/data";
 import { HEROES } from "@/lib/assets";
 
@@ -41,8 +42,21 @@ export default async function FrozenCustardPage() {
     })),
   }));
 
+  const breadcrumbItems = [
+    { name: "Home", url: "https://taylorproducts.net" },
+    { name: "Frozen Custard", url: "https://taylorproducts.net/frozen-custard" },
+  ];
+
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <WebPageSchema
+        title="Frozen Custard Machines"
+        description="Taylor frozen custard machines for premium custard production. Single and twin twist configurations available."
+        url="https://taylorproducts.net/frozen-custard"
+      />
+      <BreadcrumbSchema items={breadcrumbItems} />
+
       <Header />
       <main id="main-content" className="pt-[120px]">
         <CategoryHero

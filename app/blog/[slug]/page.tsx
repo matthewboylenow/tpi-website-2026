@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ArticleSchema, BreadcrumbSchema } from "@/components/Schema";
 import { getBlogPostBySlug, getAllBlogSlugs } from "@/lib/data";
 import { CalendarDays, ArrowLeft, User } from "lucide-react";
 import { ContactSection } from "@/components/home/ContactSection";
@@ -45,8 +46,27 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
+  // Build breadcrumb items for schema
+  const breadcrumbItems = [
+    { name: "Home", url: "https://taylorproducts.net" },
+    { name: post.isWhatsNew ? "What's New" : "Blog", url: `https://taylorproducts.net/${post.isWhatsNew ? "new" : "blog"}` },
+    { name: post.title, url: `https://taylorproducts.net/blog/${slug}` },
+  ];
+
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <ArticleSchema
+        title={post.title}
+        description={post.excerpt || post.title}
+        url={`https://taylorproducts.net/blog/${slug}`}
+        image={post.featuredImageUrl || undefined}
+        datePublished={post.publishedAt?.toISOString()}
+        dateModified={post.updatedAt?.toISOString()}
+        author={post.author || "Taylor Products"}
+      />
+      <BreadcrumbSchema items={breadcrumbItems} />
+
       <Header />
       <main id="main-content" className="pt-[120px]">
         {/* Hero Section */}

@@ -7,6 +7,7 @@ import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge, HeatTreatmentBadge, AdaBadge } from "@/components/ui/badge";
 import { ContactSection } from "@/components/home/ContactSection";
+import { ProductSchema, BreadcrumbSchema } from "@/components/Schema";
 import {
   getMachineWithCategory,
   getAllMachineSlugs,
@@ -105,8 +106,30 @@ export default async function MachinePage({
     machine.description ||
     `The Taylor ${machine.modelNumber} ${machine.name} is a reliable commercial machine designed for high-volume foodservice operations. Contact us to learn more about this model and how it can benefit your business.`;
 
+  // Build breadcrumb items for schema
+  const breadcrumbItems = [
+    { name: "Home", url: "https://taylorproducts.net" },
+    ...(machine.category
+      ? [{ name: machine.category.name, url: `https://taylorproducts.net/${machine.category.slug}` }]
+      : []),
+    { name: `${machine.modelNumber} - ${machine.name}`, url: `https://taylorproducts.net/machines/${slug}` },
+  ];
+
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <ProductSchema
+        name={machine.name}
+        model={machine.modelNumber}
+        description={machine.shortDescription || machine.description || `Commercial ${machine.name} from Taylor Products`}
+        image={imageUrl}
+        url={`https://taylorproducts.net/machines/${slug}`}
+        category={machine.category?.name}
+        sku={machine.modelNumber}
+        brand="Taylor"
+      />
+      <BreadcrumbSchema items={breadcrumbItems} />
+
       <Header />
       <main id="main-content" className="pt-[120px]">
         {/* Hero Section */}

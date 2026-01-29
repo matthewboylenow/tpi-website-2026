@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CategoryHero, MachineGrid } from "@/components/category";
 import { ContactSection } from "@/components/home/ContactSection";
+import { BreadcrumbSchema, WebPageSchema } from "@/components/Schema";
 import { getCategoryWithMachines } from "@/lib/data";
 import { HEROES } from "@/lib/assets";
 
@@ -47,8 +48,21 @@ export default async function SoftServePage() {
     })),
   }));
 
+  const breadcrumbItems = [
+    { name: "Home", url: "https://taylorproducts.net" },
+    { name: "Soft Serve & Frozen Yogurt", url: "https://taylorproducts.net/soft-serve-frozen-yogurt" },
+  ];
+
   return (
     <>
+      {/* JSON-LD Structured Data */}
+      <WebPageSchema
+        title="Soft Serve & Frozen Yogurt Machines"
+        description="Taylor soft serve machines deliver the industry's fastest recovery time, simplest cleaning process, and lowest lifetime maintenance costs."
+        url="https://taylorproducts.net/soft-serve-frozen-yogurt"
+      />
+      <BreadcrumbSchema items={breadcrumbItems} />
+
       <Header />
       <main id="main-content" className="pt-[120px]">
         <CategoryHero
