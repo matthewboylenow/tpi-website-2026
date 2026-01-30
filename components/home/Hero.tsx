@@ -173,10 +173,11 @@ export function Hero() {
           {/* Title */}
           <h1
             className={cn(
-              "font-[family-name:var(--font-heading)] font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-6 text-white transition-all duration-500",
+              "font-[family-name:var(--font-heading)] font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-[1.1] mb-6 transition-all duration-500",
               isTransitioning ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
             )}
             style={{
+              color: 'white',
               textShadow: '0 2px 20px rgba(0,0,0,0.3)',
               letterSpacing: '-0.02em'
             }}
