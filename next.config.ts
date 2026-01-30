@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
         hostname: "taylorproducts.net",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.taylor-company.com",
+        pathname: "/**",
+      },
     ],
   },
 };
