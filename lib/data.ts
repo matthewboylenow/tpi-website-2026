@@ -99,12 +99,31 @@ export async function getCategoryWithMachines(
   if (!category) return null;
 
   const subs = await getSubcategoriesByCategoryId(category.id);
+
+  // Get machines in subcategories
   const subcategoriesWithMachines: SubcategoryWithMachines[] = await Promise.all(
     subs.map(async (sub) => ({
       ...sub,
       machines: await getMachinesBySubcategoryId(sub.id),
     }))
   );
+
+  // Get machines that have categoryId but no subcategoryId (uncategorized within category)
+  const allCategoryMachines = await getMachinesByCategoryId(category.id);
+  const machinesInSubcategories = subcategoriesWithMachines.flatMap(s => s.machines.map(m => m.id));
+  const uncategorizedMachines = allCategoryMachines.filter(m => !machinesInSubcategories.includes(m.id));
+
+  // If there are uncategorized machines, add them to a virtual "All Models" subcategory
+  if (uncategorizedMachines.length > 0) {
+    subcategoriesWithMachines.push({
+      id: 0, // Virtual ID
+      categoryId: category.id,
+      name: "All Models",
+      displayOrder: 999, // Show last
+      createdAt: new Date(),
+      machines: uncategorizedMachines,
+    });
+  }
 
   return {
     ...category,
