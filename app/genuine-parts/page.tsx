@@ -1,5 +1,4 @@
-"use client";
-
+import { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -15,6 +14,11 @@ import {
   Phone,
 } from "lucide-react";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Genuine Taylor Parts | Taylor Products",
+  description: "Order authentic OEM Taylor parts online 24/7. Same-day shipping on in-stock parts. Keep your equipment running with genuine components.",
+};
 
 const partsFeatures = [
   {

@@ -1,5 +1,4 @@
-"use client";
-
+import { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -14,6 +13,11 @@ import {
   HeadphonesIcon,
 } from "lucide-react";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Red Cape Service | Taylor Products",
+  description: "24/7 emergency service, factory-trained technicians, and genuine Taylor parts. Taylor Products Red Cape Service keeps your equipment running.",
+};
 
 const serviceFeatures = [
   {
