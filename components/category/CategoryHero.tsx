@@ -15,17 +15,17 @@ export function CategoryHero({
   gradient = "from-[var(--navy-900)] via-[var(--navy-800)] to-[var(--blue-800)]",
 }: CategoryHeroProps) {
   return (
-    <section
-      className={cn(
-        "relative min-h-[40vh] flex items-center",
-        "bg-gradient-to-br",
+    <section className="relative min-h-[40vh] flex items-center overflow-hidden">
+      {/* Base dark background */}
+      <div className={cn(
+        "absolute inset-0 bg-gradient-to-br",
         gradient
-      )}
-    >
+      )} />
+
       {/* Background Image */}
       {backgroundImage && (
         <div
-          className="absolute inset-0 opacity-20"
+          className="absolute inset-0"
           style={{
             backgroundImage: `url(${backgroundImage})`,
             backgroundSize: "cover",
@@ -34,8 +34,11 @@ export function CategoryHero({
         />
       )}
 
+      {/* Dark overlay to ensure text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[var(--navy-900)]/90 via-[var(--navy-800)]/80 to-[var(--navy-800)]/60" />
+
       {/* Pattern Overlay */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0"
           style={{
