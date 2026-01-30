@@ -60,8 +60,8 @@ export default async function FlavorBurstPage() {
       <Header />
       <main id="main-content" className="pt-[120px]">
         <CategoryHero
-          title="FlavorBurst Programs"
-          description="Transform a single soft serve or shake machine into a multi-flavor profit center. FlavorBurst adds 8+ flavors with the push of a button, increasing menu variety without additional equipment."
+          title="FlavorBurst"
+          description="FlavorBurst and FlavorBlend helps you stand out among your competitors when combined with a Taylor soft serve or frozen beverage freezer. With over 8 different flavors available, giving you a total of 40 different combinable flavor options to provide your customers with custom choices that encourage repeat business."
           backgroundImage={HEROES.flavorburst}
           gradient="from-[var(--green-800)] via-[var(--teal-700)] to-[var(--teal-900)]"
         />

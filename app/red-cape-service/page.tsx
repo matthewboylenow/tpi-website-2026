@@ -84,17 +84,16 @@ export default function RedCapeServicePage() {
                 className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
                 style={{ color: "white" }}
               >
-                Red Cape Service: We&apos;ve Got Your Back
+                Taylor Red Cape Service: A Winning Combination
               </h1>
               <div className="w-20 h-1 bg-[var(--orange-500)] rounded-full mb-6" />
               <p
                 className="text-lg leading-relaxed max-w-2xl"
                 style={{ color: "rgba(255, 255, 255, 0.9)" }}
               >
-                When you buy from Taylor Products, you&apos;re not just getting
-                equipment—you&apos;re getting a partner. Our Red Cape commitment
-                means we&apos;re here when you need us, with the expertise to
-                solve problems fast.
+                When you partner with Taylor Products, you can rest assured knowing
+                that you will receive the finest equipment, plus best-in-class
+                customer service, staff training, and support.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <a href="tel:610-268-0500">
@@ -186,13 +185,14 @@ export default function RedCapeServicePage() {
                   className="font-[family-name:var(--font-outfit)] font-bold text-3xl sm:text-4xl mb-6"
                   style={{ color: "var(--navy-800)" }}
                 >
-                  More Than Just a Service Call
+                  The Red Cape Commitment
                 </h2>
                 <p className="text-[var(--gray-600)] text-lg mb-8">
-                  When you partner with us, you get more than a vendor—you get a
-                  team that&apos;s invested in your success. We&apos;re not
-                  happy until your equipment is running and your customers are
-                  smiling.
+                  Our Red Cape® Commitment ensures that you will be provided with
+                  superior equipment and heroic support that will send your profits
+                  soaring. No matter where your company relocates, the greater Taylor
+                  network of more than 6,500 factory-trained service personnel will
+                  make sure you receive first-rate service.
                 </p>
                 <ul className="space-y-4">
                   {commitments.map((item) => (

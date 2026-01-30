@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { LocalBusinessSchema, WebPageSchema } from "@/components/Schema";
 import Link from "next/link";
 import {
-  Users,
   Award,
   Wrench,
   TrendingUp,
@@ -45,13 +44,12 @@ export default function AboutPage() {
                 className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
                 style={{ color: 'white' }}
               >
-                Family-Owned, Customer-Focused Since 1985
+                Why Taylor Products?
               </h1>
               <div className="w-20 h-1 bg-[var(--orange-500)] rounded-full mb-6" />
               <p className="text-lg text-gray-300 leading-relaxed">
-                Not just a vendor—a committed partner. As a family-owned business,
-                our promise to each and every customer is a strong commitment to
-                service, dependability, and profit solutions to help drive all of your goals.
+                We&apos;re more than an industry-leading distributor of Taylor and FlavorBurst equipment.
+                We&apos;re a family-owned company that partners with small businesses to help them succeed.
               </p>
             </div>
           </div>
@@ -112,30 +110,17 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white rounded-xl p-8 shadow-sm border border-[var(--gray-200)] text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[var(--blue-500)] text-white mb-6">
-                  <Users className="w-8 h-8" />
+                  <TrendingUp className="w-8 h-8" />
                 </div>
                 <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-3">
-                  Family Values
+                  Profit Solutions
                 </h3>
                 <p className="text-[var(--gray-600)]">
-                  As a family-owned and operated business, we bring personal
-                  commitment to every relationship.
-                </p>
-              </div>
-
-              <div className="bg-white rounded-xl p-8 shadow-sm border border-[var(--gray-200)] text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[var(--blue-500)] text-white mb-6">
-                  <Award className="w-8 h-8" />
-                </div>
-                <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-3">
-                  Industry Expertise
-                </h3>
-                <p className="text-[var(--gray-600)]">
-                  Deep knowledge of foodservice equipment and market trends to
-                  guide your decisions.
+                  We partner with you on a personal basis to help you realize the full
+                  potential of your Taylor or FlavorBurst equipment and drive your business goals.
                 </p>
               </div>
 
@@ -144,24 +129,25 @@ export default function AboutPage() {
                   <Wrench className="w-8 h-8" />
                 </div>
                 <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-3">
-                  Service Excellence
+                  Red Cape Service
                 </h3>
                 <p className="text-[var(--gray-600)]">
-                  Industry-leading response times with factory-trained
-                  technicians and genuine parts.
+                  Our Red Cape customer service continually reinforces our commitment to your success.
+                  Our service teams&apos; fully-equipped vans keep you assured that your equipment will be
+                  serviced quickly and properly.
                 </p>
               </div>
 
               <div className="bg-white rounded-xl p-8 shadow-sm border border-[var(--gray-200)] text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[var(--blue-500)] text-white mb-6">
-                  <TrendingUp className="w-8 h-8" />
+                  <Award className="w-8 h-8" />
                 </div>
                 <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-3">
-                  Profit Focus
+                  Industry Leading Quality
                 </h3>
                 <p className="text-[var(--gray-600)]">
-                  We help you build programs that drive real profitability, not
-                  just sell equipment.
+                  We only use the highest quality machines and parts, assuring you that your
+                  highest demands will be met.
                 </p>
               </div>
             </div>

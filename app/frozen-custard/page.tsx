@@ -60,8 +60,8 @@ export default async function FrozenCustardPage() {
       <Header />
       <main id="main-content" className="pt-[120px]">
         <CategoryHero
-          title="Frozen Custard Machines"
-          description="Premium frozen custard requires precision equipment. Taylor custard freezers deliver the rich, dense texture that custard lovers expect, with consistent quality every serving."
+          title="Frozen Custard"
+          description="Partner with Taylor Products with our frozen custard freezers, helping you to develop your own menu of premium homemade ice cream, Italian ice and frozen custard. Provide your customers signature products that complement your existing service offerings."
           backgroundImage={HEROES.custard}
           gradient="from-[var(--yellow-700)] via-[var(--amber-600)] to-[var(--amber-800)]"
         />

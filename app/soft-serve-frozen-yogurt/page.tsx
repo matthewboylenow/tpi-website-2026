@@ -66,8 +66,8 @@ export default async function SoftServePage() {
       <Header />
       <main id="main-content" className="pt-[120px]">
         <CategoryHero
-          title="Soft Serve & Frozen Yogurt Machines"
-          description="Taylor soft serve machines deliver the industry's fastest recovery time, simplest cleaning process, and lowest lifetime maintenance costs. Choose from 23+ models including revolutionary 28HT heat treatment technology that eliminates nightly breakdown and reduces labor costs."
+          title="Soft Serve & Frozen Yogurt"
+          description="Partner with Taylor Products for your soft serve and frozen yogurt needs. Not only do we have the most advanced technology in the industry, but our freezers feature the fastest recovery time, fewest parts for cleanup, and lowest maintenance costs. With over 20 different freezers, we have the perfect model for you and your business."
           backgroundImage={HEROES.softServe}
         />
 

@@ -61,7 +61,7 @@ export default async function GrillsPage() {
       <main id="main-content" className="pt-[120px]">
         <CategoryHero
           title="Two Sided Grills"
-          description="Taylor two-sided grills cook food faster and more consistently than traditional grills. From the new Crown Series to our classic electric and gas models, we have the right grill for your operation."
+          description="A Taylor two sided grill will offer your customers a complete cook-to-order menu concept. Taylor's two-sided cooking process assures food safety by programming the proper time and temperatures for up to 99 menu items. Cooking both sides simultaneously reduces cook time by up to two-thirds."
           backgroundImage={HEROES.grills}
           gradient="from-[var(--orange-800)] via-[var(--orange-700)] to-[var(--red-800)]"
         />
