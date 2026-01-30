@@ -111,24 +111,14 @@ export function HeaderClient({
         <div className="flex items-center justify-between gap-8">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
-            <div className="flex items-center gap-3">
-              <Image
-                src={logoUrl || defaultLogoUrl}
-                alt="Taylor Products"
-                width={180}
-                height={50}
-                className="h-10 w-auto"
-                priority
-              />
-              <div className="hidden md:block">
-                <p className="font-[family-name:var(--font-outfit)] font-bold text-lg text-[var(--navy-800)] leading-tight">
-                  Taylor Products
-                </p>
-                <p className="text-xs text-[var(--gray-600)]">
-                  Foodservice Equipment
-                </p>
-              </div>
-            </div>
+            <Image
+              src={logoUrl || defaultLogoUrl}
+              alt="Taylor Products"
+              width={200}
+              height={55}
+              className="h-12 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}

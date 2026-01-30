@@ -172,8 +172,10 @@ export default async function MachinePage({
                     <Image
                       src={imageUrl}
                       alt={`${machine.modelNumber} - ${machine.name}`}
-                      fill
-                      className="object-contain p-8"
+                      width={600}
+                      height={600}
+                      className="object-contain p-6 w-full h-full"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                       priority
                     />
                   ) : (
@@ -295,100 +297,88 @@ export default async function MachinePage({
           </div>
         </section>
 
-        {/* Features & Ideal For */}
-        {(features.length > 0 || idealFor.length > 0) && (
+        {/* Features & Specifications - Unified Section */}
+        {(features.length > 0 || Object.keys(specifications).length > 0 || idealFor.length > 0) && (
           <section className="section bg-[var(--gray-50)]">
             <div className="container">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                {/* Features */}
-                {features.length > 0 && (
-                  <div>
-                    <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mb-6">
-                      Features & Benefits
-                    </h2>
-                    <ul className="space-y-4">
-                      {features.map((feature) => (
-                        <li
-                          key={feature}
-                          className="flex items-start gap-4 bg-white p-4 rounded-lg shadow-sm"
-                        >
-                          <div className="flex-shrink-0 w-8 h-8 bg-[var(--blue-500)] rounded-full flex items-center justify-center">
-                            <Check className="w-4 h-4 text-white" />
-                          </div>
-                          <span className="text-[var(--gray-700)] pt-1">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
+              <div className="max-w-5xl mx-auto">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {/* Left Column - Features */}
+                  {features.length > 0 && (
+                    <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
+                      <h2 className="font-[family-name:var(--font-outfit)] font-bold text-xl text-[var(--navy-800)] mb-4 pb-3 border-b border-[var(--gray-200)]">
+                        Features & Benefits
+                      </h2>
+                      <ul className="space-y-2">
+                        {features.map((feature) => (
+                          <li
+                            key={feature}
+                            className="flex items-start gap-2 text-[var(--gray-700)] text-sm"
+                          >
+                            <Check className="w-4 h-4 text-[var(--success)] flex-shrink-0 mt-0.5" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
 
-                {/* Ideal For */}
+                  {/* Right Column - Specs */}
+                  {Object.keys(specifications).length > 0 && (
+                    <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
+                      <h2 className="font-[family-name:var(--font-outfit)] font-bold text-xl text-[var(--navy-800)] mb-4 pb-3 border-b border-[var(--gray-200)]">
+                        Specifications
+                      </h2>
+                      <dl className="space-y-2 text-sm">
+                        {Object.entries(specifications).map(([key, value]) => (
+                          <div key={key} className="flex justify-between gap-4 py-1.5 border-b border-[var(--gray-100)] last:border-0">
+                            <dt className="font-medium text-[var(--gray-600)] capitalize">
+                              {key.replace(/([A-Z])/g, " $1").trim()}
+                            </dt>
+                            <dd className="text-[var(--gray-900)] text-right">
+                              {value}
+                            </dd>
+                          </div>
+                        ))}
+                      </dl>
+                      {specSheetUrl && (
+                        <div className="mt-4 pt-3 border-t border-[var(--gray-200)]">
+                          <a
+                            href={specSheetUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-sm text-[var(--blue-600)] hover:text-[var(--blue-700)]"
+                          >
+                            <FileText className="w-4 h-4" />
+                            Download Full Spec Sheet (PDF)
+                          </a>
+                        </div>
+                      )}
+                    </div>
+                  )}
+                </div>
+
+                {/* Ideal For - Below in single row if exists */}
                 {idealFor.length > 0 && (
-                  <div>
-                    <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mb-6">
+                  <div className="mt-8 bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
+                    <h2 className="font-[family-name:var(--font-outfit)] font-bold text-xl text-[var(--navy-800)] mb-4 pb-3 border-b border-[var(--gray-200)]">
                       Ideal For
                     </h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="flex flex-wrap gap-3">
                       {idealFor.map((use) => {
                         const Icon = idealForIcons[use] || Building;
                         return (
                           <div
                             key={use}
-                            className="flex items-center gap-4 bg-white p-4 rounded-lg shadow-sm"
+                            className="inline-flex items-center gap-2 bg-[var(--gray-50)] px-4 py-2 rounded-full text-sm"
                           >
-                            <div className="flex-shrink-0 w-12 h-12 bg-[var(--orange-100)] rounded-lg flex items-center justify-center">
-                              <Icon className="w-6 h-6 text-[var(--orange-600)]" />
-                            </div>
-                            <span className="font-medium text-[var(--gray-700)]">
-                              {use}
-                            </span>
+                            <Icon className="w-4 h-4 text-[var(--orange-600)]" />
+                            <span className="text-[var(--gray-700)]">{use}</span>
                           </div>
                         );
                       })}
                     </div>
                   </div>
-                )}
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* Specifications */}
-        {Object.keys(specifications).length > 0 && (
-          <section className="section">
-            <div className="container">
-              <div className="max-w-4xl mx-auto">
-                <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mb-6">
-                  Specifications
-                </h2>
-                <div className="bg-white rounded-xl shadow-sm border border-[var(--gray-200)] overflow-hidden">
-                  <table className="w-full">
-                    <tbody className="divide-y divide-[var(--gray-200)]">
-                      {Object.entries(specifications).map(([key, value]) => (
-                        <tr key={key}>
-                          <td className="px-6 py-4 font-medium text-[var(--gray-700)] bg-[var(--gray-50)] capitalize">
-                            {key.replace(/([A-Z])/g, " $1").trim()}
-                          </td>
-                          <td className="px-6 py-4 text-[var(--gray-600)]">
-                            {value}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
-                {specSheetUrl && (
-                  <p className="mt-4 text-center text-[var(--gray-500)]">
-                    For complete specifications,{" "}
-                    <a
-                      href={specSheetUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-[var(--blue-500)] hover:underline"
-                    >
-                      download the spec sheet (PDF)
-                    </a>
-                  </p>
                 )}
               </div>
             </div>
