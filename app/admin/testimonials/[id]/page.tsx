@@ -29,7 +29,7 @@ export default async function EditTestimonialPage({
           <ArrowLeft className="w-5 h-5 text-[var(--gray-600)]" />
         </Link>
         <div>
-          <h1 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)]">
+          <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)]">
             Edit Testimonial
           </h1>
           <p className="text-[var(--gray-600)] mt-1">

@@ -154,7 +154,7 @@ export async function Footer() {
             {/* Showroom Locations */}
             <div className="mt-6 space-y-4">
               <h4
-                className="font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider"
+                className="font-[family-name:var(--font-heading)] font-semibold text-sm uppercase tracking-wider"
                 style={{ color: 'var(--gray-400)' }}
               >
                 Showroom Locations
@@ -199,7 +199,7 @@ export async function Footer() {
           {/* Products Links */}
           <div>
             <h4
-              className="font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4"
+              className="font-[family-name:var(--font-heading)] font-semibold text-sm uppercase tracking-wider mb-4"
               style={{ color: 'var(--gray-400)' }}
             >
               Products
@@ -245,7 +245,7 @@ export async function Footer() {
           {/* Company Links */}
           <div>
             <h4
-              className="font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4"
+              className="font-[family-name:var(--font-heading)] font-semibold text-sm uppercase tracking-wider mb-4"
               style={{ color: 'var(--gray-400)' }}
             >
               Company
@@ -291,7 +291,7 @@ export async function Footer() {
           {/* Support Links */}
           <div>
             <h4
-              className="font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4"
+              className="font-[family-name:var(--font-heading)] font-semibold text-sm uppercase tracking-wider mb-4"
               style={{ color: 'var(--gray-400)' }}
             >
               Support

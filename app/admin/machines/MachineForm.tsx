@@ -123,7 +123,7 @@ export function MachineForm({
             <ArrowLeft className="w-5 h-5" />
           </Link>
           <div>
-            <h1 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)]">
+            <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)]">
               {isEditing ? "Edit Machine" : "New Machine"}
             </h1>
             <p className="text-[var(--gray-600)] mt-1">
@@ -154,7 +154,7 @@ export function MachineForm({
         <div className="lg:col-span-2 space-y-6">
           {/* Basic Info */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               Basic Information
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -200,7 +200,7 @@ export function MachineForm({
 
           {/* Descriptions */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               Descriptions
             </h2>
             <div className="space-y-4">
@@ -243,7 +243,7 @@ export function MachineForm({
 
           {/* SEO */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               SEO
             </h2>
             <div className="space-y-4">
@@ -285,7 +285,7 @@ export function MachineForm({
         <div className="space-y-6">
           {/* Image Preview */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               Image
             </h2>
             {imageUrl && (
@@ -323,7 +323,7 @@ export function MachineForm({
 
           {/* Category */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               Category
             </h2>
             <div className="space-y-4">
@@ -369,7 +369,7 @@ export function MachineForm({
 
           {/* Attributes */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               Attributes
             </h2>
             <div className="space-y-4">
@@ -417,7 +417,7 @@ export function MachineForm({
 
           {/* Status */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               Status
             </h2>
             <div className="space-y-3">

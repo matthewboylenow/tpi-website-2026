@@ -46,12 +46,12 @@ export default function AdminLoginPage() {
         {/* Logo/Header */}
         <div className="text-center mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-white mb-4">
-            <span className="text-[var(--blue-500)] font-bold text-2xl font-[family-name:var(--font-outfit)]">
+            <span className="text-[var(--blue-500)] font-bold text-2xl font-[family-name:var(--font-heading)]">
               TP
             </span>
           </div>
           <h1
-            className="font-[family-name:var(--font-outfit)] font-bold text-2xl"
+            className="font-[family-name:var(--font-heading)] font-bold text-2xl"
             style={{ color: 'white' }}
           >
             Admin Login

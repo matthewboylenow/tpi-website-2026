@@ -22,11 +22,11 @@ export default async function WhatsNewPage() {
         <section className="bg-gradient-to-br from-[var(--navy-900)] via-[var(--navy-800)] to-[var(--blue-800)] py-16">
           <div className="container">
             <div className="max-w-3xl">
-              <p className="text-[var(--orange-400)] font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4">
+              <p className="text-[var(--orange-400)] font-[family-name:var(--font-heading)] font-semibold text-sm uppercase tracking-wider mb-4">
                 Latest Updates
               </p>
               <h1
-                className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
+                className="font-[family-name:var(--font-heading)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
                 style={{ color: "white" }}
               >
                 What&apos;s New at Taylor Products
@@ -51,7 +51,7 @@ export default async function WhatsNewPage() {
                   <Sparkles className="w-8 h-8 text-[var(--gray-400)]" />
                 </div>
                 <h2
-                  className="font-[family-name:var(--font-outfit)] font-semibold text-xl mb-2"
+                  className="font-[family-name:var(--font-heading)] font-semibold text-xl mb-2"
                   style={{ color: "var(--navy-800)" }}
                 >
                   Nothing New... Yet!
@@ -123,7 +123,7 @@ export default async function WhatsNewPage() {
                         </div>
                       )}
                       <h2
-                        className={`font-[family-name:var(--font-outfit)] font-bold text-[var(--navy-800)] mb-3 ${
+                        className={`font-[family-name:var(--font-heading)] font-bold text-[var(--navy-800)] mb-3 ${
                           index === 0 ? "text-2xl md:text-3xl" : "text-xl"
                         }`}
                       >
@@ -163,7 +163,7 @@ export default async function WhatsNewPage() {
           <div className="container">
             <div className="max-w-2xl mx-auto text-center">
               <h2
-                className="font-[family-name:var(--font-outfit)] font-bold text-2xl md:text-3xl mb-4"
+                className="font-[family-name:var(--font-heading)] font-bold text-2xl md:text-3xl mb-4"
                 style={{ color: "white" }}
               >
                 Don&apos;t Miss Out

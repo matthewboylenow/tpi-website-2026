@@ -80,10 +80,10 @@ export function ProductsGrid({ categories }: ProductsGridProps) {
       <div className="container">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <p className="text-[var(--orange-500)] font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4">
+          <p className="text-[var(--orange-500)] font-[family-name:var(--font-heading)] font-semibold text-sm uppercase tracking-wider mb-4">
             Our Equipment
           </p>
-          <h2 className="font-[family-name:var(--font-outfit)] font-bold text-3xl sm:text-4xl text-[var(--navy-800)] mb-4">
+          <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl text-[var(--navy-800)] mb-4">
             Find Your Perfect Machine
           </h2>
           <p className="text-[var(--gray-600)] text-lg">
@@ -132,7 +132,7 @@ export function ProductsGrid({ categories }: ProductsGridProps) {
                     Most Popular
                   </p>
                   <h3
-                    className="font-[family-name:var(--font-outfit)] font-bold text-2xl mb-2"
+                    className="font-[family-name:var(--font-heading)] font-bold text-2xl mb-2"
                     style={{ color: 'white' }}
                   >
                     {featuredCategory.name}
@@ -181,7 +181,7 @@ export function ProductsGrid({ categories }: ProductsGridProps) {
 
                 <div className="relative z-10 h-full p-6 flex flex-col justify-end">
                   <h3
-                    className="font-[family-name:var(--font-outfit)] font-semibold text-lg mb-1"
+                    className="font-[family-name:var(--font-heading)] font-semibold text-lg mb-1"
                     style={{ color: 'white' }}
                   >
                     {category.name}

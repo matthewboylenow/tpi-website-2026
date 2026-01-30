@@ -22,11 +22,11 @@ export default async function BlogPage() {
         <section className="bg-gradient-to-br from-[var(--navy-900)] via-[var(--navy-800)] to-[var(--blue-800)] py-16">
           <div className="container">
             <div className="max-w-3xl">
-              <p className="text-[var(--orange-400)] font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4">
+              <p className="text-[var(--orange-400)] font-[family-name:var(--font-heading)] font-semibold text-sm uppercase tracking-wider mb-4">
                 Our Blog
               </p>
               <h1
-                className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
+                className="font-[family-name:var(--font-heading)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
                 style={{ color: "white" }}
               >
                 Tips, Stories & Industry Insights
@@ -90,7 +90,7 @@ export default async function BlogPage() {
                           </time>
                         </div>
                       )}
-                      <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-xl text-[var(--navy-800)] mb-3 group-hover:text-[var(--blue-500)] transition-colors">
+                      <h2 className="font-[family-name:var(--font-heading)] font-semibold text-xl text-[var(--navy-800)] mb-3 group-hover:text-[var(--blue-500)] transition-colors">
                         <Link href={`/blog/${post.slug}`}>{post.title}</Link>
                       </h2>
                       {post.excerpt && (
@@ -118,7 +118,7 @@ export default async function BlogPage() {
           <div className="container">
             <div className="max-w-2xl mx-auto text-center">
               <h2
-                className="font-[family-name:var(--font-outfit)] font-bold text-2xl mb-4"
+                className="font-[family-name:var(--font-heading)] font-bold text-2xl mb-4"
                 style={{ color: "var(--navy-800)" }}
               >
                 Have a Question?

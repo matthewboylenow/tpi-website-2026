@@ -207,12 +207,12 @@ export default async function MachinePage({
               {/* Details */}
               <div>
                 {/* Model Number */}
-                <p className="text-[var(--orange-500)] font-[family-name:var(--font-outfit)] font-bold text-lg tracking-wider mb-2">
+                <p className="text-[var(--orange-500)] font-[family-name:var(--font-heading)] font-bold text-lg tracking-wider mb-2">
                   MODEL {machine.modelNumber}
                 </p>
 
                 {/* Name */}
-                <h1 className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl text-[var(--navy-800)] mb-4">
+                <h1 className="font-[family-name:var(--font-heading)] font-extrabold text-3xl sm:text-4xl text-[var(--navy-800)] mb-4">
                   {machine.name}
                 </h1>
 
@@ -258,7 +258,7 @@ export default async function MachinePage({
                 {/* Key Features Preview */}
                 {features.length > 0 && (
                   <div className="bg-[var(--gray-50)] rounded-lg p-6">
-                    <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+                    <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
                       Key Features
                     </h3>
                     <ul className="space-y-2">
@@ -283,7 +283,7 @@ export default async function MachinePage({
         <section className="section">
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mb-6">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mb-6">
                 Overview
               </h2>
               <div className="prose prose-lg max-w-none text-[var(--gray-700)]">
@@ -306,7 +306,7 @@ export default async function MachinePage({
                   {/* Left Column - Features */}
                   {features.length > 0 && (
                     <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-                      <h2 className="font-[family-name:var(--font-outfit)] font-bold text-xl text-[var(--navy-800)] mb-4 pb-3 border-b border-[var(--gray-200)]">
+                      <h2 className="font-[family-name:var(--font-heading)] font-bold text-xl text-[var(--navy-800)] mb-4 pb-3 border-b border-[var(--gray-200)]">
                         Features & Benefits
                       </h2>
                       <ul className="space-y-2">
@@ -326,7 +326,7 @@ export default async function MachinePage({
                   {/* Right Column - Specs */}
                   {Object.keys(specifications).length > 0 && (
                     <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-                      <h2 className="font-[family-name:var(--font-outfit)] font-bold text-xl text-[var(--navy-800)] mb-4 pb-3 border-b border-[var(--gray-200)]">
+                      <h2 className="font-[family-name:var(--font-heading)] font-bold text-xl text-[var(--navy-800)] mb-4 pb-3 border-b border-[var(--gray-200)]">
                         Specifications
                       </h2>
                       <dl className="space-y-2 text-sm">
@@ -361,7 +361,7 @@ export default async function MachinePage({
                 {/* Ideal For - Below in single row if exists */}
                 {idealFor.length > 0 && (
                   <div className="mt-8 bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-                    <h2 className="font-[family-name:var(--font-outfit)] font-bold text-xl text-[var(--navy-800)] mb-4 pb-3 border-b border-[var(--gray-200)]">
+                    <h2 className="font-[family-name:var(--font-heading)] font-bold text-xl text-[var(--navy-800)] mb-4 pb-3 border-b border-[var(--gray-200)]">
                       Ideal For
                     </h2>
                     <div className="flex flex-wrap gap-3">
@@ -389,7 +389,7 @@ export default async function MachinePage({
         {relatedMachines.length > 0 && (
           <section className="section bg-[var(--gray-50)]">
             <div className="container">
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mb-8 text-center">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mb-8 text-center">
                 You Might Also Consider
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
@@ -430,7 +430,7 @@ export default async function MachinePage({
                           )}
                         </div>
                         <div className="p-4">
-                          <p className="font-[family-name:var(--font-outfit)] font-bold text-lg text-[var(--navy-800)]">
+                          <p className="font-[family-name:var(--font-heading)] font-bold text-lg text-[var(--navy-800)]">
                             {related.modelNumber}
                           </p>
                           <p className="text-sm text-[var(--gray-600)]">

@@ -18,7 +18,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="block text-sm font-medium text-[var(--gray-700)] mb-1.5 font-[family-name:var(--font-outfit)]"
+            className="block text-sm font-medium text-[var(--gray-700)] mb-1.5 font-[family-name:var(--font-heading)]"
           >
             {label}
             {props.required && <span className="text-[var(--error)] ml-1">*</span>}
@@ -86,7 +86,7 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="block text-sm font-medium text-[var(--gray-700)] mb-1.5 font-[family-name:var(--font-outfit)]"
+            className="block text-sm font-medium text-[var(--gray-700)] mb-1.5 font-[family-name:var(--font-heading)]"
           >
             {label}
             {props.required && <span className="text-[var(--error)] ml-1">*</span>}
@@ -156,7 +156,7 @@ const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
         {label && (
           <label
             htmlFor={inputId}
-            className="block text-sm font-medium text-[var(--gray-700)] mb-1.5 font-[family-name:var(--font-outfit)]"
+            className="block text-sm font-medium text-[var(--gray-700)] mb-1.5 font-[family-name:var(--font-heading)]"
           >
             {label}
             {props.required && <span className="text-[var(--error)] ml-1">*</span>}

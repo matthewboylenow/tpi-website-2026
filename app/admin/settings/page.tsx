@@ -89,7 +89,7 @@ export default function SettingsPage() {
             <Settings className="w-6 h-6 text-[var(--blue-500)]" />
           </div>
           <div>
-            <h1 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)]">
+            <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)]">
               Site Settings
             </h1>
             <p className="text-[var(--gray-600)] mt-1">
@@ -115,7 +115,7 @@ export default function SettingsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Branding */}
         <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-          <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+          <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
             Logo & Branding
           </h2>
           <div className="space-y-6">
@@ -142,7 +142,7 @@ export default function SettingsPage() {
 
         {/* Social Share */}
         <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-          <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+          <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
             Social Share Image
           </h2>
           <ImageUpload
@@ -158,7 +158,7 @@ export default function SettingsPage() {
 
         {/* Homepage SEO */}
         <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)] lg:col-span-2">
-          <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+          <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
             Homepage SEO
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

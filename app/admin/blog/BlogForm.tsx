@@ -92,7 +92,7 @@ export function BlogForm({ post }: BlogFormProps) {
             <ArrowLeft className="w-5 h-5" />
           </Link>
           <div>
-            <h1 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)]">
+            <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)]">
               {isEditing ? "Edit Post" : "New Post"}
             </h1>
             <p className="text-[var(--gray-600)] mt-1">
@@ -120,7 +120,7 @@ export function BlogForm({ post }: BlogFormProps) {
         {/* Main Content */}
         <div className="lg:col-span-2 space-y-6">
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               Content
             </h2>
             <div className="space-y-4">
@@ -167,7 +167,7 @@ export function BlogForm({ post }: BlogFormProps) {
 
           {/* SEO */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               SEO
             </h2>
             <div className="space-y-4">
@@ -198,7 +198,7 @@ export function BlogForm({ post }: BlogFormProps) {
         <div className="space-y-6">
           {/* Publish Settings */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               Publish Settings
             </h2>
             <div className="space-y-4">
@@ -247,7 +247,7 @@ export function BlogForm({ post }: BlogFormProps) {
 
           {/* Author & Image */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               Details
             </h2>
             <div className="space-y-4">

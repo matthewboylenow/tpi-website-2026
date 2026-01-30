@@ -67,7 +67,7 @@ export default function WorkWithUsPage() {
           <div className="container relative z-10 py-16 md:py-24">
             <div className="max-w-3xl">
               <h1
-                className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
+                className="font-[family-name:var(--font-heading)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
                 style={{ color: "white" }}
               >
                 Work at Taylor Products
@@ -82,7 +82,7 @@ export default function WorkWithUsPage() {
           <div className="container">
             <div className="max-w-3xl mx-auto">
               <h2
-                className="font-[family-name:var(--font-outfit)] font-bold text-3xl mb-6"
+                className="font-[family-name:var(--font-heading)] font-bold text-3xl mb-6"
                 style={{ color: "var(--navy-800)" }}
               >
                 Current Positions Open
@@ -95,7 +95,7 @@ export default function WorkWithUsPage() {
               </div>
 
               <h2
-                className="font-[family-name:var(--font-outfit)] font-bold text-3xl mb-6"
+                className="font-[family-name:var(--font-heading)] font-bold text-3xl mb-6"
                 style={{ color: "var(--navy-800)" }}
               >
                 Our Service Area
@@ -118,7 +118,7 @@ export default function WorkWithUsPage() {
             <div className="max-w-2xl mx-auto">
               <div className="text-center mb-10">
                 <h2
-                  className="font-[family-name:var(--font-outfit)] font-bold text-3xl mb-4"
+                  className="font-[family-name:var(--font-heading)] font-bold text-3xl mb-4"
                   style={{ color: "var(--navy-800)" }}
                 >
                   Come Work With Us

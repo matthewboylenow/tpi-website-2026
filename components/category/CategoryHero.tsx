@@ -64,7 +64,7 @@ export function CategoryHero({
 
           {/* Title */}
           <h1
-            className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6 tracking-tight"
+            className="font-[family-name:var(--font-heading)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6 tracking-tight"
             style={{ color: 'white' }}
           >
             {title}

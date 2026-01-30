@@ -18,7 +18,7 @@ export default function PrivacyPolicyPage() {
           <div className="container">
             <div className="max-w-3xl">
               <h1
-                className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl leading-tight mb-4"
+                className="font-[family-name:var(--font-heading)] font-extrabold text-3xl sm:text-4xl leading-tight mb-4"
                 style={{ color: "white" }}
               >
                 Privacy Policy
@@ -42,7 +42,7 @@ export default function PrivacyPolicyPage() {
                 when you visit our website or do business with us.
               </p>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Information We Collect
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -78,7 +78,7 @@ export default function PrivacyPolicyPage() {
                 <li>Device information</li>
               </ul>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 How We Use Your Information
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -93,7 +93,7 @@ export default function PrivacyPolicyPage() {
                 <li>Comply with legal obligations</li>
               </ul>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Information Sharing
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -114,7 +114,7 @@ export default function PrivacyPolicyPage() {
                 </li>
               </ul>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Cookies and Tracking
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -126,7 +126,7 @@ export default function PrivacyPolicyPage() {
                 properly if you disable them.
               </p>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Data Security
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -137,7 +137,7 @@ export default function PrivacyPolicyPage() {
                 security.
               </p>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Your Rights
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -148,7 +148,7 @@ export default function PrivacyPolicyPage() {
                 contacting us directly.
               </p>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Children&apos;s Privacy
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -157,7 +157,7 @@ export default function PrivacyPolicyPage() {
                 under 13.
               </p>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Changes to This Policy
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -166,7 +166,7 @@ export default function PrivacyPolicyPage() {
                 and updating the &quot;Last updated&quot; date.
               </p>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Contact Us
               </h2>
               <p className="text-[var(--gray-600)]">

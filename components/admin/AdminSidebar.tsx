@@ -112,11 +112,11 @@ export function AdminSidebar() {
         <div className="flex items-center justify-between h-16 px-6 border-b border-[var(--gray-200)]">
           <Link href="/admin" className="flex items-center gap-3">
             <div className="w-8 h-8 bg-[var(--blue-500)] rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm font-[family-name:var(--font-outfit)]">
+              <span className="text-white font-bold text-sm font-[family-name:var(--font-heading)]">
                 TP
               </span>
             </div>
-            <span className="font-[family-name:var(--font-outfit)] font-semibold text-[var(--navy-800)]">
+            <span className="font-[family-name:var(--font-heading)] font-semibold text-[var(--navy-800)]">
               Admin
             </span>
           </Link>

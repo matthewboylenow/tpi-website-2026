@@ -51,11 +51,11 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
       <div className="container">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <p className="text-[var(--orange-400)] font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4">
+          <p className="text-[var(--orange-400)] font-[family-name:var(--font-heading)] font-semibold text-sm uppercase tracking-wider mb-4">
             Customer Stories
           </p>
           <h2
-            className="font-[family-name:var(--font-outfit)] font-bold text-3xl sm:text-4xl mb-4"
+            className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl mb-4"
             style={{ color: 'white' }}
           >
             What Our Customers Say
@@ -78,7 +78,7 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
 
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-[family-name:var(--font-outfit)] font-semibold text-white">
+                  <p className="font-[family-name:var(--font-heading)] font-semibold text-white">
                     {testimonial.customerName}
                   </p>
                   {testimonial.businessName && (

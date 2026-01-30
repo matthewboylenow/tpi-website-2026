@@ -100,7 +100,7 @@ export function SalespersonForm({ salesperson, assignedCounties = [] }: Salesper
             <ArrowLeft className="w-5 h-5" />
           </Link>
           <div>
-            <h1 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)]">
+            <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)]">
               {isEditing ? "Edit Salesperson" : "New Salesperson"}
             </h1>
             <p className="text-[var(--gray-600)] mt-1">
@@ -131,7 +131,7 @@ export function SalespersonForm({ salesperson, assignedCounties = [] }: Salesper
         <div className="lg:col-span-2 space-y-6">
           {/* Basic Info */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               Basic Information
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -175,7 +175,7 @@ export function SalespersonForm({ salesperson, assignedCounties = [] }: Salesper
 
           {/* Contact Info */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               Contact Information
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -216,7 +216,7 @@ export function SalespersonForm({ salesperson, assignedCounties = [] }: Salesper
 
           {/* Bio */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               Biography
             </h2>
             <Textarea
@@ -235,7 +235,7 @@ export function SalespersonForm({ salesperson, assignedCounties = [] }: Salesper
         <div className="space-y-6">
           {/* Photo Preview */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               Photo
             </h2>
             <div className="flex justify-center mb-4">
@@ -267,7 +267,7 @@ export function SalespersonForm({ salesperson, assignedCounties = [] }: Salesper
 
           {/* Status */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               Status
             </h2>
             <div className="flex items-center gap-3">
@@ -293,7 +293,7 @@ export function SalespersonForm({ salesperson, assignedCounties = [] }: Salesper
           {isEditing && (
             <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
               <div className="flex items-center justify-between mb-4">
-                <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)]">
+                <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)]">
                   Territories
                 </h2>
                 <Link

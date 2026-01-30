@@ -108,7 +108,7 @@ export default function ImportPage() {
           <Upload className="w-6 h-6 text-[var(--blue-500)]" />
         </div>
         <div>
-          <h1 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)]">
+          <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)]">
             WordPress Import
           </h1>
           <p className="text-[var(--gray-600)] mt-1">
@@ -119,7 +119,7 @@ export default function ImportPage() {
 
       {/* Instructions */}
       <div className="bg-[var(--blue-50)] rounded-xl p-4 border border-[var(--blue-200)]">
-        <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-[var(--blue-800)] mb-2">
+        <h3 className="font-[family-name:var(--font-heading)] font-semibold text-[var(--blue-800)] mb-2">
           How to export from WordPress
         </h3>
         <ol className="list-decimal list-inside text-sm text-[var(--blue-700)] space-y-1">

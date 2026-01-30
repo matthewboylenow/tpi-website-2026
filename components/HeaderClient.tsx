@@ -130,7 +130,7 @@ export function HeaderClient({
                   onClick={() => toggleDropdown("products")}
                   className={cn(
                     "flex items-center gap-1 px-4 py-2 rounded-lg",
-                    "font-[family-name:var(--font-outfit)] font-medium text-sm",
+                    "font-[family-name:var(--font-heading)] font-medium text-sm",
                     "text-[var(--gray-700)] hover:text-[var(--blue-600)] hover:bg-[var(--blue-50)]",
                     "transition-all duration-200",
                     activeDropdown === "products" && "text-[var(--blue-600)] bg-[var(--blue-50)]"
@@ -184,7 +184,7 @@ export function HeaderClient({
                   onClick={() => toggleDropdown("service")}
                   className={cn(
                     "flex items-center gap-1 px-4 py-2 rounded-lg",
-                    "font-[family-name:var(--font-outfit)] font-medium text-sm",
+                    "font-[family-name:var(--font-heading)] font-medium text-sm",
                     "text-[var(--gray-700)] hover:text-[var(--blue-600)] hover:bg-[var(--blue-50)]",
                     "transition-all duration-200",
                     activeDropdown === "service" && "text-[var(--blue-600)] bg-[var(--blue-50)]"
@@ -254,7 +254,7 @@ export function HeaderClient({
                 href={link.url}
                 className={cn(
                   "px-4 py-2 rounded-lg",
-                  "font-[family-name:var(--font-outfit)] font-medium text-sm",
+                  "font-[family-name:var(--font-heading)] font-medium text-sm",
                   "text-[var(--gray-700)] hover:text-[var(--blue-600)] hover:bg-[var(--blue-50)]",
                   "transition-all duration-200",
                   pathname === link.url && "text-[var(--blue-600)] bg-[var(--blue-50)]"

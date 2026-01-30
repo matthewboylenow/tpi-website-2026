@@ -76,7 +76,7 @@ export default async function SoftServePage() {
         {/* Machine Finder CTA */}
         <section className="py-16 bg-[var(--gray-50)]">
           <div className="container text-center">
-            <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mb-4">
               Not Sure Which Machine Is Right For You?
             </h2>
             <p className="text-[var(--gray-600)] mb-6 max-w-2xl mx-auto">

@@ -46,7 +46,7 @@ export function MachineGrid({ subcategories }: MachineGridProps) {
           <div key={subcategory.id} className="mb-16 last:mb-0">
             {/* Subcategory Header */}
             <div className="flex items-center gap-4 mb-8">
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)]">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)]">
                 {subcategory.name}
               </h2>
               <div className="flex-1 h-px bg-[var(--gray-200)]" />
@@ -140,12 +140,12 @@ function MachineGridCard({ machine }: { machine: Machine }) {
           {/* Content */}
           <div className="p-5">
             {/* Model Number */}
-            <p className="font-[family-name:var(--font-outfit)] font-bold text-lg tracking-wider text-[var(--navy-800)]">
+            <p className="font-[family-name:var(--font-heading)] font-bold text-lg tracking-wider text-[var(--navy-800)]">
               {machine.modelNumber}
             </p>
 
             {/* Name */}
-            <h3 className="font-[family-name:var(--font-outfit)] font-medium text-base text-[var(--gray-700)] mt-1">
+            <h3 className="font-[family-name:var(--font-heading)] font-medium text-base text-[var(--gray-700)] mt-1">
               {machine.name}
             </h3>
 

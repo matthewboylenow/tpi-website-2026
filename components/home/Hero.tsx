@@ -134,14 +134,14 @@ export function Hero() {
         <div className="max-w-3xl">
           {/* Subtitle */}
           {slide.subtitle && (
-            <p className="text-[var(--orange-400)] font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4 animate-fade-in">
+            <p className="text-[var(--orange-400)] font-[family-name:var(--font-heading)] font-semibold text-sm uppercase tracking-wider mb-4 animate-fade-in">
               {slide.subtitle}
             </p>
           )}
 
           {/* Title */}
           <h1
-            className="font-[family-name:var(--font-outfit)] font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6 tracking-tight"
+            className="font-[family-name:var(--font-heading)] font-extrabold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-6 tracking-tight"
             style={{ color: 'white' }}
           >
             {slide.title}

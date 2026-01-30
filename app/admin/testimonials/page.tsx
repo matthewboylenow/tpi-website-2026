@@ -12,7 +12,7 @@ export default async function TestimonialsAdminPage() {
       {/* Page Header */}
       <div className="flex items-center justify-between">
         <div>
-          <h1 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)]">
+          <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)]">
             Testimonials
           </h1>
           <p className="text-[var(--gray-600)] mt-1">
@@ -31,7 +31,7 @@ export default async function TestimonialsAdminPage() {
       {testimonials.length === 0 ? (
         <div className="bg-white rounded-xl p-12 shadow-sm border border-[var(--gray-200)] text-center">
           <Quote className="w-12 h-12 text-[var(--gray-300)] mx-auto mb-4" />
-          <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-2">
+          <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-2">
             No Testimonials Yet
           </h2>
           <p className="text-[var(--gray-500)] mb-6">
@@ -51,7 +51,7 @@ export default async function TestimonialsAdminPage() {
               <div className="flex items-start justify-between gap-4">
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-3 mb-3">
-                    <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)]">
+                    <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)]">
                       {testimonial.customerName}
                     </h3>
                     {testimonial.isFeatured && (

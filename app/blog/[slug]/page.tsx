@@ -83,7 +83,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               </Link>
 
               <h1
-                className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
+                className="font-[family-name:var(--font-heading)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
                 style={{ color: "white" }}
               >
                 {post.title}
@@ -133,7 +133,7 @@ export default async function BlogPostPage({ params }: PageProps) {
             <article className="max-w-3xl mx-auto">
               <div
                 className="prose prose-lg max-w-none
-                  prose-headings:font-[family-name:var(--font-outfit)]
+                  prose-headings:font-[family-name:var(--font-heading)]
                   prose-headings:text-[var(--navy-800)]
                   prose-p:text-[var(--gray-600)]
                   prose-a:text-[var(--blue-500)]
@@ -151,7 +151,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           <div className="container">
             <div className="max-w-2xl mx-auto text-center">
               <h2
-                className="font-[family-name:var(--font-outfit)] font-bold text-2xl mb-4"
+                className="font-[family-name:var(--font-heading)] font-bold text-2xl mb-4"
                 style={{ color: "var(--navy-800)" }}
               >
                 Questions About This Topic?

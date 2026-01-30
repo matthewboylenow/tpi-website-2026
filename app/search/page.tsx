@@ -98,7 +98,7 @@ function SearchContent() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h1
-              className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl leading-tight mb-6"
+              className="font-[family-name:var(--font-heading)] font-extrabold text-3xl sm:text-4xl leading-tight mb-6"
               style={{ color: "white" }}
             >
               Search
@@ -176,7 +176,7 @@ function SearchContent() {
                                 </span>
                               )}
                             </div>
-                            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] group-hover:text-[var(--blue-500)] transition-colors">
+                            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] group-hover:text-[var(--blue-500)] transition-colors">
                               {result.title}
                             </h2>
                             {result.description && (
@@ -196,7 +196,7 @@ function SearchContent() {
                     <Search className="w-8 h-8 text-[var(--gray-400)]" />
                   </div>
                   <h2
-                    className="font-[family-name:var(--font-outfit)] font-semibold text-xl mb-2"
+                    className="font-[family-name:var(--font-heading)] font-semibold text-xl mb-2"
                     style={{ color: "var(--navy-800)" }}
                   >
                     No Results Found
@@ -217,7 +217,7 @@ function SearchContent() {
                   <Search className="w-8 h-8 text-[var(--gray-400)]" />
                 </div>
                 <h2
-                  className="font-[family-name:var(--font-outfit)] font-semibold text-xl mb-2"
+                  className="font-[family-name:var(--font-heading)] font-semibold text-xl mb-2"
                   style={{ color: "var(--navy-800)" }}
                 >
                   What Are You Looking For?
@@ -240,7 +240,7 @@ function SearchContent() {
         <div className="container">
           <div className="max-w-2xl mx-auto text-center">
             <h2
-              className="font-[family-name:var(--font-outfit)] font-bold text-2xl mb-4"
+              className="font-[family-name:var(--font-heading)] font-bold text-2xl mb-4"
               style={{ color: "var(--navy-800)" }}
             >
               Can&apos;t Find What You Need?
@@ -304,7 +304,7 @@ function SearchLoading() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h1
-              className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl leading-tight mb-6"
+              className="font-[family-name:var(--font-heading)] font-extrabold text-3xl sm:text-4xl leading-tight mb-6"
               style={{ color: "white" }}
             >
               Search

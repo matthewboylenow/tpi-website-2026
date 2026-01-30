@@ -37,11 +37,11 @@ export default function AboutPage() {
         <section className="bg-gradient-to-br from-[var(--navy-900)] via-[var(--navy-800)] to-[var(--blue-800)] py-16 md:py-24">
           <div className="container">
             <div className="max-w-3xl">
-              <p className="text-[var(--orange-400)] font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4">
+              <p className="text-[var(--orange-400)] font-[family-name:var(--font-heading)] font-semibold text-sm uppercase tracking-wider mb-4">
                 Our Story
               </p>
               <h1
-                className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
+                className="font-[family-name:var(--font-heading)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
                 style={{ color: 'white' }}
               >
                 Why Taylor Products?
@@ -59,7 +59,7 @@ export default function AboutPage() {
         <section className="section">
           <div className="container">
             <div className="max-w-4xl mx-auto">
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-3xl text-[var(--navy-800)] mb-8">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl text-[var(--navy-800)] mb-8">
                 More Than Equipment—A Partnership
               </h2>
               <div className="prose prose-lg max-w-none text-[var(--gray-700)] space-y-6">
@@ -101,7 +101,7 @@ export default function AboutPage() {
         <section className="section bg-[var(--gray-50)]">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-3xl text-[var(--navy-800)] mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl text-[var(--navy-800)] mb-4">
                 What We Stand For
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -115,7 +115,7 @@ export default function AboutPage() {
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[var(--blue-500)] text-white mb-6">
                   <TrendingUp className="w-8 h-8" />
                 </div>
-                <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-3">
+                <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-3">
                   Profit Solutions
                 </h3>
                 <p className="text-[var(--gray-600)]">
@@ -128,7 +128,7 @@ export default function AboutPage() {
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[var(--blue-500)] text-white mb-6">
                   <Wrench className="w-8 h-8" />
                 </div>
-                <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-3">
+                <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-3">
                   Red Cape Service
                 </h3>
                 <p className="text-[var(--gray-600)]">
@@ -142,7 +142,7 @@ export default function AboutPage() {
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[var(--blue-500)] text-white mb-6">
                   <Award className="w-8 h-8" />
                 </div>
-                <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-3">
+                <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-3">
                   Industry Leading Quality
                 </h3>
                 <p className="text-[var(--gray-600)]">
@@ -158,7 +158,7 @@ export default function AboutPage() {
         <section className="section">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-3xl text-[var(--navy-800)] mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl text-[var(--navy-800)] mb-4">
                 Visit Our Showrooms
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -175,7 +175,7 @@ export default function AboutPage() {
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)]">
+                    <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)]">
                       Pennsylvania Showroom
                     </h3>
                     <p className="text-sm text-[var(--gray-500)]">
@@ -227,7 +227,7 @@ export default function AboutPage() {
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)]">
+                    <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)]">
                       New Jersey Showroom
                     </h3>
                     <p className="text-sm text-[var(--gray-500)]">
@@ -279,7 +279,7 @@ export default function AboutPage() {
         <section className="section bg-gradient-to-r from-[var(--blue-600)] to-[var(--navy-700)]">
           <div className="container text-center">
             <h2
-              className="font-[family-name:var(--font-outfit)] font-bold text-2xl md:text-3xl mb-4"
+              className="font-[family-name:var(--font-heading)] font-bold text-2xl md:text-3xl mb-4"
               style={{ color: 'white' }}
             >
               Ready to Start a Conversation?

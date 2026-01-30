@@ -86,11 +86,11 @@ export default function GenuinePartsPage() {
 
           <div className="container relative z-10 py-16 md:py-24">
             <div className="max-w-3xl">
-              <p className="text-[var(--orange-400)] font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4">
+              <p className="text-[var(--orange-400)] font-[family-name:var(--font-heading)] font-semibold text-sm uppercase tracking-wider mb-4">
                 Genuine Taylor Parts
               </p>
               <h1
-                className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
+                className="font-[family-name:var(--font-heading)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
                 style={{ color: "white" }}
               >
                 The Right Part, When You Need It
@@ -143,7 +143,7 @@ export default function GenuinePartsPage() {
                   <div className="w-14 h-14 rounded-lg bg-[var(--blue-500)] flex items-center justify-center mx-auto mb-4">
                     <feature.icon className="w-7 h-7 text-white" />
                   </div>
-                  <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-2">
+                  <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-2">
                     {feature.title}
                   </h3>
                   <p className="text-[var(--gray-600)] text-sm">
@@ -160,11 +160,11 @@ export default function GenuinePartsPage() {
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="text-[var(--orange-500)] font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4">
+                <p className="text-[var(--orange-500)] font-[family-name:var(--font-heading)] font-semibold text-sm uppercase tracking-wider mb-4">
                   Why It Matters
                 </p>
                 <h2
-                  className="font-[family-name:var(--font-outfit)] font-bold text-3xl sm:text-4xl mb-6"
+                  className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl mb-6"
                   style={{ color: "var(--navy-800)" }}
                 >
                   Why Use Genuine Taylor Parts?
@@ -179,7 +179,7 @@ export default function GenuinePartsPage() {
                     <div key={item.title} className="flex gap-4">
                       <CheckCircle className="w-6 h-6 text-[var(--success)] flex-shrink-0" />
                       <div>
-                        <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-[var(--navy-800)] mb-1">
+                        <h3 className="font-[family-name:var(--font-heading)] font-semibold text-[var(--navy-800)] mb-1">
                           {item.title}
                         </h3>
                         <p className="text-[var(--gray-600)] text-sm">
@@ -197,7 +197,7 @@ export default function GenuinePartsPage() {
                   <div className="w-20 h-20 rounded-full bg-[var(--orange-500)] flex items-center justify-center mx-auto mb-6">
                     <Package className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mb-4">
+                  <h3 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mb-4">
                     Shop Our Parts Store
                   </h3>
                   <p className="text-[var(--gray-600)] mb-6">
@@ -231,7 +231,7 @@ export default function GenuinePartsPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
                   <h2
-                    className="font-[family-name:var(--font-outfit)] font-bold text-2xl md:text-3xl mb-4"
+                    className="font-[family-name:var(--font-heading)] font-bold text-2xl md:text-3xl mb-4"
                     style={{ color: "white" }}
                   >
                     Need Installation Help?
@@ -283,7 +283,7 @@ export default function GenuinePartsPage() {
           <div className="container">
             <div className="max-w-2xl mx-auto text-center">
               <h2
-                className="font-[family-name:var(--font-outfit)] font-bold text-3xl mb-4"
+                className="font-[family-name:var(--font-heading)] font-bold text-3xl mb-4"
                 style={{ color: "var(--navy-800)" }}
               >
                 Not Sure Which Part You Need?

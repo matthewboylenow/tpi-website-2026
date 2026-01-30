@@ -25,55 +25,52 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ) => {
     const baseStyles = `
       inline-flex items-center justify-center gap-2
-      font-[family-name:var(--font-outfit)] font-semibold
-      tracking-wide uppercase
-      rounded-lg
+      font-[family-name:var(--font-heading)] font-semibold
+      rounded-xl
       transition-all duration-200 ease-out
-      disabled:opacity-50 disabled:cursor-not-allowed
+      disabled:opacity-50 disabled:cursor-not-allowed disabled:pointer-events-none
       focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
     `;
 
     const variants = {
       primary: `
-        bg-gradient-to-b from-[var(--orange-500)] to-[var(--orange-600)]
-        text-white border-none
-        shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_2px_4px_rgba(255,123,0,0.3)]
-        hover:from-[var(--orange-400)] hover:to-[var(--orange-500)]
-        hover:-translate-y-0.5
-        hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_4px_8px_rgba(255,123,0,0.4)]
-        active:translate-y-0
-        active:shadow-[inset_0_2px_4px_rgba(0,0,0,0.1)]
+        bg-[var(--orange-500)] text-white
+        shadow-sm
+        hover:bg-[var(--orange-600)]
+        hover:shadow-md hover:shadow-orange-500/25
+        active:bg-[var(--orange-700)]
         focus-visible:ring-[var(--orange-500)]
       `,
       secondary: `
-        bg-gradient-to-b from-[var(--blue-500)] to-[var(--blue-600)]
-        text-white border-none
-        shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_2px_4px_rgba(0,102,178,0.3)]
-        hover:from-[var(--blue-400)] hover:to-[var(--blue-500)]
-        hover:-translate-y-0.5
-        hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.15),0_4px_8px_rgba(0,102,178,0.4)]
-        active:translate-y-0
+        bg-[var(--blue-500)] text-white
+        shadow-sm
+        hover:bg-[var(--blue-600)]
+        hover:shadow-md hover:shadow-blue-500/25
+        active:bg-[var(--blue-700)]
         focus-visible:ring-[var(--blue-500)]
       `,
       ghost: `
         bg-transparent
         text-[var(--blue-600)]
-        border-2 border-[var(--blue-500)]
+        border border-[var(--blue-200)]
         hover:bg-[var(--blue-50)]
-        hover:border-[var(--blue-600)]
+        hover:border-[var(--blue-300)]
+        active:bg-[var(--blue-100)]
         focus-visible:ring-[var(--blue-500)]
       `,
       outline: `
         bg-white
         text-[var(--gray-700)]
-        border border-[var(--gray-300)]
+        border border-[var(--gray-200)]
+        shadow-sm
         hover:bg-[var(--gray-50)]
-        hover:border-[var(--gray-400)]
-        focus-visible:ring-[var(--gray-500)]
+        hover:border-[var(--gray-300)]
+        active:bg-[var(--gray-100)]
+        focus-visible:ring-[var(--gray-400)]
       `,
       link: `
         bg-transparent
-        text-[var(--blue-500)]
+        text-[var(--blue-600)]
         underline-offset-4
         hover:underline
         hover:text-[var(--blue-700)]
@@ -83,9 +80,9 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     };
 
     const sizes = {
-      sm: "text-xs px-3 py-2",
+      sm: "text-sm px-3.5 py-2 rounded-lg",
       md: "text-sm px-5 py-2.5",
-      lg: "text-base px-8 py-3",
+      lg: "text-base px-6 py-3",
     };
 
     return (

@@ -77,11 +77,11 @@ export default function RedCapeServicePage() {
 
           <div className="container relative z-10 py-16 md:py-24">
             <div className="max-w-3xl">
-              <p className="text-[var(--orange-400)] font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4">
+              <p className="text-[var(--orange-400)] font-[family-name:var(--font-heading)] font-semibold text-sm uppercase tracking-wider mb-4">
                 Our Service Promise
               </p>
               <h1
-                className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
+                className="font-[family-name:var(--font-heading)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
                 style={{ color: "white" }}
               >
                 Taylor Red Cape Service: A Winning Combination
@@ -122,7 +122,7 @@ export default function RedCapeServicePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <p className="font-[family-name:var(--font-outfit)] font-bold text-4xl text-[var(--blue-500)] mb-2">
+                  <p className="font-[family-name:var(--font-heading)] font-bold text-4xl text-[var(--blue-500)] mb-2">
                     {stat.number}
                   </p>
                   <p className="text-[var(--gray-600)]">{stat.label}</p>
@@ -137,7 +137,7 @@ export default function RedCapeServicePage() {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center mb-12">
               <h2
-                className="font-[family-name:var(--font-outfit)] font-bold text-3xl sm:text-4xl mb-4"
+                className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl mb-4"
                 style={{ color: "var(--navy-800)" }}
               >
                 What Red Cape Service Actually Means
@@ -160,7 +160,7 @@ export default function RedCapeServicePage() {
                     </div>
                   </div>
                   <div>
-                    <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-2">
+                    <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-2">
                       {feature.title}
                     </h3>
                     <p className="text-[var(--gray-600)]">
@@ -178,11 +178,11 @@ export default function RedCapeServicePage() {
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <p className="text-[var(--orange-500)] font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4">
+                <p className="text-[var(--orange-500)] font-[family-name:var(--font-heading)] font-semibold text-sm uppercase tracking-wider mb-4">
                   The Red Cape Commitment
                 </p>
                 <h2
-                  className="font-[family-name:var(--font-outfit)] font-bold text-3xl sm:text-4xl mb-6"
+                  className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl mb-6"
                   style={{ color: "var(--navy-800)" }}
                 >
                   The Red Cape Commitment
@@ -209,7 +209,7 @@ export default function RedCapeServicePage() {
                     <HeadphonesIcon className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-xl text-[var(--navy-800)]">
+                    <h3 className="font-[family-name:var(--font-heading)] font-semibold text-xl text-[var(--navy-800)]">
                       Need Service Now?
                     </h3>
                     <p className="text-[var(--gray-500)]">
@@ -243,7 +243,7 @@ export default function RedCapeServicePage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div>
                   <h2
-                    className="font-[family-name:var(--font-outfit)] font-bold text-2xl md:text-3xl mb-4"
+                    className="font-[family-name:var(--font-heading)] font-bold text-2xl md:text-3xl mb-4"
                     style={{ color: "white" }}
                   >
                     Our Service Area

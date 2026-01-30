@@ -42,11 +42,11 @@ export default async function MeetYourSalespersonPage() {
         <section className="bg-gradient-to-br from-[var(--navy-900)] via-[var(--navy-800)] to-[var(--blue-800)] py-16 md:py-24">
           <div className="container">
             <div className="max-w-3xl">
-              <p className="text-[var(--orange-400)] font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4">
+              <p className="text-[var(--orange-400)] font-[family-name:var(--font-heading)] font-semibold text-sm uppercase tracking-wider mb-4">
                 Your Partners in Success
               </p>
               <h1
-                className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
+                className="font-[family-name:var(--font-heading)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
                 style={{ color: 'white' }}
               >
                 Good Things Start Here
@@ -90,7 +90,7 @@ export default async function MeetYourSalespersonPage() {
                             />
                           ) : (
                             <div className="w-full h-full flex items-center justify-center">
-                              <span className="text-white text-2xl font-bold font-[family-name:var(--font-outfit)]">
+                              <span className="text-white text-2xl font-bold font-[family-name:var(--font-heading)]">
                                 {person.firstName[0]}
                                 {person.lastName[0]}
                               </span>
@@ -98,7 +98,7 @@ export default async function MeetYourSalespersonPage() {
                           )}
                         </div>
                         <div>
-                          <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)]">
+                          <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)]">
                             {person.firstName} {person.lastName}
                           </h2>
                           <p className="text-[var(--gray-600)]">
@@ -119,7 +119,7 @@ export default async function MeetYourSalespersonPage() {
                         <div className="mb-6">
                           <div className="flex items-center gap-2 mb-2">
                             <MapPin className="w-4 h-4 text-[var(--orange-500)]" />
-                            <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-sm text-[var(--gray-700)]">
+                            <h3 className="font-[family-name:var(--font-heading)] font-semibold text-sm text-[var(--gray-700)]">
                               Territories
                             </h3>
                           </div>
@@ -188,7 +188,7 @@ export default async function MeetYourSalespersonPage() {
         <section className="section bg-[var(--gray-50)]">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-3xl text-[var(--navy-800)] mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl text-[var(--navy-800)] mb-4">
                 Our Service Territory
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -220,7 +220,7 @@ export default async function MeetYourSalespersonPage() {
           <div className="container">
             <div className="bg-gradient-to-r from-[var(--blue-600)] to-[var(--navy-700)] rounded-2xl p-8 md:p-12 text-center">
               <h2
-                className="font-[family-name:var(--font-outfit)] font-bold text-2xl md:text-3xl mb-4"
+                className="font-[family-name:var(--font-heading)] font-bold text-2xl md:text-3xl mb-4"
                 style={{ color: 'white' }}
               >
                 Not Sure Which Territory You&apos;re In?

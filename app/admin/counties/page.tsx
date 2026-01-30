@@ -224,7 +224,7 @@ export default function CountiesPage() {
             <MapPin className="w-6 h-6 text-[var(--blue-500)]" />
           </div>
           <div>
-            <h1 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)]">
+            <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)]">
               Territory Management
             </h1>
             <p className="text-[var(--gray-600)] mt-1">
@@ -329,7 +329,7 @@ export default function CountiesPage() {
       {/* New County Form */}
       {showNewForm && (
         <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-          <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+          <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
             Add New County
           </h2>
           <form onSubmit={handleCreateCounty} className="flex gap-4 flex-wrap">
@@ -389,7 +389,7 @@ export default function CountiesPage() {
           >
             <div className="bg-[var(--gray-50)] px-6 py-3 border-b border-[var(--gray-200)]">
               <div className="flex items-center justify-between">
-                <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-[var(--navy-800)]">
+                <h2 className="font-[family-name:var(--font-heading)] font-semibold text-[var(--navy-800)]">
                   {state.name}
                 </h2>
                 <span className="text-sm text-[var(--gray-500)]">

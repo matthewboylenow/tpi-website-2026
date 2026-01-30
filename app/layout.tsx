@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
-import { Outfit, Source_Serif_4 } from "next/font/google";
+import { Plus_Jakarta_Sans, Inter } from "next/font/google";
 import { getAllSiteSettings } from "@/lib/data";
 import { OrganizationSchema } from "@/components/Schema";
 import "./globals.css";
 
-const outfit = Outfit({
-  variable: "--font-outfit",
+// Premium heading font - modern, geometric, distinctive
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-const sourceSerif = Source_Serif_4({
-  variable: "--font-source-serif",
+// Clean body/UI font - industry standard for premium web experiences
+const inter = Inter({
+  variable: "--font-body",
   subsets: ["latin"],
   display: "swap",
   weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
 });
 
 // Default metadata values
@@ -101,7 +102,7 @@ export default function RootLayout({
         {/* <script src="https://cdn.usefathom.com/script.js" data-site="YOUR_FATHOM_SITE_ID" defer /> */}
       </head>
       <body
-        className={`${outfit.variable} ${sourceSerif.variable} antialiased`}
+        className={`${plusJakarta.variable} ${inter.variable} antialiased`}
       >
         <a href="#main-content" className="skip-link">
           Skip to main content

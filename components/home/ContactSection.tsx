@@ -83,10 +83,10 @@ export function ContactSection() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left Column - Contact Info */}
           <div>
-            <p className="text-[var(--orange-500)] font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4">
+            <p className="text-[var(--orange-500)] font-[family-name:var(--font-heading)] font-semibold text-sm uppercase tracking-wider mb-4">
               Get In Touch
             </p>
-            <h2 className="font-[family-name:var(--font-outfit)] font-bold text-3xl sm:text-4xl text-[var(--navy-800)] mb-6">
+            <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl text-[var(--navy-800)] mb-6">
               Let&apos;s Talk About Your Business
             </h2>
             <p className="text-[var(--gray-600)] text-lg mb-8 leading-relaxed">
@@ -101,7 +101,7 @@ export function ContactSection() {
                   <Phone className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-[var(--navy-800)]">
+                  <h3 className="font-[family-name:var(--font-heading)] font-semibold text-[var(--navy-800)]">
                     Call Us
                   </h3>
                   <a
@@ -118,7 +118,7 @@ export function ContactSection() {
                   <Mail className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-[var(--navy-800)]">
+                  <h3 className="font-[family-name:var(--font-heading)] font-semibold text-[var(--navy-800)]">
                     Email Us
                   </h3>
                   <a
@@ -135,7 +135,7 @@ export function ContactSection() {
                   <Clock className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-[var(--navy-800)]">
+                  <h3 className="font-[family-name:var(--font-heading)] font-semibold text-[var(--navy-800)]">
                     Business Hours
                   </h3>
                   <p className="text-[var(--gray-600)]">
@@ -152,7 +152,7 @@ export function ContactSection() {
                   <MapPin className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-[var(--navy-800)]">
+                  <h3 className="font-[family-name:var(--font-heading)] font-semibold text-[var(--navy-800)]">
                     Showrooms
                   </h3>
                   <p className="text-[var(--gray-600)] text-sm">
@@ -167,7 +167,7 @@ export function ContactSection() {
 
             {/* Meet Your Salesperson CTA */}
             <div className="mt-8 p-6 bg-white rounded-xl shadow-sm border border-[var(--gray-200)]">
-              <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-[var(--navy-800)] mb-2">
+              <h3 className="font-[family-name:var(--font-heading)] font-semibold text-[var(--navy-800)] mb-2">
                 Prefer to schedule a meeting?
               </h3>
               <p className="text-[var(--gray-600)] text-sm mb-4">
@@ -201,7 +201,7 @@ export function ContactSection() {
                       />
                     </svg>
                   </div>
-                  <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-xl text-[var(--navy-800)] mb-2">
+                  <h3 className="font-[family-name:var(--font-heading)] font-semibold text-xl text-[var(--navy-800)] mb-2">
                     Message Sent!
                   </h3>
                   <p className="text-[var(--gray-600)]">

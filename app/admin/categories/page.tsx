@@ -14,7 +14,7 @@ export default async function CategoriesAdminPage() {
       {/* Page Header */}
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div>
-          <h1 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)]">
+          <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)]">
             Categories
           </h1>
           <p className="text-[var(--gray-600)] mt-1">
@@ -55,7 +55,7 @@ export default async function CategoriesAdminPage() {
               {/* Category Info */}
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 flex-wrap">
-                  <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)]">
+                  <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)]">
                     {category.name}
                   </h2>
                   <Badge variant="secondary">

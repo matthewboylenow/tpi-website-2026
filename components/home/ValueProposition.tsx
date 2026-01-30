@@ -33,10 +33,10 @@ export function ValueProposition() {
       <div className="container">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-[var(--orange-500)] font-[family-name:var(--font-outfit)] font-semibold text-sm uppercase tracking-wider mb-4">
+          <p className="text-[var(--orange-500)] font-[family-name:var(--font-heading)] font-semibold text-sm uppercase tracking-wider mb-4">
             Why Taylor Products
           </p>
-          <h2 className="font-[family-name:var(--font-outfit)] font-bold text-3xl sm:text-4xl text-[var(--navy-800)] mb-4">
+          <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl text-[var(--navy-800)] mb-4">
             What Makes Us Different
           </h2>
           <p className="text-[var(--gray-600)] text-lg">
@@ -60,7 +60,7 @@ export function ValueProposition() {
               </div>
 
               {/* Title */}
-              <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-3">
+              <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-3">
                 {value.title}
               </h3>
 
@@ -76,25 +76,25 @@ export function ValueProposition() {
         <div className="mt-16 pt-16 border-t border-[var(--gray-200)]">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <p className="font-[family-name:var(--font-outfit)] font-bold text-4xl text-[var(--blue-500)] mb-2">
+              <p className="font-[family-name:var(--font-heading)] font-bold text-4xl text-[var(--blue-500)] mb-2">
                 40+
               </p>
               <p className="text-[var(--gray-600)] text-sm">Years in Business</p>
             </div>
             <div>
-              <p className="font-[family-name:var(--font-outfit)] font-bold text-4xl text-[var(--blue-500)] mb-2">
+              <p className="font-[family-name:var(--font-heading)] font-bold text-4xl text-[var(--blue-500)] mb-2">
                 4
               </p>
               <p className="text-[var(--gray-600)] text-sm">States We Call Home</p>
             </div>
             <div>
-              <p className="font-[family-name:var(--font-outfit)] font-bold text-4xl text-[var(--blue-500)] mb-2">
+              <p className="font-[family-name:var(--font-heading)] font-bold text-4xl text-[var(--blue-500)] mb-2">
                 100+
               </p>
               <p className="text-[var(--gray-600)] text-sm">Models to Choose From</p>
             </div>
             <div>
-              <p className="font-[family-name:var(--font-outfit)] font-bold text-4xl text-[var(--blue-500)] mb-2">
+              <p className="font-[family-name:var(--font-heading)] font-bold text-4xl text-[var(--blue-500)] mb-2">
                 2
               </p>
               <p className="text-[var(--gray-600)] text-sm">Showrooms — Come Visit!</p>

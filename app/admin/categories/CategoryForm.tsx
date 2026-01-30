@@ -117,7 +117,7 @@ export function CategoryForm({ category, subcategories = [] }: CategoryFormProps
             <ArrowLeft className="w-5 h-5" />
           </Link>
           <div>
-            <h1 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)]">
+            <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)]">
               {isEditing ? "Edit Category" : "New Category"}
             </h1>
             <p className="text-[var(--gray-600)] mt-1">
@@ -146,7 +146,7 @@ export function CategoryForm({ category, subcategories = [] }: CategoryFormProps
         <div className="lg:col-span-2 space-y-6">
           {/* Basic Info */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               Basic Information
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -207,7 +207,7 @@ export function CategoryForm({ category, subcategories = [] }: CategoryFormProps
 
           {/* Subcategories */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               Subcategories
             </h2>
 
@@ -284,7 +284,7 @@ export function CategoryForm({ category, subcategories = [] }: CategoryFormProps
         <div className="space-y-6">
           {/* Hero Image */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
-            <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-4">
+            <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
               Hero Image
             </h2>
             <ImageUpload

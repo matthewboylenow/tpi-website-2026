@@ -19,7 +19,7 @@ export function AdminHeader({ user }: AdminHeaderProps) {
     <header className="sticky top-0 z-30 h-16 bg-white border-b border-[var(--gray-200)] flex items-center justify-between px-6">
       <div className="lg:hidden w-8" /> {/* Spacer for mobile menu button */}
 
-      <h1 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] hidden sm:block">
+      <h1 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] hidden sm:block">
         Taylor Products Admin
       </h1>
 

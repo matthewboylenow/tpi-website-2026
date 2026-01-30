@@ -18,7 +18,7 @@ export default async function MachinesAdminPage() {
       {/* Page Header */}
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div>
-          <h1 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)]">
+          <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)]">
             Machines
           </h1>
           <p className="text-[var(--gray-600)] mt-1">
@@ -116,7 +116,7 @@ export default async function MachinesAdminPage() {
                           )}
                         </div>
                         <div>
-                          <p className="font-[family-name:var(--font-outfit)] font-semibold text-[var(--navy-800)]">
+                          <p className="font-[family-name:var(--font-heading)] font-semibold text-[var(--navy-800)]">
                             {machine.modelNumber}
                           </p>
                           <p className="text-sm text-[var(--gray-600)]">

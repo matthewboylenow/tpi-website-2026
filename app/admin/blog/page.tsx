@@ -13,7 +13,7 @@ export default async function BlogAdminPage() {
       {/* Page Header */}
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div>
-          <h1 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)]">
+          <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)]">
             Blog Posts
           </h1>
           <p className="text-[var(--gray-600)] mt-1">
@@ -32,7 +32,7 @@ export default async function BlogAdminPage() {
       {posts.length === 0 ? (
         <div className="bg-white rounded-xl p-12 shadow-sm border border-[var(--gray-200)] text-center">
           <FileText className="w-12 h-12 text-[var(--gray-300)] mx-auto mb-4" />
-          <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)] mb-2">
+          <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-2">
             No Posts Yet
           </h2>
           <p className="text-[var(--gray-500)] mb-6">
@@ -76,7 +76,7 @@ export default async function BlogAdminPage() {
                   >
                     <td className="px-6 py-4">
                       <div>
-                        <p className="font-[family-name:var(--font-outfit)] font-semibold text-[var(--navy-800)]">
+                        <p className="font-[family-name:var(--font-heading)] font-semibold text-[var(--navy-800)]">
                           {post.title}
                         </p>
                         <p className="text-sm text-[var(--gray-500)] truncate max-w-md">

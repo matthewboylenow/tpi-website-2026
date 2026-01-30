@@ -72,7 +72,7 @@ export default async function FlavorBurstPage() {
         <section className="py-16 bg-[var(--gray-50)]">
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mb-4">
                 How FlavorBurst Works
               </h2>
               <p className="text-[var(--gray-600)] mb-6">

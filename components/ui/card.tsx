@@ -11,14 +11,14 @@ const Card = React.forwardRef<HTMLDivElement, CardProps>(
       <div
         ref={ref}
         className={cn(
-          "bg-white rounded-xl overflow-hidden",
-          "border border-[var(--gray-100)]",
-          "shadow-[0_1px_2px_rgba(0,0,0,0.04),0_4px_8px_rgba(0,0,0,0.04),0_12px_24px_rgba(0,0,0,0.06)]",
+          "bg-white rounded-2xl overflow-hidden",
+          "border border-[var(--gray-200)]/60",
+          "shadow-sm",
           hover && [
-            "transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]",
-            "hover:-translate-y-1",
-            "hover:shadow-[0_4px_8px_rgba(0,0,0,0.06),0_12px_24px_rgba(0,0,0,0.08),0_24px_48px_rgba(0,0,0,0.1)]",
-            "hover:border-[var(--blue-200)]",
+            "transition-all duration-300 ease-out",
+            "hover:-translate-y-0.5",
+            "hover:shadow-lg hover:shadow-black/[0.04]",
+            "hover:border-[var(--gray-300)]",
           ],
           className
         )}
@@ -50,7 +50,7 @@ const CardTitle = React.forwardRef<
   <h3
     ref={ref}
     className={cn(
-      "font-[family-name:var(--font-outfit)] font-semibold text-xl tracking-tight text-[var(--navy-800)]",
+      "font-[family-name:var(--font-heading)] font-semibold text-xl tracking-tight text-[var(--navy-800)]",
       className
     )}
     {...props}
@@ -164,12 +164,12 @@ const MachineCard = React.forwardRef<
         {/* Content */}
         <div className="p-5">
           {/* Model Number */}
-          <p className="font-[family-name:var(--font-outfit)] font-bold text-lg tracking-wider text-[var(--navy-800)]">
+          <p className="font-[family-name:var(--font-heading)] font-bold text-lg tracking-wider text-[var(--navy-800)]">
             {modelNumber}
           </p>
 
           {/* Name */}
-          <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-base text-[var(--gray-700)] mt-1">
+          <h3 className="font-[family-name:var(--font-heading)] font-semibold text-base text-[var(--gray-700)] mt-1">
             {name}
           </h3>
 

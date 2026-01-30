@@ -73,7 +73,7 @@ export default async function AdminDashboard() {
     <div className="space-y-8">
       {/* Page Header */}
       <div>
-        <h1 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)]">
+        <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)]">
           Dashboard
         </h1>
         <p className="text-[var(--gray-600)] mt-1">
@@ -94,7 +94,7 @@ export default async function AdminDashboard() {
                 <stat.icon className="w-6 h-6 text-[var(--blue-500)]" />
               </div>
             </div>
-            <p className="font-[family-name:var(--font-outfit)] font-bold text-3xl text-[var(--navy-800)]">
+            <p className="font-[family-name:var(--font-heading)] font-bold text-3xl text-[var(--navy-800)]">
               {stat.value}
             </p>
             <p className="text-sm text-[var(--gray-600)] mt-1">{stat.name}</p>
@@ -107,7 +107,7 @@ export default async function AdminDashboard() {
         <div className="lg:col-span-2">
           <div className="bg-white rounded-xl shadow-sm border border-[var(--gray-200)] overflow-hidden">
             <div className="px-6 py-4 border-b border-[var(--gray-200)]">
-              <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)]">
+              <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)]">
                 Quick Actions
               </h2>
             </div>
@@ -139,7 +139,7 @@ export default async function AdminDashboard() {
         <div>
           <div className="bg-white rounded-xl shadow-sm border border-[var(--gray-200)] overflow-hidden">
             <div className="px-6 py-4 border-b border-[var(--gray-200)]">
-              <h2 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)]">
+              <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)]">
                 Recent Contacts
               </h2>
             </div>
@@ -184,7 +184,7 @@ export default async function AdminDashboard() {
       <div className="bg-gradient-to-r from-[var(--blue-600)] to-[var(--navy-700)] rounded-xl p-8 text-white">
         <div className="flex items-start justify-between gap-6 flex-wrap">
           <div>
-            <h2 className="font-[family-name:var(--font-outfit)] font-bold text-xl mb-2">
+            <h2 className="font-[family-name:var(--font-heading)] font-bold text-xl mb-2">
               Need Help?
             </h2>
             <p className="text-blue-100 max-w-xl">

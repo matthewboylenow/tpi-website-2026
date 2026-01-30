@@ -235,7 +235,7 @@ export default function NavigationEditorPage() {
             <Navigation className="w-6 h-6 text-[var(--blue-500)]" />
           </div>
           <div>
-            <h1 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)]">
+            <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)]">
               Navigation Editor
             </h1>
             <p className="text-[var(--gray-600)] mt-1">

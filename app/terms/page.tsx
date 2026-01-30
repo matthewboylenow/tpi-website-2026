@@ -18,7 +18,7 @@ export default function TermsOfServicePage() {
           <div className="container">
             <div className="max-w-3xl">
               <h1
-                className="font-[family-name:var(--font-outfit)] font-extrabold text-3xl sm:text-4xl leading-tight mb-4"
+                className="font-[family-name:var(--font-heading)] font-extrabold text-3xl sm:text-4xl leading-tight mb-4"
                 style={{ color: "white" }}
               >
                 Terms of Service
@@ -40,7 +40,7 @@ export default function TermsOfServicePage() {
                 Service. Please read them carefully.
               </p>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Use of Our Website
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -69,7 +69,7 @@ export default function TermsOfServicePage() {
                 </li>
               </ul>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Products and Services
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -86,7 +86,7 @@ export default function TermsOfServicePage() {
                 error-free.
               </p>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Orders and Purchases
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -108,7 +108,7 @@ export default function TermsOfServicePage() {
                 suspected fraud.
               </p>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Service Territory
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -119,7 +119,7 @@ export default function TermsOfServicePage() {
                 local authorized distributor.
               </p>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Warranties
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -134,7 +134,7 @@ export default function TermsOfServicePage() {
                 warranties.
               </p>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Limitation of Liability
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -150,7 +150,7 @@ export default function TermsOfServicePage() {
                 in the twelve months preceding the claim.
               </p>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Intellectual Property
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -166,7 +166,7 @@ export default function TermsOfServicePage() {
                 of Taylor Company.
               </p>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Third-Party Links
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -176,7 +176,7 @@ export default function TermsOfServicePage() {
                 content or privacy practices.
               </p>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Indemnification
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -186,7 +186,7 @@ export default function TermsOfServicePage() {
                 these Terms or your use of our website and services.
               </p>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Changes to These Terms
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -197,7 +197,7 @@ export default function TermsOfServicePage() {
                 the new Terms.
               </p>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Governing Law
               </h2>
               <p className="text-[var(--gray-600)]">
@@ -208,7 +208,7 @@ export default function TermsOfServicePage() {
                 County, Pennsylvania.
               </p>
 
-              <h2 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mt-10 mb-4">
                 Contact Us
               </h2>
               <p className="text-[var(--gray-600)]">

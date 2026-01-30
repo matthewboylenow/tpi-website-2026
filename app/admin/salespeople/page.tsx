@@ -14,7 +14,7 @@ export default async function SalespeopleAdminPage() {
       {/* Page Header */}
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <div>
-          <h1 className="font-[family-name:var(--font-outfit)] font-bold text-2xl text-[var(--navy-800)]">
+          <h1 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)]">
             Salespeople
           </h1>
           <p className="text-[var(--gray-600)] mt-1">
@@ -55,7 +55,7 @@ export default async function SalespeopleAdminPage() {
                   )}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-[family-name:var(--font-outfit)] font-semibold text-lg text-[var(--navy-800)]">
+                  <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)]">
                     {person.firstName} {person.lastName}
                   </h3>
                   <div className="mt-1 flex items-center gap-2">
