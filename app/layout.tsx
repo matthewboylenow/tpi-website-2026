@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+import { Sora, Inter } from "next/font/google";
 import { getAllSiteSettings } from "@/lib/data";
 import { OrganizationSchema } from "@/components/Schema";
 import "./globals.css";
 
-// Premium heading font - modern, geometric, distinctive
-const plusJakarta = Plus_Jakarta_Sans({
+// Bold, geometric heading font - modern with personality
+const sora = Sora({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
@@ -102,7 +102,7 @@ export default function RootLayout({
         {/* <script src="https://cdn.usefathom.com/script.js" data-site="YOUR_FATHOM_SITE_ID" defer /> */}
       </head>
       <body
-        className={`${plusJakarta.variable} ${inter.variable} antialiased`}
+        className={`${sora.variable} ${inter.variable} antialiased`}
       >
         <a href="#main-content" className="skip-link">
           Skip to main content

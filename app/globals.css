@@ -191,39 +191,54 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Headings - Premium typography */
+/* Headings - Bold, impactful typography */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
   color: var(--navy-800);
 }
 
 h1 {
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
 }
 
 h2 {
   font-weight: 700;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
 }
 
-h3, h4 {
+h3 {
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+h4 {
   font-weight: 600;
   letter-spacing: -0.015em;
 }
 
-/* Links */
+/* Links - inherit color by default, styled links use specific classes */
 a {
-  color: var(--blue-500);
+  color: inherit;
   text-decoration: none;
   transition: color var(--transition-fast);
 }
 
-a:hover {
-  color: var(--blue-700);
+/* Content links (in prose/article areas) */
+.prose a,
+article a:not([class]) {
+  color: var(--blue-600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover,
+article a:not([class]):hover {
+  color: var(--blue-800);
 }
 
 /* ========================================
