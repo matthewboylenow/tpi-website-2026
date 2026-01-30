@@ -10,10 +10,9 @@ export default async function AdminLayout({
 }) {
   const session = await auth();
 
-  // Check if user is logged in (except for login page)
-  // The login page has its own layout, so this check applies to other admin pages
+  // Redirect to login if not authenticated
   if (!session?.user) {
-    redirect("/admin/login");
+    redirect("/login");
   }
 
   return (
