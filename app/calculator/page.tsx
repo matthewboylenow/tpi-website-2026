@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import Image from "next/image";
@@ -185,30 +185,37 @@ interface ProductState {
   competitorTime: number;
 }
 
+// Helper to initialize products for a market
+function getInitialProducts(market: Market): Record<string, ProductState> {
+  const configs = productConfigs[market];
+  const initial: Record<string, ProductState> = {};
+  configs.forEach((p) => {
+    initial[p.id] = {
+      enabled: p.defaultEnabled,
+      price: p.defaultPrice,
+      cost: p.defaultCost,
+      sales: p.defaultSales,
+      taylorTime: p.defaultTaylorTime,
+      competitorTime: p.defaultCompetitorTime,
+    };
+  });
+  return initial;
+}
+
 export default function CalculatorPage() {
   const [market, setMarket] = useState<Market>("soft_serve");
   const [equipment, setEquipment] = useState<string>("single");
   const [years, setYears] = useState<number>(5);
-  const [products, setProducts] = useState<Record<string, ProductState>>({});
+  const [products, setProducts] = useState<Record<string, ProductState>>(() =>
+    getInitialProducts("soft_serve")
+  );
 
-  // Initialize products when market changes
-  useEffect(() => {
-    const configs = productConfigs[market];
-    const initial: Record<string, ProductState> = {};
-    configs.forEach((p) => {
-      initial[p.id] = {
-        enabled: p.defaultEnabled,
-        price: p.defaultPrice,
-        cost: p.defaultCost,
-        sales: p.defaultSales,
-        taylorTime: p.defaultTaylorTime,
-        competitorTime: p.defaultCompetitorTime,
-      };
-    });
-    setProducts(initial);
-    // Reset equipment to first option for new market
-    setEquipment(Object.keys(equipmentData[market])[0]);
-  }, [market]);
+  // Update products when market changes
+  const handleMarketChange = (newMarket: Market) => {
+    setMarket(newMarket);
+    setProducts(getInitialProducts(newMarket));
+    setEquipment(Object.keys(equipmentData[newMarket])[0]);
+  };
 
   const updateProduct = (id: string, field: keyof ProductState, value: number | boolean) => {
     setProducts((prev) => ({
@@ -313,7 +320,7 @@ export default function CalculatorPage() {
                     ].map((m) => (
                       <button
                         key={m.id}
-                        onClick={() => setMarket(m.id as Market)}
+                        onClick={() => handleMarketChange(m.id as Market)}
                         className={`p-6 rounded-xl border-2 font-semibold text-lg transition-all ${
                           market === m.id
                             ? "border-[var(--blue-500)] bg-[var(--blue-500)] text-white"
