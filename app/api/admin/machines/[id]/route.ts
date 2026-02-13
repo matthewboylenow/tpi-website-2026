@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { updateMachine, deleteMachine, getMachineById } from "@/lib/data";
+import { updateMachine, deleteMachine, getMachineById, setMachineCategories } from "@/lib/data";
 
 export async function PUT(
   request: NextRequest,
@@ -46,6 +46,11 @@ export async function PUT(
       focusKeyword: data.focusKeyword || null,
       displayOrder: data.displayOrder || 0,
     });
+
+    // Handle multiple categories
+    if (data.categoryIds && Array.isArray(data.categoryIds)) {
+      await setMachineCategories(machineId, data.categoryIds);
+    }
 
     return NextResponse.json({ success: true, machine });
   } catch (error) {

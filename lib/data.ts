@@ -4,6 +4,7 @@ import {
   categories,
   subcategories,
   machines,
+  machineCategories,
   testimonials,
   salespeople,
   blogPosts,
@@ -14,6 +15,7 @@ import {
   type Category,
   type Subcategory,
   type Machine,
+  type MachineCategory,
   type Testimonial,
   type Salesperson,
   type BlogPost,
@@ -60,10 +62,29 @@ export async function getMachinesBySubcategoryId(subcategoryId: number): Promise
 }
 
 export async function getMachinesByCategoryId(categoryId: number): Promise<Machine[]> {
-  return db.query.machines.findMany({
+  // Get machines that have this category as their primary category OR in the junction table
+  const directMachines = await db.query.machines.findMany({
     where: eq(machines.categoryId, categoryId),
     orderBy: [asc(machines.displayOrder)],
   });
+
+  // Also get machines linked via junction table
+  const linkedMachineCategories = await db.query.machineCategories.findMany({
+    where: eq(machineCategories.categoryId, categoryId),
+    with: {
+      machine: true,
+    },
+  });
+
+  // Combine and dedupe
+  const directIds = new Set(directMachines.map((m) => m.id));
+  const additionalMachines = linkedMachineCategories
+    .map((mc) => mc.machine)
+    .filter((m) => !directIds.has(m.id));
+
+  return [...directMachines, ...additionalMachines].sort(
+    (a, b) => (a.displayOrder ?? 0) - (b.displayOrder ?? 0)
+  );
 }
 
 export async function getMachineBySlug(slug: string): Promise<Machine | undefined> {
@@ -459,6 +480,58 @@ export async function getMachineById(id: number): Promise<Machine | undefined> {
   return db.query.machines.findFirst({
     where: eq(machines.id, id),
   });
+}
+
+export type MachineWithCategories = Machine & {
+  categories: Category[];
+};
+
+export async function getMachineByIdWithCategories(id: number): Promise<MachineWithCategories | undefined> {
+  const machine = await db.query.machines.findFirst({
+    where: eq(machines.id, id),
+    with: {
+      machineCategories: {
+        with: {
+          category: true,
+        },
+      },
+    },
+  });
+
+  if (!machine) return undefined;
+
+  return {
+    ...machine,
+    categories: machine.machineCategories.map((mc) => mc.category),
+  };
+}
+
+// ================================
+// Machine Categories (Junction)
+// ================================
+
+export async function getMachineCategoryIds(machineId: number): Promise<number[]> {
+  const result = await db.query.machineCategories.findMany({
+    where: eq(machineCategories.machineId, machineId),
+  });
+  return result.map((mc) => mc.categoryId);
+}
+
+export async function setMachineCategories(machineId: number, categoryIds: number[]) {
+  // Delete existing relationships
+  await db.delete(machineCategories).where(eq(machineCategories.machineId, machineId));
+
+  // Insert new relationships
+  if (categoryIds.length > 0) {
+    await db.insert(machineCategories).values(
+      categoryIds.map((categoryId, index) => ({
+        machineId,
+        categoryId,
+        isPrimary: index === 0,
+        displayOrder: index,
+      }))
+    );
+  }
 }
 
 export async function createMachine(data: {

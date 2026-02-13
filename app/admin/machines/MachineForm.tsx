@@ -12,12 +12,14 @@ import type { Machine, Category, Subcategory } from "@/lib/schema";
 
 interface MachineFormProps {
   machine?: Machine;
+  machineCategories?: Category[];
   categories: Category[];
   subcategories: (Subcategory & { category: Category | null })[];
 }
 
 export function MachineForm({
   machine,
+  machineCategories = [],
   categories,
   subcategories,
 }: MachineFormProps) {
@@ -25,6 +27,13 @@ export function MachineForm({
   const isEditing = !!machine;
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedCategoryIds, setSelectedCategoryIds] = useState<number[]>(
+    machineCategories.length > 0
+      ? machineCategories.map((c) => c.id)
+      : machine?.categoryId
+        ? [machine.categoryId]
+        : []
+  );
   const [formData, setFormData] = useState({
     modelNumber: machine?.modelNumber || "",
     name: machine?.name || "",
@@ -49,6 +58,14 @@ export function MachineForm({
     displayOrder: machine?.displayOrder?.toString() || "0",
   });
 
+  const toggleCategory = (categoryId: number) => {
+    setSelectedCategoryIds((prev) =>
+      prev.includes(categoryId)
+        ? prev.filter((id) => id !== categoryId)
+        : [...prev, categoryId]
+    );
+  };
+
   const generateSlug = (modelNumber: string) => {
     return modelNumber
       .toLowerCase()
@@ -64,8 +81,10 @@ export function MachineForm({
     }));
   };
 
+  // Get subcategories for the primary (first) selected category
+  const primaryCategoryId = selectedCategoryIds[0];
   const filteredSubcategories = subcategories.filter(
-    (sub) => sub.categoryId?.toString() === formData.categoryId
+    (sub) => sub.categoryId === primaryCategoryId
   );
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -78,12 +97,16 @@ export function MachineForm({
         : "/api/admin/machines";
       const method = isEditing ? "PUT" : "POST";
 
+      // Primary category is the first selected one, or the explicitly selected one
+      const primaryCategoryId = selectedCategoryIds[0] || (formData.categoryId ? parseInt(formData.categoryId) : null);
+
       const response = await fetch(url, {
         method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
-          categoryId: formData.categoryId ? parseInt(formData.categoryId) : null,
+          categoryId: primaryCategoryId,
+          categoryIds: selectedCategoryIds,
           subcategoryId: formData.subcategoryId
             ? parseInt(formData.subcategoryId)
             : null,
@@ -321,31 +344,43 @@ export function MachineForm({
             />
           </div>
 
-          {/* Category */}
+          {/* Categories */}
           <div className="bg-white rounded-xl p-6 shadow-sm border border-[var(--gray-200)]">
             <h2 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-4">
-              Category
+              Categories
             </h2>
-            <div className="space-y-4">
-              <Select
-                label="Category"
-                value={formData.categoryId}
-                onChange={(e) =>
-                  setFormData((prev) => ({
-                    ...prev,
-                    categoryId: e.target.value,
-                    subcategoryId: "",
-                  }))
-                }
-                options={[
-                  { value: "", label: "Select category..." },
-                  ...categories.map((cat) => ({
-                    value: cat.id.toString(),
-                    label: cat.name,
-                  })),
-                ]}
-              />
-              {filteredSubcategories.length > 0 && (
+            <p className="text-sm text-[var(--gray-500)] mb-3">
+              Select all categories this machine belongs to. The first selected will be the primary category.
+            </p>
+            <div className="space-y-2 max-h-64 overflow-y-auto">
+              {categories.map((cat) => (
+                <label
+                  key={cat.id}
+                  className={`flex items-center gap-3 p-2 rounded-lg cursor-pointer transition-colors ${
+                    selectedCategoryIds.includes(cat.id)
+                      ? "bg-[var(--blue-50)] border border-[var(--blue-200)]"
+                      : "hover:bg-[var(--gray-50)] border border-transparent"
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    checked={selectedCategoryIds.includes(cat.id)}
+                    onChange={() => toggleCategory(cat.id)}
+                    className="w-4 h-4 rounded border-[var(--gray-300)] text-[var(--blue-500)]"
+                  />
+                  <span className="text-sm flex-1">{cat.name}</span>
+                  {selectedCategoryIds[0] === cat.id && (
+                    <span className="text-xs bg-[var(--blue-500)] text-white px-2 py-0.5 rounded">
+                      Primary
+                    </span>
+                  )}
+                </label>
+              ))}
+            </div>
+
+            {/* Subcategory - only show if primary category has subcategories */}
+            {filteredSubcategories.length > 0 && (
+              <div className="mt-4 pt-4 border-t border-[var(--gray-200)]">
                 <Select
                   label="Subcategory"
                   value={formData.subcategoryId}
@@ -363,8 +398,8 @@ export function MachineForm({
                     })),
                   ]}
                 />
-              )}
-            </div>
+              </div>
+            )}
           </div>
 
           {/* Attributes */}

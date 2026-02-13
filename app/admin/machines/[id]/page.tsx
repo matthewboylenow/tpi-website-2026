@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getMachineById, getCategories, getAllSubcategories } from "@/lib/data";
+import { getMachineByIdWithCategories, getCategories, getAllSubcategories } from "@/lib/data";
 import { MachineForm } from "../MachineForm";
 
 interface PageProps {
@@ -15,7 +15,7 @@ export default async function EditMachinePage({ params }: PageProps) {
   }
 
   const [machine, categories, subcategories] = await Promise.all([
-    getMachineById(machineId),
+    getMachineByIdWithCategories(machineId),
     getCategories(),
     getAllSubcategories(),
   ]);
@@ -27,6 +27,7 @@ export default async function EditMachinePage({ params }: PageProps) {
   return (
     <MachineForm
       machine={machine}
+      machineCategories={machine.categories}
       categories={categories}
       subcategories={subcategories}
     />

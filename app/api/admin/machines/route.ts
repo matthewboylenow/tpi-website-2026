@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createMachine } from "@/lib/data";
+import { createMachine, setMachineCategories } from "@/lib/data";
 
 export async function POST(request: NextRequest) {
   try {
@@ -36,6 +36,11 @@ export async function POST(request: NextRequest) {
       focusKeyword: data.focusKeyword || null,
       displayOrder: data.displayOrder || 0,
     });
+
+    // Handle multiple categories
+    if (data.categoryIds && Array.isArray(data.categoryIds) && data.categoryIds.length > 0) {
+      await setMachineCategories(machine.id, data.categoryIds);
+    }
 
     return NextResponse.json({ success: true, machine });
   } catch (error) {

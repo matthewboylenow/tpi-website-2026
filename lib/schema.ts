@@ -29,6 +29,7 @@ export const categories = pgTable("categories", {
 export const categoriesRelations = relations(categories, ({ many }) => ({
   subcategories: many(subcategories),
   machines: many(machines),
+  machineCategories: many(machineCategories),
 }));
 
 // ================================
@@ -109,6 +110,38 @@ export const machinesRelations = relations(machines, ({ one, many }) => ({
   relatedMachines: many(relatedMachines, { relationName: "machine" }),
   relatedTo: many(relatedMachines, { relationName: "relatedMachine" }),
   machineTags: many(machineTags),
+  machineCategories: many(machineCategories),
+}));
+
+// ================================
+// Machine Categories (Junction Table for Many-to-Many)
+// ================================
+export const machineCategories = pgTable(
+  "machine_categories",
+  {
+    machineId: integer("machine_id")
+      .notNull()
+      .references(() => machines.id, { onDelete: "cascade" }),
+    categoryId: integer("category_id")
+      .notNull()
+      .references(() => categories.id, { onDelete: "cascade" }),
+    isPrimary: boolean("is_primary").default(false),
+    displayOrder: integer("display_order").default(0),
+  },
+  (table) => ({
+    pk: primaryKey({ columns: [table.machineId, table.categoryId] }),
+  })
+);
+
+export const machineCategoriesRelations = relations(machineCategories, ({ one }) => ({
+  machine: one(machines, {
+    fields: [machineCategories.machineId],
+    references: [machines.id],
+  }),
+  category: one(categories, {
+    fields: [machineCategories.categoryId],
+    references: [categories.id],
+  }),
 }));
 
 // ================================
@@ -472,3 +505,6 @@ export type NewContactSubmission = typeof contactSubmissions.$inferInsert;
 
 export type AdminUser = typeof adminUsers.$inferSelect;
 export type NewAdminUser = typeof adminUsers.$inferInsert;
+
+export type MachineCategory = typeof machineCategories.$inferSelect;
+export type NewMachineCategory = typeof machineCategories.$inferInsert;
