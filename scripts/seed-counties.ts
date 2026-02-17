@@ -26,24 +26,30 @@ const COUNTIES_DATA = [
   { name: "Union", state: "NJ" },
   { name: "Warren", state: "NJ" },
 
-  // Pennsylvania - 67 counties (focusing on Eastern/Central PA in territory)
+  // Pennsylvania - 50 counties in territory
   { name: "Adams", state: "PA" },
+  { name: "Bedford", state: "PA" },
   { name: "Berks", state: "PA" },
   { name: "Blair", state: "PA" },
   { name: "Bradford", state: "PA" },
   { name: "Bucks", state: "PA" },
   { name: "Cambria", state: "PA" },
+  { name: "Cameron", state: "PA" },
   { name: "Carbon", state: "PA" },
   { name: "Centre", state: "PA" },
   { name: "Chester", state: "PA" },
+  { name: "Clearfield", state: "PA" },
   { name: "Clinton", state: "PA" },
   { name: "Columbia", state: "PA" },
   { name: "Cumberland", state: "PA" },
   { name: "Dauphin", state: "PA" },
   { name: "Delaware", state: "PA" },
+  { name: "Elk", state: "PA" },
   { name: "Franklin", state: "PA" },
   { name: "Fulton", state: "PA" },
   { name: "Huntingdon", state: "PA" },
+  { name: "Indiana", state: "PA" },
+  { name: "Jefferson", state: "PA" },
   { name: "Juniata", state: "PA" },
   { name: "Lackawanna", state: "PA" },
   { name: "Lancaster", state: "PA" },
@@ -60,8 +66,10 @@ const COUNTIES_DATA = [
   { name: "Perry", state: "PA" },
   { name: "Philadelphia", state: "PA" },
   { name: "Pike", state: "PA" },
+  { name: "Potter", state: "PA" },
   { name: "Schuylkill", state: "PA" },
   { name: "Snyder", state: "PA" },
+  { name: "Somerset", state: "PA" },
   { name: "Sullivan", state: "PA" },
   { name: "Susquehanna", state: "PA" },
   { name: "Tioga", state: "PA" },
@@ -85,10 +93,8 @@ const COUNTIES_DATA = [
   { name: "Ulster", state: "NY" },
   { name: "Westchester", state: "NY" },
 
-  // Delaware - 3 counties
-  { name: "Kent", state: "DE" },
+  // Delaware - 1 county
   { name: "New Castle", state: "DE" },
-  { name: "Sussex", state: "DE" },
 ];
 
 async function seedCounties() {

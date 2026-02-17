@@ -36,22 +36,28 @@ const FIPS_TO_COUNTY: Record<string, { name: string; state: string }> = {
 
   // Pennsylvania (42)
   "42001": { name: "Adams", state: "PA" },
+  "42009": { name: "Bedford", state: "PA" },
   "42011": { name: "Berks", state: "PA" },
   "42013": { name: "Blair", state: "PA" },
   "42015": { name: "Bradford", state: "PA" },
   "42017": { name: "Bucks", state: "PA" },
   "42021": { name: "Cambria", state: "PA" },
+  "42023": { name: "Cameron", state: "PA" },
   "42025": { name: "Carbon", state: "PA" },
   "42027": { name: "Centre", state: "PA" },
   "42029": { name: "Chester", state: "PA" },
+  "42033": { name: "Clearfield", state: "PA" },
   "42035": { name: "Clinton", state: "PA" },
   "42037": { name: "Columbia", state: "PA" },
   "42041": { name: "Cumberland", state: "PA" },
   "42043": { name: "Dauphin", state: "PA" },
   "42045": { name: "Delaware", state: "PA" },
+  "42047": { name: "Elk", state: "PA" },
   "42055": { name: "Franklin", state: "PA" },
   "42057": { name: "Fulton", state: "PA" },
   "42061": { name: "Huntingdon", state: "PA" },
+  "42063": { name: "Indiana", state: "PA" },
+  "42065": { name: "Jefferson", state: "PA" },
   "42067": { name: "Juniata", state: "PA" },
   "42069": { name: "Lackawanna", state: "PA" },
   "42071": { name: "Lancaster", state: "PA" },
@@ -68,8 +74,10 @@ const FIPS_TO_COUNTY: Record<string, { name: string; state: string }> = {
   "42099": { name: "Perry", state: "PA" },
   "42101": { name: "Philadelphia", state: "PA" },
   "42103": { name: "Pike", state: "PA" },
+  "42105": { name: "Potter", state: "PA" },
   "42107": { name: "Schuylkill", state: "PA" },
   "42109": { name: "Snyder", state: "PA" },
+  "42111": { name: "Somerset", state: "PA" },
   "42113": { name: "Sullivan", state: "PA" },
   "42115": { name: "Susquehanna", state: "PA" },
   "42117": { name: "Tioga", state: "PA" },
@@ -93,10 +101,8 @@ const FIPS_TO_COUNTY: Record<string, { name: string; state: string }> = {
   "36111": { name: "Ulster", state: "NY" },
   "36119": { name: "Westchester", state: "NY" },
 
-  // Delaware (3)
-  "10001": { name: "Kent", state: "DE" },
+  // Delaware (1)
   "10003": { name: "New Castle", state: "DE" },
-  "10005": { name: "Sussex", state: "DE" },
 };
 
 // State FIPS prefixes for boundary generation
