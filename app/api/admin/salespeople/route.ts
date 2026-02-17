@@ -1,5 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createSalesperson } from "@/lib/data";
+import { getAllSalespeople, createSalesperson } from "@/lib/data";
+
+export async function GET() {
+  try {
+    const salespeople = await getAllSalespeople();
+    return NextResponse.json({ salespeople });
+  } catch (error) {
+    console.error("Get salespeople error:", error);
+    return NextResponse.json(
+      { error: "Failed to get salespeople" },
+      { status: 500 }
+    );
+  }
+}
 
 export async function POST(request: NextRequest) {
   try {
