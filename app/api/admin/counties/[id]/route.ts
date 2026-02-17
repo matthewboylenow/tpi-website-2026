@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { getCountyById, updateCounty, deleteCounty } from "@/lib/data";
 
 export async function GET(
@@ -49,6 +50,7 @@ export async function PUT(
       salespersonId: data.salespersonId ?? null,
     });
 
+    revalidatePath("/meet-your-salesperson");
     return NextResponse.json({ success: true, county });
   } catch (error) {
     console.error("Update county error:", error);

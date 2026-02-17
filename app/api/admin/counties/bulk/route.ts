@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { bulkAssignCounties } from "@/lib/data";
 
 export async function PUT(request: NextRequest) {
@@ -17,6 +18,7 @@ export async function PUT(request: NextRequest) {
 
     const counties = await bulkAssignCounties(data.countyIds, salespersonId);
 
+    revalidatePath("/meet-your-salesperson");
     return NextResponse.json({ success: true, counties });
   } catch (error) {
     console.error("Bulk assign counties error:", error);
