@@ -83,14 +83,10 @@ const COUNTIES_DATA = [
   { name: "Kings (Brooklyn)", state: "NY" },
   { name: "Nassau", state: "NY" },
   { name: "New York (Manhattan)", state: "NY" },
-  { name: "Orange", state: "NY" },
   { name: "Putnam", state: "NY" },
   { name: "Queens", state: "NY" },
   { name: "Richmond (Staten Island)", state: "NY" },
-  { name: "Rockland", state: "NY" },
   { name: "Suffolk", state: "NY" },
-  { name: "Sullivan", state: "NY" },
-  { name: "Ulster", state: "NY" },
   { name: "Westchester", state: "NY" },
 
   // Delaware - 1 county

@@ -91,14 +91,10 @@ const FIPS_TO_COUNTY: Record<string, { name: string; state: string }> = {
   "36047": { name: "Kings (Brooklyn)", state: "NY" },
   "36059": { name: "Nassau", state: "NY" },
   "36061": { name: "New York (Manhattan)", state: "NY" },
-  "36071": { name: "Orange", state: "NY" },
   "36079": { name: "Putnam", state: "NY" },
   "36081": { name: "Queens", state: "NY" },
   "36085": { name: "Richmond (Staten Island)", state: "NY" },
-  "36087": { name: "Rockland", state: "NY" },
   "36103": { name: "Suffolk", state: "NY" },
-  "36105": { name: "Sullivan", state: "NY" },
-  "36111": { name: "Ulster", state: "NY" },
   "36119": { name: "Westchester", state: "NY" },
 
   // Delaware (1)
