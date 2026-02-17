@@ -4,8 +4,9 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, Calendar, MapPin } from "lucide-react";
-import { getActiveSalespeople, getCountiesBySalesperson } from "@/lib/data";
+import { getActiveSalespeople, getCountiesBySalesperson, getCountyMapData } from "@/lib/data";
 import { getSalespersonImage } from "@/lib/assets";
+import { TerritoryMap } from "@/components/TerritoryMap";
 
 export const metadata: Metadata = {
   title: "Meet Your Salesperson",
@@ -19,7 +20,10 @@ type SalespersonWithTerritories = Awaited<ReturnType<typeof getActiveSalespeople
 };
 
 export default async function MeetYourSalespersonPage() {
-  const salespeople = await getActiveSalespeople();
+  const [salespeople, mapData] = await Promise.all([
+    getActiveSalespeople(),
+    getCountyMapData(),
+  ]);
 
   // Fetch territories for each salesperson
   const salespeopleWithTerritories: SalespersonWithTerritories[] = await Promise.all(
@@ -73,6 +77,7 @@ export default async function MeetYourSalespersonPage() {
                 return (
                   <div
                     key={person.id}
+                    id={`salesperson-${person.slug}`}
                     className="bg-white rounded-xl shadow-lg overflow-hidden border border-[var(--gray-200)] hover:shadow-xl transition-shadow"
                   >
                     <div className="p-8">
@@ -184,7 +189,7 @@ export default async function MeetYourSalespersonPage() {
           </div>
         </section>
 
-        {/* Territory Map Placeholder */}
+        {/* Territory Map */}
         <section className="section bg-[var(--gray-50)]">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
@@ -198,19 +203,11 @@ export default async function MeetYourSalespersonPage() {
               </p>
             </div>
 
-            {/* Map Placeholder */}
-            <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8 border border-[var(--gray-200)]">
-              <div className="aspect-video bg-[var(--gray-100)] rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="w-16 h-16 text-[var(--gray-400)] mx-auto mb-4" />
-                  <p className="text-[var(--gray-500)]">
-                    Territory Map Coming Soon
-                  </p>
-                  <p className="text-sm text-[var(--gray-400)] mt-2">
-                    NJ • PA • NY • DE
-                  </p>
-                </div>
-              </div>
+            <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 md:p-8 border border-[var(--gray-200)]">
+              <TerritoryMap
+                counties={mapData.counties}
+                salespeople={mapData.salespeople}
+              />
             </div>
           </div>
         </section>

@@ -417,7 +417,7 @@ export async function deleteContactSubmission(id: number) {
 
 export async function getAllBlogPostsAdmin(): Promise<BlogPost[]> {
   return db.query.blogPosts.findMany({
-    orderBy: [desc(blogPosts.createdAt)],
+    orderBy: [asc(blogPosts.isPublished), desc(blogPosts.publishedAt), desc(blogPosts.createdAt)],
   });
 }
 
@@ -979,6 +979,57 @@ export async function updateNavigationItem(
 
 export async function deleteNavigationItem(id: number) {
   return db.delete(navigationItems).where(eq(navigationItems.id, id));
+}
+
+// ================================
+// Territory Map Data
+// ================================
+
+export type CountyMapEntry = {
+  id: number;
+  name: string;
+  state: string;
+  salespersonId: number | null;
+};
+
+export type SalespersonMapEntry = {
+  id: number;
+  firstName: string;
+  lastName: string;
+  slug: string;
+  phone: string | null;
+  email: string;
+  bookingLink: string | null;
+};
+
+export async function getCountyMapData(): Promise<{
+  counties: CountyMapEntry[];
+  salespeople: SalespersonMapEntry[];
+}> {
+  const [allCounties, activeSalespeople] = await Promise.all([
+    db.query.counties.findMany({
+      columns: { id: true, name: true, state: true, salespersonId: true },
+      orderBy: [asc(counties.state), asc(counties.name)],
+    }),
+    db.query.salespeople.findMany({
+      where: eq(salespeople.isActive, true),
+      columns: {
+        id: true,
+        firstName: true,
+        lastName: true,
+        slug: true,
+        phone: true,
+        email: true,
+        bookingLink: true,
+      },
+      orderBy: [asc(salespeople.displayOrder)],
+    }),
+  ]);
+
+  return {
+    counties: allCounties as CountyMapEntry[],
+    salespeople: activeSalespeople as SalespersonMapEntry[],
+  };
 }
 
 export async function reorderNavigationItems(items: { id: number; displayOrder: number }[]) {
