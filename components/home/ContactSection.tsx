@@ -1,82 +1,11 @@
 "use client";
 
-import * as React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Input, Textarea, Select } from "@/components/ui/input";
+import { HubSpotForm } from "@/components/HubSpotForm";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
-// Sample counties - in production this would come from the database
-const counties = [
-  { value: "", label: "Select your county..." },
-  { value: "philadelphia-pa", label: "Philadelphia, PA" },
-  { value: "bucks-pa", label: "Bucks, PA" },
-  { value: "montgomery-pa", label: "Montgomery, PA" },
-  { value: "chester-pa", label: "Chester, PA" },
-  { value: "delaware-pa", label: "Delaware, PA" },
-  { value: "lancaster-pa", label: "Lancaster, PA" },
-  { value: "berks-pa", label: "Berks, PA" },
-  { value: "lehigh-pa", label: "Lehigh, PA" },
-  { value: "northampton-pa", label: "Northampton, PA" },
-  { value: "bergen-nj", label: "Bergen, NJ" },
-  { value: "essex-nj", label: "Essex, NJ" },
-  { value: "hudson-nj", label: "Hudson, NJ" },
-  { value: "middlesex-nj", label: "Middlesex, NJ" },
-  { value: "monmouth-nj", label: "Monmouth, NJ" },
-  { value: "ocean-nj", label: "Ocean, NJ" },
-  { value: "burlington-nj", label: "Burlington, NJ" },
-  { value: "camden-nj", label: "Camden, NJ" },
-  { value: "atlantic-nj", label: "Atlantic, NJ" },
-  { value: "new-york-ny", label: "New York, NY" },
-  { value: "kings-ny", label: "Kings (Brooklyn), NY" },
-  { value: "queens-ny", label: "Queens, NY" },
-  { value: "nassau-ny", label: "Nassau, NY" },
-  { value: "suffolk-ny", label: "Suffolk, NY" },
-  { value: "westchester-ny", label: "Westchester, NY" },
-  { value: "new-castle-de", label: "New Castle, DE" },
-  { value: "other", label: "Other / Not Listed" },
-];
-
 export function ContactSection() {
-  const [isSubmitting, setIsSubmitting] = React.useState(false);
-  const [isSuccess, setIsSuccess] = React.useState(false);
-
-  const [error, setError] = React.useState<string | null>(null);
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setError(null);
-
-    const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      phone: formData.get("phone"),
-      county: formData.get("county"),
-      message: formData.get("message"),
-    };
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-
-      if (!response.ok) {
-        const result = await response.json();
-        throw new Error(result.error || "Failed to send message");
-      }
-
-      setIsSuccess(true);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Failed to send message");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <section className="section bg-[var(--gray-50)]" id="contact">
       <div className="container">
@@ -181,96 +110,10 @@ export function ContactSection() {
             </div>
           </div>
 
-          {/* Right Column - Contact Form */}
+          {/* Right Column - HubSpot Contact Form */}
           <div>
             <div className="bg-white rounded-xl p-8 shadow-sm border border-[var(--gray-200)]">
-              {isSuccess ? (
-                <div className="text-center py-12">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[var(--success)] text-white mb-6">
-                    <svg
-                      className="w-8 h-8"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                  </div>
-                  <h3 className="font-[family-name:var(--font-heading)] font-semibold text-xl text-[var(--navy-800)] mb-2">
-                    Message Sent!
-                  </h3>
-                  <p className="text-[var(--gray-600)]">
-                    Thank you for reaching out. A member of our team will be in
-                    touch within 1 business day.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  {error && (
-                    <div className="p-4 rounded-lg bg-red-50 border border-red-200 text-red-700 text-sm">
-                      {error}
-                    </div>
-                  )}
-
-                  <Input
-                    label="Your Name"
-                    name="name"
-                    placeholder="John Smith"
-                    required
-                  />
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                    <Input
-                      label="Email"
-                      name="email"
-                      type="email"
-                      placeholder="john@business.com"
-                      required
-                    />
-                    <Input
-                      label="Phone"
-                      name="phone"
-                      type="tel"
-                      placeholder="(555) 123-4567"
-                    />
-                  </div>
-
-                  <Select
-                    label="Business County"
-                    name="county"
-                    options={counties}
-                    required
-                    hint="Helps us connect you with the right salesperson"
-                  />
-
-                  <Textarea
-                    label="Message"
-                    name="message"
-                    placeholder="Tell us about your equipment needs..."
-                    required
-                  />
-
-                  <Button
-                    type="submit"
-                    variant="primary"
-                    size="lg"
-                    className="w-full"
-                    isLoading={isSubmitting}
-                  >
-                    {isSubmitting ? "Sending..." : "Send Message"}
-                  </Button>
-
-                  <p className="text-xs text-[var(--gray-500)] text-center">
-                    By submitting this form, you agree to be contacted by our
-                    sales team.
-                  </p>
-                </form>
-              )}
+              <HubSpotForm formId="52142cec-0cd6-48ca-abef-bf47cbee9671" />
             </div>
           </div>
         </div>

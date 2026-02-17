@@ -24,9 +24,7 @@ export default function WorkWithUsPage() {
     script.src = "https://js.hsforms.net/forms/embed/v2.js";
     script.async = true;
     script.onload = () => {
-      // @ts-expect-error HubSpot global
       if (window.hbspt) {
-        // @ts-expect-error HubSpot global
         window.hbspt.forms.create({
           portalId: HUBSPOT_PORTAL_ID,
           formId: HUBSPOT_FORM_ID,

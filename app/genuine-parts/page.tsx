@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { ContactSection } from "@/components/home/ContactSection";
+import { HubSpotForm } from "@/components/HubSpotForm";
 import {
   Package,
   Shield,
@@ -314,8 +314,25 @@ export default function GenuinePartsPage() {
           </div>
         </section>
 
-        {/* Contact Section */}
-        <ContactSection />
+        {/* Parts Inquiry Form */}
+        <section className="section bg-[var(--gray-50)]" id="contact">
+          <div className="container">
+            <div className="max-w-2xl mx-auto">
+              <h2
+                className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl mb-4 text-center"
+                style={{ color: "var(--navy-800)" }}
+              >
+                Parts Inquiry
+              </h2>
+              <p className="text-[var(--gray-600)] text-lg mb-8 text-center">
+                Need help finding the right part? Fill out the form below and our parts team will get back to you.
+              </p>
+              <div className="bg-white rounded-xl p-8 shadow-sm border border-[var(--gray-200)]">
+                <HubSpotForm formId="533e965b-9811-4825-b197-f4f2b15d867b" />
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </>
