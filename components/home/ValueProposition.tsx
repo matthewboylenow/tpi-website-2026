@@ -3,27 +3,27 @@ import { Award, Wrench, TrendingUp, Users } from "lucide-react";
 const values = [
   {
     icon: Users,
-    title: "Family-Owned Since 1985",
+    title: "40 Years in the Business",
     description:
-      "40 years. Same commitment. When you call, you talk to people who actually care whether your machine is working.",
+      "We've been doing this since 1985. When you call us, you get a real person who knows your equipment and wants to get you back up and running.",
   },
   {
     icon: Wrench,
     title: "Red Cape Service",
     description:
-      "When your freezer goes down on a Saturday night, we answer the phone. Our factory-trained techs get you back up fast.",
+      "Your freezer goes down on a Saturday night. We pick up the phone. Our factory-trained technicians are on it.",
   },
   {
     icon: TrendingUp,
-    title: "We Help You Make Money",
+    title: "Built to Make You Money",
     description:
-      "Menu ideas, staff training, profit calculators—we're invested in your success long after the machine is installed.",
+      "Menu planning, staff training, profit calculators. We stick around after the install to make sure the numbers work.",
   },
   {
     icon: Award,
     title: "Genuine Taylor Parts & Support",
     description:
-      "Direct access to factory parts, warranties, and the people who built your machine. No third-party runaround.",
+      "Factory parts, full warranties, and direct access to the people who know your machine inside and out. No middlemen.",
   },
 ];
 
@@ -37,12 +37,13 @@ export function ValueProposition() {
             Why Taylor Products
           </p>
           <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl text-[var(--navy-800)] mb-4">
-            What Makes Us Different
+            Why Taylor Products
           </h2>
           <p className="text-[var(--gray-600)] text-lg">
-            We&apos;re a family business that&apos;s been helping local operators succeed since 1985.
-            From ice cream shops to convenience stores, we don&apos;t just sell equipment—we
-            help you build a program that actually makes money.
+            We&apos;ve been selling, servicing, and supporting Taylor equipment since 1985.
+            Whether you&apos;re running an ice cream shop, a restaurant, or a chain of
+            convenience stores, we&apos;ll help you pick the right machine and build a
+            program around it that makes real money.
           </p>
         </div>
 
@@ -85,19 +86,19 @@ export function ValueProposition() {
               <p className="font-[family-name:var(--font-heading)] font-bold text-4xl text-[var(--blue-500)] mb-2">
                 4
               </p>
-              <p className="text-[var(--gray-600)] text-sm">States We Call Home</p>
+              <p className="text-[var(--gray-600)] text-sm">States Covered</p>
             </div>
             <div>
               <p className="font-[family-name:var(--font-heading)] font-bold text-4xl text-[var(--blue-500)] mb-2">
                 100+
               </p>
-              <p className="text-[var(--gray-600)] text-sm">Models to Choose From</p>
+              <p className="text-[var(--gray-600)] text-sm">Models Available</p>
             </div>
             <div>
               <p className="font-[family-name:var(--font-heading)] font-bold text-4xl text-[var(--blue-500)] mb-2">
                 2
               </p>
-              <p className="text-[var(--gray-600)] text-sm">Showrooms — Come Visit!</p>
+              <p className="text-[var(--gray-600)] text-sm">Showrooms</p>
             </div>
           </div>
         </div>

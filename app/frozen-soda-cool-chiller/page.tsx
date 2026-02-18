@@ -61,7 +61,7 @@ export default async function CoolChillerPage() {
       <main id="main-content" className="pt-[120px]">
         <CategoryHero
           title="Cool Chiller & FCB"
-          description="Frozen Carbonated Beverages (FCB) combine the refreshment of carbonation with the appeal of a frozen treat. Taylor FCB systems deliver consistent frozen soda with the perfect texture."
+          description="Taylor FCB machines produce frozen carbonated beverages with consistent texture and temperature. Available in one to four barrel configurations."
           backgroundImage={HEROES.coolChiller}
           gradient="from-[var(--sky-700)] via-[var(--blue-600)] to-[var(--blue-800)]"
         />

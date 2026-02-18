@@ -84,11 +84,11 @@ export function ProductsGrid({ categories }: ProductsGridProps) {
             Our Equipment
           </p>
           <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl text-[var(--navy-800)] mb-4">
-            Find Your Perfect Machine
+            Our Equipment
           </h2>
           <p className="text-[var(--gray-600)] text-lg">
-            Soft serve, shakes, grills, batch freezers—we&apos;ve got the equipment
-            to match your menu and your budget.
+            Soft serve, shakes, grills, batch freezers. Whatever you&apos;re serving,
+            we have a machine for it.
           </p>
         </div>
 
@@ -196,8 +196,8 @@ export function ProductsGrid({ categories }: ProductsGridProps) {
         {/* Machine Finder CTA */}
         <div className="mt-12 text-center">
           <p className="text-[var(--gray-600)] mb-4">
-            Not sure where to start? Our interactive finder asks a few quick questions
-            and recommends the perfect machine for your business.
+            Not sure which machine you need? Answer a few questions and we&apos;ll
+            point you in the right direction.
           </p>
           <a
             href="https://finder.taylorproducts.net/wizard"
@@ -205,7 +205,7 @@ export function ProductsGrid({ categories }: ProductsGridProps) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-[var(--blue-500)] font-semibold hover:text-[var(--blue-700)] transition-colors"
           >
-            Let&apos;s Find Your Machine
+            Start Here
             <ArrowRight className="w-4 h-4" />
           </a>
         </div>

@@ -61,7 +61,7 @@ export default async function GrillsPage() {
       <main id="main-content" className="pt-[120px]">
         <CategoryHero
           title="Two Sided Grills"
-          description="A Taylor two sided grill will offer your customers a complete cook-to-order menu concept. Taylor's two-sided cooking process assures food safety by programming the proper time and temperatures for up to 99 menu items. Cooking both sides simultaneously reduces cook time by up to two-thirds."
+          description="Taylor two-sided grills cook both sides simultaneously, cutting cook time by up to two-thirds. Program time and temperature for up to 99 menu items to ensure food safety and consistency on every ticket."
           backgroundImage={HEROES.grills}
           gradient="from-[var(--orange-800)] via-[var(--orange-700)] to-[var(--red-800)]"
         />

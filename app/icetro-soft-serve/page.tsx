@@ -61,7 +61,7 @@ export default async function IcetroPage() {
       <main id="main-content" className="pt-[120px]">
         <CategoryHero
           title="Icetro Soft Serve Machines"
-          description="Icetro offers budget-friendly soft serve solutions without compromising on quality. From compact countertop units to high-capacity floor models, find the perfect machine for your operation."
+          description="Icetro soft serve machines deliver solid performance at a lower price point than Taylor. We carry countertop and floor models for operations of all sizes."
           backgroundImage={HEROES.icetro}
         />
 

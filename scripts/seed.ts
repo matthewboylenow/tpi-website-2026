@@ -35,7 +35,7 @@ const CATEGORIES_DATA = [
     name: "Soft Serve & Frozen Yogurt",
     slug: "soft-serve-frozen-yogurt",
     description:
-      "20+ models for every volume—from food trucks to high-traffic boardwalk stands",
+      "20+ models. Food trucks to high-volume boardwalk stands.",
     heroImageUrl: hero("hero-soft-serve.png"),
     displayOrder: 1,
   },
@@ -43,7 +43,7 @@ const CATEGORIES_DATA = [
     name: "Icetro Soft Serve",
     slug: "icetro-soft-serve",
     description:
-      "Quality soft serve at a friendlier price point. Great for getting started.",
+      "Solid soft serve equipment at a lower price point. Good entry-level option.",
     heroImageUrl: hero("hero-icetro.png"),
     displayOrder: 2,
   },
@@ -51,7 +51,7 @@ const CATEGORIES_DATA = [
     name: "Two Sided Grills",
     slug: "two-sided-grills",
     description:
-      "Cook faster, serve more. The Crown Series is a game-changer for busy kitchens.",
+      "The Crown Series cooks both sides at once. Faster ticket times, more throughput.",
     heroImageUrl: hero("hero-grills.jpg"),
     displayOrder: 3,
   },
@@ -59,7 +59,7 @@ const CATEGORIES_DATA = [
     name: "Milkshakes",
     slug: "milkshakes",
     description:
-      "Thick, creamy shakes your customers will come back for.",
+      "Consistent, thick shakes every time. Built for high-volume operations.",
     heroImageUrl: hero("hero-milkshakes.jpg"),
     displayOrder: 4,
   },
@@ -67,7 +67,7 @@ const CATEGORIES_DATA = [
     name: "Ice Cream & Gelato Batch",
     slug: "ice-cream-gelato-batch",
     description:
-      "Artisan quality for shops that take their craft seriously.",
+      "For shops making their own ice cream and gelato in-house.",
     heroImageUrl: hero("hero-batch.png"),
     displayOrder: 5,
   },
@@ -75,7 +75,7 @@ const CATEGORIES_DATA = [
     name: "FlavorBurst Programs",
     slug: "flavorburst-programs",
     description:
-      "8+ flavors from one machine. More variety, same footprint.",
+      "8+ flavors from a single machine. Same counter space, way more options.",
     heroImageUrl: hero("hero-flavorburst.png"),
     displayOrder: 6,
   },
@@ -83,7 +83,7 @@ const CATEGORIES_DATA = [
     name: "Frozen Cocktails",
     slug: "frozen-cocktails",
     description:
-      "Turn your bar into a destination. Consistent pours, happy customers.",
+      "Frozen drinks that pour the same every time. Big margins, low labor.",
     heroImageUrl: hero("hero-cocktails.jpg"),
     displayOrder: 7,
   },
@@ -91,7 +91,7 @@ const CATEGORIES_DATA = [
     name: "Frozen Custard",
     slug: "frozen-custard",
     description:
-      "Rich, dense, and worth the trip. Give your customers something special.",
+      "Premium frozen custard equipment for shops that want to stand out.",
     heroImageUrl: hero("hero-custard.jpg"),
     displayOrder: 8,
   },
@@ -99,7 +99,7 @@ const CATEGORIES_DATA = [
     name: "Premium Slush",
     slug: "premium-slush",
     description:
-      "High-margin, low-labor. Kids love it, operators love the profits.",
+      "High margins, low labor. One of the easiest add-ons you can put in a store.",
     heroImageUrl: hero("hero-slush.jpg"),
     displayOrder: 9,
   },
@@ -107,7 +107,7 @@ const CATEGORIES_DATA = [
     name: "Cool Chiller / FCB",
     slug: "frozen-soda-cool-chiller",
     description:
-      "Frozen carbonated beverages that keep customers coming back.",
+      "Frozen carbonated beverages. Easy to run, customers can't get enough.",
     heroImageUrl: hero("hero-coolchiller.jpg"),
     displayOrder: 10,
   },
@@ -115,7 +115,7 @@ const CATEGORIES_DATA = [
     name: "Smoothies & Frozen Cappuccino",
     slug: "smoothies-frozen-cappuccino",
     description:
-      "Versatile machines for coffee shops and convenience stores.",
+      "Reliable machines for coffee shops and c-stores running blended drinks.",
     heroImageUrl: hero("hero-smoothies.jpg"),
     displayOrder: 11,
   },

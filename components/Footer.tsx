@@ -129,8 +129,7 @@ export async function Footer() {
             </div>
 
             <p className="text-[var(--gray-300)] mb-6 max-w-sm">
-              Family-owned since 1985. Serving NJ, PA, NY &amp; DE with equipment,
-              service, and the support to help your business grow.
+              Taylor equipment sales, service, and support across NJ, PA, NY &amp; DE since 1985.
             </p>
 
             {/* Contact Info */}

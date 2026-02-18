@@ -25,25 +25,25 @@ const partsFeatures = [
     icon: Shield,
     title: "Authentic OEM Parts",
     description:
-      "Every part is engineered and manufactured specifically for Taylor equipment. No generic substitutes.",
+      "Every part is made specifically for Taylor equipment. No generic substitutes.",
   },
   {
     icon: Truck,
     title: "Order Today, Get Tomorrow",
     description:
-      "Most in-stock parts ship same day. Because we know you can't wait around when equipment is down.",
+      "Most in-stock parts ship same day. You can't wait around when equipment is down.",
   },
   {
     icon: Clock,
     title: "24/7 Online Ordering",
     description:
-      "Our parts store is always open. Order what you need, when you need it—even at 2 AM.",
+      "The parts store is always open. Order anytime.",
   },
   {
     icon: Wrench,
     title: "Expert Support",
     description:
-      "Not sure which part you need? Our parts team can help you identify exactly what you're looking for.",
+      "Not sure which part you need? Our parts team can look it up for you.",
   },
 ];
 
@@ -51,22 +51,22 @@ const whyGenuine = [
   {
     title: "Built to Spec",
     description:
-      "Genuine parts meet exact factory specifications. They fit right, work right, and last.",
+      "Genuine parts meet exact factory specifications. They fit, they work, and they last.",
   },
   {
     title: "Protect Your Warranty",
     description:
-      "Using authentic parts keeps your equipment warranty intact. Generic parts can void coverage.",
+      "Authentic parts keep your warranty intact. Generic parts can void it.",
   },
   {
     title: "Longer Equipment Life",
     description:
-      "Quality parts mean less wear on your machine. It's an investment that pays off over time.",
+      "Quality parts mean less wear on your machine and a longer lifespan.",
   },
   {
     title: "Peace of Mind",
     description:
-      "When you use genuine Taylor parts, you know your equipment is running the way it was designed to.",
+      "Your equipment runs the way it was designed to. No guesswork.",
   },
 ];
 
@@ -97,16 +97,15 @@ export default function GenuinePartsPage() {
                 className="font-[family-name:var(--font-heading)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
                 style={{ color: "white" }}
               >
-                The Right Part, When You Need It
+                Genuine Taylor Parts
               </h1>
               <div className="w-20 h-1 bg-[var(--orange-500)] rounded-full mb-6" />
               <p
                 className="text-lg leading-relaxed max-w-2xl"
                 style={{ color: "rgba(255, 255, 255, 0.9)" }}
               >
-                Your Taylor equipment deserves authentic parts. Shop our online
-                store for fast shipping on OEM components, or give us a call and
-                we&apos;ll help you find exactly what you need.
+                OEM parts, fast shipping, and a parts team that can help you find
+                what you need. Shop online or call us.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <a
@@ -174,9 +173,8 @@ export default function GenuinePartsPage() {
                   Why Use Genuine Taylor Parts?
                 </h2>
                 <p className="text-[var(--gray-600)] text-lg mb-8">
-                  We get it—generic parts can be tempting. But when it comes to
-                  your equipment, cutting corners usually costs more in the long
-                  run. Here&apos;s why genuine matters:
+                  Generic parts might cost less up front, but they usually cost
+                  more over time. Here&apos;s why we only sell genuine.
                 </p>
                 <div className="space-y-6">
                   {whyGenuine.map((item) => (
@@ -242,8 +240,7 @@ export default function GenuinePartsPage() {
                   </h2>
                   <p className="text-blue-100 mb-6">
                     Our factory-certified technicians can install parts for you.
-                    They have the training, the tools, and the know-how to get
-                    the job done right.
+                    Right tools, right training, done right.
                   </p>
                   <ul className="space-y-2 text-white mb-6">
                     <li className="flex items-center gap-2">
@@ -293,9 +290,8 @@ export default function GenuinePartsPage() {
                 Not Sure Which Part You Need?
               </h2>
               <p className="text-[var(--gray-600)] text-lg mb-8">
-                No problem. Give our parts team a call and they&apos;ll help you
-                identify exactly what you&apos;re looking for. Have your model
-                number ready and we&apos;ll take it from there.
+                Give our parts team a call. Have your model number handy and
+                we&apos;ll take it from there.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
                 <a href="tel:610-268-0500">

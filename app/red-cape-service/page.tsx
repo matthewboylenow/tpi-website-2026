@@ -24,35 +24,35 @@ const serviceFeatures = [
     icon: Clock,
     title: "24/7 Emergency Service",
     description:
-      "When your freezer goes down on a Saturday night, we answer. Our dispatch team is available around the clock for emergencies.",
+      "Freezer goes down on a Saturday? We pick up. Our dispatch team is available around the clock.",
   },
   {
     icon: Wrench,
     title: "Factory-Trained Technicians",
     description:
-      "Our techs aren't just certified—they're factory-trained by Taylor. They know these machines inside and out.",
+      "Our technicians are factory-trained by Taylor. They know these machines inside and out.",
   },
   {
     icon: Zap,
     title: "Fast Response Times",
     description:
-      "We know every hour of downtime costs you money. That's why we prioritize getting you back up and running fast.",
+      "Every hour your machine is down costs you money. We get there fast.",
   },
   {
     icon: Shield,
     title: "Genuine Parts Only",
     description:
-      "We only use authentic Taylor parts. No knockoffs, no shortcuts. Your equipment deserves the real thing.",
+      "We only use genuine Taylor parts. No knockoffs, no shortcuts.",
   },
 ];
 
 const commitments = [
-  "Same-day service for critical equipment failures",
-  "Preventive maintenance programs to avoid surprises",
-  "Direct access to factory technical support",
-  "Ongoing training and business-building advice",
-  "Service that follows you if you relocate",
-  "Real people who answer the phone",
+  "Same-day service for critical breakdowns",
+  "Preventive maintenance programs",
+  "Direct factory technical support",
+  "Staff training and menu planning",
+  "Coverage if you relocate",
+  "Real people on the phone",
 ];
 
 const stats = [
@@ -88,16 +88,16 @@ export default function RedCapeServicePage() {
                 className="font-[family-name:var(--font-heading)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
                 style={{ color: "white" }}
               >
-                Taylor Red Cape Service: A Winning Combination
+                Red Cape Service
               </h1>
               <div className="w-20 h-1 bg-[var(--orange-500)] rounded-full mb-6" />
               <p
                 className="text-lg leading-relaxed max-w-2xl"
                 style={{ color: "rgba(255, 255, 255, 0.9)" }}
               >
-                When you partner with Taylor Products, you can rest assured knowing
-                that you will receive the finest equipment, plus best-in-class
-                customer service, staff training, and support.
+                Factory-trained technicians, 24/7 emergency support, and a parts
+                department that keeps your equipment running. That&apos;s what Red
+                Cape means.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <a href="tel:610-268-0500">
@@ -144,11 +144,10 @@ export default function RedCapeServicePage() {
                 className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl mb-4"
                 style={{ color: "var(--navy-800)" }}
               >
-                What Red Cape Service Actually Means
+                What You Get
               </h2>
               <p className="text-[var(--gray-600)] text-lg">
-                It&apos;s not just a slogan. It&apos;s how we&apos;ve done
-                business for 40 years.
+                Red Cape isn&apos;t a slogan. It&apos;s how we operate.
               </p>
             </div>
 
@@ -192,11 +191,10 @@ export default function RedCapeServicePage() {
                   The Red Cape Commitment
                 </h2>
                 <p className="text-[var(--gray-600)] text-lg mb-8">
-                  Our Red Cape® Commitment ensures that you will be provided with
-                  superior equipment and heroic support that will send your profits
-                  soaring. No matter where your company relocates, the greater Taylor
-                  network of more than 6,500 factory-trained service personnel will
-                  make sure you receive first-rate service.
+                  The Red Cape® Commitment means superior equipment backed by real
+                  support. If your business relocates, the Taylor network of more
+                  than 6,500 factory-trained service technicians means you&apos;ll have
+                  coverage wherever you go.
                 </p>
                 <ul className="space-y-4">
                   {commitments.map((item) => (
@@ -217,14 +215,13 @@ export default function RedCapeServicePage() {
                       Need Service Now?
                     </h3>
                     <p className="text-[var(--gray-500)]">
-                      We&apos;re here to help
+                      We&apos;re ready
                     </p>
                   </div>
                 </div>
                 <p className="text-[var(--gray-600)] mb-6">
-                  Whether it&apos;s an emergency repair or routine maintenance,
-                  our team is ready. Call us directly or fill out the form below
-                  and we&apos;ll get back to you fast.
+                  Emergency or routine, we&apos;re ready. Call us or fill out
+                  the form and we&apos;ll get back to you.
                 </p>
                 <a href="tel:610-268-0500">
                   <Button variant="primary" size="lg" className="w-full">
@@ -253,8 +250,7 @@ export default function RedCapeServicePage() {
                     Our Service Area
                   </h2>
                   <p className="text-blue-100 mb-6">
-                    We proudly serve businesses throughout our territory with
-                    fast, reliable service.
+                    We cover the following states with full sales and service.
                   </p>
                   <ul className="grid grid-cols-2 gap-2 text-white">
                     <li className="flex items-center gap-2">

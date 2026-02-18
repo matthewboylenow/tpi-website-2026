@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
 /* ========================================
    Taylor Products Design System
@@ -407,4 +408,32 @@ article a:not([class]):hover {
   .machine-specs {
     page-break-inside: avoid;
   }
+}
+
+/* ========================================
+   HubSpot Form Overrides
+   ======================================== */
+.hs-form label,
+.hs-form .hs-form-field > label {
+  color: var(--gray-800) !important;
+  font-weight: 500;
+}
+
+.hs-form .hs-input,
+.hs-form select,
+.hs-form textarea {
+  color: var(--gray-800) !important;
+}
+
+.hs-form .hs-input::placeholder {
+  color: var(--gray-500) !important;
+}
+
+.hs-form .hs-field-desc,
+.hs-form .hs-error-msg {
+  color: var(--gray-600) !important;
+}
+
+.hs-form select option {
+  color: var(--gray-800) !important;
 }

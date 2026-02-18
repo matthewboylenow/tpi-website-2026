@@ -14,26 +14,26 @@ const db = drizzle(sql);
 // New category descriptions (slug -> description)
 const categoryDescriptions: Record<string, string> = {
   "soft-serve-frozen-yogurt":
-    "20+ models for every volume—from food trucks to high-traffic boardwalk stands",
+    "20+ models. Food trucks to high-volume boardwalk stands.",
   "icetro-soft-serve":
-    "Quality soft serve at a friendlier price point. Great for getting started.",
+    "Solid soft serve equipment at a lower price point. Good entry-level option.",
   "two-sided-grills":
-    "Cook faster, serve more. The Crown Series is a game-changer for busy kitchens.",
-  milkshakes: "Thick, creamy shakes your customers will come back for.",
+    "The Crown Series cooks both sides at once. Faster ticket times, more throughput.",
+  milkshakes: "Consistent, thick shakes every time. Built for high-volume operations.",
   "ice-cream-gelato-batch":
-    "Artisan quality for shops that take their craft seriously.",
+    "For shops making their own ice cream and gelato in-house.",
   "flavorburst-programs":
-    "8+ flavors from one machine. More variety, same footprint.",
+    "8+ flavors from a single machine. Same counter space, way more options.",
   "frozen-cocktails":
-    "Turn your bar into a destination. Consistent pours, happy customers.",
+    "Frozen drinks that pour the same every time. Big margins, low labor.",
   "frozen-custard":
-    "Rich, dense, and worth the trip. Give your customers something special.",
+    "Premium frozen custard equipment for shops that want to stand out.",
   "premium-slush":
-    "High-margin, low-labor. Kids love it, operators love the profits.",
+    "High margins, low labor. One of the easiest add-ons you can put in a store.",
   "frozen-soda-cool-chiller":
-    "Frozen carbonated beverages that keep customers coming back.",
+    "Frozen carbonated beverages. Easy to run, customers can't get enough.",
   "smoothies-frozen-cappuccino":
-    "Versatile machines for coffee shops and convenience stores.",
+    "Reliable machines for coffee shops and c-stores running blended drinks.",
 };
 
 // New testimonials data

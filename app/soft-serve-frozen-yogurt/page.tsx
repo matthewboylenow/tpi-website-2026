@@ -67,7 +67,7 @@ export default async function SoftServePage() {
       <main id="main-content" className="pt-[120px]">
         <CategoryHero
           title="Soft Serve & Frozen Yogurt"
-          description="Partner with Taylor Products for your soft serve and frozen yogurt needs. Not only do we have the most advanced technology in the industry, but our freezers feature the fastest recovery time, fewest parts for cleanup, and lowest maintenance costs. With over 20 different freezers, we have the perfect model for you and your business."
+          description="Taylor soft serve and frozen yogurt freezers offer the fastest recovery time, fewest parts for cleanup, and lowest maintenance costs in the industry. We carry over 20 models, from compact countertop units to high-capacity floor machines."
           backgroundImage={HEROES.softServe}
         />
 
@@ -77,11 +77,10 @@ export default async function SoftServePage() {
         <section className="py-16 bg-[var(--gray-50)]">
           <div className="container text-center">
             <h2 className="font-[family-name:var(--font-heading)] font-bold text-2xl text-[var(--navy-800)] mb-4">
-              Not Sure Which Machine Is Right For You?
+              Not Sure Which Machine You Need?
             </h2>
             <p className="text-[var(--gray-600)] mb-6 max-w-2xl mx-auto">
-              Answer a few questions about your business and we&apos;ll recommend
-              the perfect soft serve machine for your needs.
+              Answer a few questions and we&apos;ll point you to the right model.
             </p>
             <a
               href="https://finder.taylorproducts.net/wizard"

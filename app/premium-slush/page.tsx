@@ -61,7 +61,7 @@ export default async function PremiumSlushPage() {
       <main id="main-content" className="pt-[120px]">
         <CategoryHero
           title="Premium Slush Programs"
-          description="Premium slush programs deliver high margins and customer excitement. Our commercial slush machines produce consistent frozen beverages with excellent texture and flavor."
+          description="Premium slush is one of the highest-margin, lowest-labor programs you can add to your store. Consistent product, minimal training, and customers love it."
           backgroundImage={HEROES.slush}
           gradient="from-[var(--blue-600)] via-[var(--cyan-500)] to-[var(--cyan-700)]"
         />

@@ -61,7 +61,7 @@ export default async function FlavorBurstPage() {
       <main id="main-content" className="pt-[120px]">
         <CategoryHero
           title="FlavorBurst"
-          description="FlavorBurst and FlavorBlend helps you stand out among your competitors when combined with a Taylor soft serve or frozen beverage freezer. With over 8 different flavors available, giving you a total of 40 different combinable flavor options to provide your customers with custom choices that encourage repeat business."
+          description="FlavorBurst and FlavorBlend add 8+ flavors to any Taylor soft serve or frozen beverage freezer. One vanilla base, over 40 flavor combinations. It's one of the fastest ways to add variety without adding equipment."
           backgroundImage={HEROES.flavorburst}
           gradient="from-[var(--green-800)] via-[var(--teal-700)] to-[var(--teal-900)]"
         />
@@ -76,9 +76,9 @@ export default async function FlavorBurstPage() {
                 How FlavorBurst Works
               </h2>
               <p className="text-[var(--gray-600)] mb-6">
-                FlavorBurst systems inject concentrated flavor into your vanilla soft serve
-                or shake base as it&apos;s dispensed. With up to 8 flavors per unit, you can
-                offer chocolate, strawberry, caramel, and more - all from a single machine.
+                FlavorBurst injects concentrated flavor into your vanilla base as it
+                dispenses. Up to 8 flavors per unit, all from one machine. Chocolate,
+                strawberry, caramel, and more.
               </p>
               <div className="grid md:grid-cols-3 gap-6 mt-8">
                 <div className="bg-white p-6 rounded-xl shadow-sm">

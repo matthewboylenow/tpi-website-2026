@@ -16,11 +16,11 @@ export function ContactSection() {
               Get In Touch
             </p>
             <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl text-[var(--navy-800)] mb-6">
-              Let&apos;s Talk About Your Business
+              Get In Touch
             </h2>
             <p className="text-[var(--gray-600)] text-lg mb-8 leading-relaxed">
               Whether you&apos;re buying your first machine or adding to your lineup,
-              we&apos;d love to hear what you&apos;re working on. No pressure—just a conversation.
+              give us a call or send us a note. We&apos;re happy to talk through what you need.
             </p>
 
             {/* Contact Info Cards */}
@@ -97,10 +97,10 @@ export function ContactSection() {
             {/* Meet Your Salesperson CTA */}
             <div className="mt-8 p-6 bg-white rounded-xl shadow-sm border border-[var(--gray-200)]">
               <h3 className="font-[family-name:var(--font-heading)] font-semibold text-[var(--navy-800)] mb-2">
-                Prefer to schedule a meeting?
+                Want to set up a time to talk?
               </h3>
               <p className="text-[var(--gray-600)] text-sm mb-4">
-                Book a time directly with your territory salesperson.
+                Schedule a call with your territory salesperson.
               </p>
               <Link href="/meet-your-salesperson">
                 <Button variant="secondary" className="w-full sm:w-auto">

@@ -29,13 +29,13 @@ const slides: HeroSlide[] = [
   {
     title: "The Machines Behind Your Favorite Frozen Treats",
     description:
-      "Taylor equipment powers ice cream shops, restaurants, and convenience stores across New York City, New Jersey, Pennsylvania and Delaware.",
+      "We sell, install, and service Taylor equipment for ice cream shops, restaurants, and convenience stores across New York, New Jersey, Pennsylvania, and Delaware.",
     cta: {
-      text: "Explore Machines",
+      text: "Browse Equipment",
       href: "/soft-serve-frozen-yogurt",
     },
     secondaryCta: {
-      text: "Find Your Perfect Fit",
+      text: "Help Me Choose",
       href: "https://finder.taylorproducts.net/wizard",
       external: true,
     },

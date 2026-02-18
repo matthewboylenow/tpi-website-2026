@@ -61,7 +61,7 @@ export default async function FrozenCocktailsPage() {
       <main id="main-content" className="pt-[120px]">
         <CategoryHero
           title="Frozen Cocktail Machines"
-          description="Serve perfect frozen cocktails, margaritas, and frozen beverages every time. Our commercial frozen drink machines are built for high-volume bar and restaurant operations."
+          description="Commercial frozen cocktail and margarita machines built for bars and restaurants running high volume. Consistent pours, low labor, strong margins."
           backgroundImage={HEROES.cocktails}
           gradient="from-[var(--amber-800)] via-[var(--orange-700)] to-[var(--orange-900)]"
         />

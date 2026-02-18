@@ -61,7 +61,7 @@ export default async function MilkshakesPage() {
       <main id="main-content" className="pt-[120px]">
         <CategoryHero
           title="Milkshake Machines"
-          description="From classic single-flavor shake freezers to multi-flavor configurations, Taylor milkshake machines deliver consistent, high-quality shakes every time."
+          description="Taylor shake freezers deliver consistent shakes at volume. We carry single-flavor, two-flavor, and four-flavor configurations."
           backgroundImage={HEROES.milkshakes}
           gradient="from-[var(--pink-800)] via-[var(--purple-700)] to-[var(--purple-900)]"
         />

@@ -58,7 +58,7 @@ export function Testimonials({ testimonials }: TestimonialsProps) {
             className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl mb-4"
             style={{ color: 'white' }}
           >
-            What Our Customers Say
+            Don&apos;t Take Our Word For It
           </h2>
         </div>
 

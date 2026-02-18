@@ -61,7 +61,7 @@ export default async function BatchPage() {
       <main id="main-content" className="pt-[120px]">
         <CategoryHero
           title="Ice Cream & Gelato Batch Freezers"
-          description="From artisan small-batch production to high-volume commercial operations, we offer Taylor, Emery Thompson, and Frigomat batch freezers plus ISA gelato display cases."
+          description="Batch freezers from Taylor, Emery Thompson, and Frigomat, plus ISA gelato display cases. Countertop to floor models for small-batch and high-volume production."
           backgroundImage={HEROES.batch}
           gradient="from-[var(--indigo-800)] via-[var(--purple-700)] to-[var(--purple-900)]"
         />

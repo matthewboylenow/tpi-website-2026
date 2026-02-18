@@ -61,7 +61,7 @@ export default async function SmoothiesPage() {
       <main id="main-content" className="pt-[120px]">
         <CategoryHero
           title="Smoothies & Frozen Cappuccino"
-          description="Versatile frozen beverage machines perfect for smoothies, frozen cappuccinos, and blended coffee drinks. Ideal for coffee shops, convenience stores, and foodservice operations."
+          description="Frozen beverage machines for smoothies, frozen cappuccinos, and blended coffee drinks. Built for coffee shops, c-stores, and foodservice operations."
           backgroundImage={HEROES.smoothies}
           gradient="from-[var(--emerald-700)] via-[var(--green-600)] to-[var(--green-800)]"
         />

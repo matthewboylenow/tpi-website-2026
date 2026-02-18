@@ -44,12 +44,13 @@ export default function AboutPage() {
                 className="font-[family-name:var(--font-heading)] font-extrabold text-3xl sm:text-4xl lg:text-5xl leading-tight mb-6"
                 style={{ color: 'white' }}
               >
-                Why Taylor Products?
+                About Taylor Products
               </h1>
               <div className="w-20 h-1 bg-[var(--orange-500)] rounded-full mb-6" />
               <p className="text-lg text-gray-300 leading-relaxed">
-                We&apos;re more than an industry-leading distributor of Taylor and FlavorBurst equipment.
-                We&apos;re a family-owned company that partners with small businesses to help them succeed.
+                We&apos;re an authorized Taylor Company distributor covering New Jersey,
+                Pennsylvania, New York, and Delaware. We sell the equipment, service the
+                equipment, and help you build a program around it that makes money.
               </p>
             </div>
           </div>
@@ -60,37 +61,25 @@ export default function AboutPage() {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl text-[var(--navy-800)] mb-8">
-                More Than Equipment—A Partnership
+                What We Do
               </h2>
               <div className="prose prose-lg max-w-none text-[var(--gray-700)] space-y-6">
-              <p>
-                  Not only are we trusted by some of the biggest brands in the food
-                  industry, but we also are strong supporters of local businesses.
-                  Over the years, our mission has grown into a comprehensive
-                  partnership that goes far beyond selling equipment.
+                <p>
+                  We sell Taylor soft serve, frozen beverage, and grilling equipment
+                  to operators of all sizes, from single-location ice cream shops to
+                  national QSR chains. We also carry FlavorBurst, Icetro, Emery
+                  Thompson, Frigomat, and ISA products.
                 </p>
                 <p>
-                  As an authorized Taylor Company distributor, we provide access
-                  to the industry&apos;s leading soft serve, frozen beverage, and
-                  grilling equipment. But what truly sets us apart is our
-                  commitment to service. Our factory-trained technicians,
-                  experienced sales team, and dedicated parts department work
-                  together to ensure your equipment performs at its best—day
-                  after day, year after year.
+                  Our factory-trained technicians, sales team, and parts department
+                  all work out of our two locations in Exton, PA and Edison, NJ.
+                  When your equipment goes down, we have 24/7 emergency support and
+                  one of the fastest response times in the region through our Red
+                  Cape Service program.
                 </p>
                 <p>
-                  We understand that when your equipment goes down, so does your
-                  business. That&apos;s why we&apos;ve built one of the most responsive
-                  service networks in the region, with emergency support
-                  available 24/7. Our Red Cape Service program delivers
-                  industry-leading response times because we know every hour of
-                  downtime costs you money.
-                </p>
-                <p>
-                  Today, Taylor Products proudly serves thousands of operators
-                  across New Jersey, Pennsylvania, New York, and Delaware. From
-                  small ice cream shops to national QSR chains, we bring the
-                  same dedication to every customer relationship.
+                  We currently serve thousands of operators across New Jersey,
+                  Pennsylvania, New York, and Delaware.
                 </p>
               </div>
             </div>
@@ -102,12 +91,8 @@ export default function AboutPage() {
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl text-[var(--navy-800)] mb-4">
-                What We Stand For
+                How We Work
               </h2>
-              <p className="text-[var(--gray-600)]">
-                These principles guide everything we do, from our first
-                conversation to ongoing support.
-              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -116,11 +101,12 @@ export default function AboutPage() {
                   <TrendingUp className="w-8 h-8" />
                 </div>
                 <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-3">
-                  Profit Solutions
+                  We Help You Make Money
                 </h3>
                 <p className="text-[var(--gray-600)]">
-                  We partner with you on a personal basis to help you realize the full
-                  potential of your Taylor or FlavorBurst equipment and drive your business goals.
+                  We don&apos;t just drop off a machine. We help you plan your menu,
+                  train your staff, and figure out pricing that actually works for
+                  your operation.
                 </p>
               </div>
 
@@ -132,9 +118,8 @@ export default function AboutPage() {
                   Red Cape Service
                 </h3>
                 <p className="text-[var(--gray-600)]">
-                  Our Red Cape customer service continually reinforces our commitment to your success.
-                  Our service teams&apos; fully-equipped vans keep you assured that your equipment will be
-                  serviced quickly and properly.
+                  Fully-equipped service vans, factory-trained technicians, and a
+                  team that picks up the phone when your equipment is down.
                 </p>
               </div>
 
@@ -143,11 +128,10 @@ export default function AboutPage() {
                   <Award className="w-8 h-8" />
                 </div>
                 <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-3">
-                  Industry Leading Quality
+                  Factory Equipment and Parts Only
                 </h3>
                 <p className="text-[var(--gray-600)]">
-                  We only use the highest quality machines and parts, assuring you that your
-                  highest demands will be met.
+                  We sell Taylor machines and genuine Taylor parts. No off-brand substitutes.
                 </p>
               </div>
             </div>
@@ -159,11 +143,10 @@ export default function AboutPage() {
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl text-[var(--navy-800)] mb-4">
-                Visit Our Showrooms
+                Showrooms
               </h2>
               <p className="text-[var(--gray-600)]">
-                See Taylor equipment in action and talk with our team at one of
-                our two convenient locations.
+                Come see the equipment in person. We have two locations.
               </p>
             </div>
 
@@ -282,11 +265,11 @@ export default function AboutPage() {
               className="font-[family-name:var(--font-heading)] font-bold text-2xl md:text-3xl mb-4"
               style={{ color: 'white' }}
             >
-              Ready to Start a Conversation?
+              Talk to Us
             </h2>
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
-              Whether you&apos;re looking for new equipment, exploring program
-              options, or need service on existing machines, we&apos;re here to help.
+              Looking for equipment, need service, or want to see what a program
+              could look like for your operation? Give us a call.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/meet-your-salesperson">
