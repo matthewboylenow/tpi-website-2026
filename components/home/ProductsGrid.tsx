@@ -2,7 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { CATEGORY_CARDS, HEROES } from "@/lib/assets";
 import { type Category } from "@/lib/schema";
 
 // Visual config for categories - maps slug to display properties
@@ -11,48 +10,48 @@ const categoryConfig: Record<
   { image?: string; gradient: string; featured?: boolean }
 > = {
   "soft-serve-frozen-yogurt": {
-    image: CATEGORY_CARDS.softServe,
+    image: "/homepage-img/soft-serve.jpg",
     gradient: "from-blue-500 to-blue-600",
     featured: true,
   },
   "icetro-soft-serve": {
-    image: HEROES.icetro,
+    image: "/homepage-img/icetro.jpg",
     gradient: "from-cyan-500 to-blue-500",
   },
   "two-sided-grills": {
-    image: CATEGORY_CARDS.grills,
+    image: "/homepage-img/grills.jpg",
     gradient: "from-orange-500 to-red-500",
   },
   milkshakes: {
-    image: CATEGORY_CARDS.milkshakes,
+    image: "/homepage-img/milkshakes.jpg",
     gradient: "from-pink-500 to-purple-500",
   },
   "ice-cream-gelato-batch": {
-    image: CATEGORY_CARDS.batch,
+    image: "/homepage-img/gelato.jpg",
     gradient: "from-indigo-500 to-purple-500",
   },
   "flavorburst-programs": {
-    image: CATEGORY_CARDS.flavorburst,
+    image: "/homepage-img/flavorburst.jpg",
     gradient: "from-green-500 to-teal-500",
   },
   "frozen-cocktails": {
-    image: CATEGORY_CARDS.cocktails,
+    image: "/homepage-img/frozen-cocktails.jpg",
     gradient: "from-amber-500 to-orange-500",
   },
   "frozen-custard": {
-    image: CATEGORY_CARDS.custard,
+    image: "/homepage-img/frozen-custard.jpg",
     gradient: "from-yellow-500 to-amber-500",
   },
   "premium-slush": {
-    image: CATEGORY_CARDS.slush,
+    image: "/homepage-img/slush.png",
     gradient: "from-blue-400 to-cyan-400",
   },
   "frozen-soda-cool-chiller": {
-    image: CATEGORY_CARDS.coolChiller,
+    image: "/homepage-img/cool-chiller.png",
     gradient: "from-sky-500 to-blue-500",
   },
   "smoothies-frozen-cappuccino": {
-    image: CATEGORY_CARDS.smoothies,
+    image: "/homepage-img/java-latte.jpg",
     gradient: "from-emerald-500 to-green-500",
   },
 };
