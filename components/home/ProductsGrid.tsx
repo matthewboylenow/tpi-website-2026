@@ -4,56 +4,25 @@ import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { type Category } from "@/lib/schema";
 
-// Visual config for categories - maps slug to display properties
-const categoryConfig: Record<
-  string,
-  { image?: string; gradient: string; featured?: boolean }
-> = {
-  "soft-serve-frozen-yogurt": {
-    image: "/homepage-img/soft-serve.jpg",
-    gradient: "from-blue-500 to-blue-600",
-    featured: true,
-  },
-  "icetro-soft-serve": {
-    image: "/homepage-img/icetro.jpg",
-    gradient: "from-cyan-500 to-blue-500",
-  },
-  "two-sided-grills": {
-    image: "/homepage-img/grills.jpg",
-    gradient: "from-orange-500 to-red-500",
-  },
-  milkshakes: {
-    image: "/homepage-img/milkshakes.jpg",
-    gradient: "from-pink-500 to-purple-500",
-  },
-  "ice-cream-gelato-batch": {
-    image: "/homepage-img/gelato.jpg",
-    gradient: "from-indigo-500 to-purple-500",
-  },
-  "flavorburst-programs": {
-    image: "/homepage-img/flavorburst.jpg",
-    gradient: "from-green-500 to-teal-500",
-  },
-  "frozen-cocktails": {
-    image: "/homepage-img/frozen-cocktails.jpg",
-    gradient: "from-amber-500 to-orange-500",
-  },
-  "frozen-custard": {
-    image: "/homepage-img/frozen-custard.jpg",
-    gradient: "from-yellow-500 to-amber-500",
-  },
-  "premium-slush": {
-    image: "/homepage-img/slush.png",
-    gradient: "from-blue-400 to-cyan-400",
-  },
-  "frozen-soda-cool-chiller": {
-    image: "/homepage-img/cool-chiller.png",
-    gradient: "from-sky-500 to-blue-500",
-  },
-  "smoothies-frozen-cappuccino": {
-    image: "/homepage-img/java-latte.jpg",
-    gradient: "from-emerald-500 to-green-500",
-  },
+// Bento grid config — order matters, size controls the layout
+const gridItems: { slug: string; image: string; size: "large" | "wide" | "standard" }[] = [
+  { slug: "soft-serve-frozen-yogurt", image: "/homepage-img/soft-serve.jpg", size: "large" },
+  { slug: "two-sided-grills", image: "/homepage-img/grills.jpg", size: "wide" },
+  { slug: "frozen-cocktails", image: "/homepage-img/frozen-cocktails.jpg", size: "wide" },
+  { slug: "icetro-soft-serve", image: "/homepage-img/icetro.jpg", size: "standard" },
+  { slug: "milkshakes", image: "/homepage-img/milkshakes.jpg", size: "standard" },
+  { slug: "ice-cream-gelato-batch", image: "/homepage-img/gelato.jpg", size: "standard" },
+  { slug: "flavorburst-programs", image: "/homepage-img/flavorburst.jpg", size: "standard" },
+  { slug: "frozen-soda-cool-chiller", image: "/homepage-img/cool-chiller.png", size: "standard" },
+  { slug: "frozen-custard", image: "/homepage-img/frozen-custard.jpg", size: "standard" },
+  { slug: "premium-slush", image: "/homepage-img/slush.png", size: "standard" },
+  { slug: "smoothies-frozen-cappuccino", image: "/homepage-img/java-latte.jpg", size: "standard" },
+];
+
+const sizeClasses = {
+  large: "md:col-span-2 lg:col-span-2 lg:row-span-2",
+  wide: "md:col-span-2 lg:col-span-2",
+  standard: "",
 };
 
 interface ProductsGridProps {
@@ -61,18 +30,14 @@ interface ProductsGridProps {
 }
 
 export function ProductsGrid({ categories }: ProductsGridProps) {
-  // Merge database categories with visual config
-  const productCategories = categories.map((cat) => ({
-    name: cat.name,
-    href: `/${cat.slug}`,
-    description: cat.description || "",
-    image: categoryConfig[cat.slug]?.image,
-    gradient: categoryConfig[cat.slug]?.gradient || "from-gray-500 to-gray-600",
-    featured: categoryConfig[cat.slug]?.featured || false,
-  }));
-
-  const featuredCategory = productCategories.find((c) => c.featured);
-  const otherCategories = productCategories.filter((c) => !c.featured);
+  // Build display list: only show items that exist in the database
+  const items = gridItems
+    .map((item) => {
+      const cat = categories.find((c) => c.slug === item.slug);
+      if (!cat) return null;
+      return { ...item, name: cat.name, href: `/${cat.slug}` };
+    })
+    .filter(Boolean);
 
   return (
     <section className="section">
@@ -91,103 +56,36 @@ export function ProductsGrid({ categories }: ProductsGridProps) {
           </p>
         </div>
 
-        {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {/* Featured Category - Larger Card */}
-          {featuredCategory && (
+        {/* Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 lg:auto-rows-[210px]">
+          {items.map((item) => (
             <Link
-              href={featuredCategory.href}
-              className="md:col-span-2 lg:col-span-2 xl:col-span-2 group"
+              key={item!.slug}
+              href={item!.href}
+              className={cn(
+                "group relative block overflow-hidden rounded-xl bg-[var(--navy-800)] min-h-[200px]",
+                sizeClasses[item!.size]
+              )}
             >
-              <div
-                className={cn(
-                  "relative h-full min-h-[280px] rounded-xl overflow-hidden",
-                  "bg-gradient-to-br",
-                  featuredCategory.gradient,
-                  "transition-all duration-300",
-                  "hover:shadow-xl hover:-translate-y-1"
-                )}
-              >
-                {/* Background Image */}
-                {featuredCategory.image && (
-                  <Image
-                    src={featuredCategory.image}
-                    alt={featuredCategory.name}
-                    fill
-                    className="object-cover opacity-30 group-hover:opacity-40 transition-opacity"
-                  />
-                )}
+              <Image
+                src={item!.image}
+                alt={item!.name}
+                fill
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes={
+                  item!.size === "standard"
+                    ? "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    : "(max-width: 768px) 100vw, 50vw"
+                }
+              />
 
-                {/* Gradient overlay */}
-                <div
-                  className={cn(
-                    "absolute inset-0 bg-gradient-to-t",
-                    "from-black/70 via-black/30 to-transparent"
-                  )}
-                />
+              {/* Subtle bottom gradient for text readability */}
+              <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/60 to-transparent pointer-events-none" />
 
-                <div className="relative z-10 h-full p-8 flex flex-col justify-end">
-                  <p className="text-white/80 text-sm font-medium mb-2">
-                    Most Popular
-                  </p>
-                  <h3
-                    className="font-[family-name:var(--font-heading)] font-bold text-2xl mb-2"
-                    style={{ color: 'white' }}
-                  >
-                    {featuredCategory.name}
-                  </h3>
-                  <p className="text-white/80 mb-4">
-                    {featuredCategory.description}
-                  </p>
-                  <span className="inline-flex items-center gap-2 text-white font-semibold group-hover:gap-3 transition-all">
-                    Browse Machines
-                    <ArrowRight className="w-4 h-4" />
-                  </span>
-                </div>
-              </div>
-            </Link>
-          )}
-
-          {/* Other Categories */}
-          {otherCategories.map((category) => (
-            <Link key={category.href} href={category.href} className="group">
-              <div
-                className={cn(
-                  "relative h-full min-h-[180px] rounded-xl overflow-hidden",
-                  "bg-gradient-to-br",
-                  category.gradient,
-                  "transition-all duration-300",
-                  "hover:shadow-lg hover:-translate-y-1"
-                )}
-              >
-                {/* Background Image */}
-                {category.image && (
-                  <Image
-                    src={category.image}
-                    alt={category.name}
-                    fill
-                    className="object-cover opacity-25 group-hover:opacity-35 transition-opacity"
-                  />
-                )}
-
-                {/* Gradient overlay */}
-                <div
-                  className={cn(
-                    "absolute inset-0 bg-gradient-to-t",
-                    "from-black/60 via-black/20 to-transparent"
-                  )}
-                />
-
-                <div className="relative z-10 h-full p-6 flex flex-col justify-end">
-                  <h3
-                    className="font-[family-name:var(--font-heading)] font-semibold text-lg mb-1"
-                    style={{ color: 'white' }}
-                  >
-                    {category.name}
-                  </h3>
-                  <p className="text-white/80 text-sm">{category.description}</p>
-                </div>
-              </div>
+              {/* Category name */}
+              <h3 className="absolute bottom-0 left-0 p-4 font-[family-name:var(--font-heading)] font-bold text-lg drop-shadow-lg" style={{ color: "white" }}>
+                {item!.name}
+              </h3>
             </Link>
           ))}
         </div>

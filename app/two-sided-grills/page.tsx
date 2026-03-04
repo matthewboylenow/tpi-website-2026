@@ -6,7 +6,7 @@ import { CategoryHero, MachineGrid } from "@/components/category";
 import { ContactSection } from "@/components/home/ContactSection";
 import { BreadcrumbSchema, WebPageSchema } from "@/components/Schema";
 import { getCategoryWithMachines } from "@/lib/data";
-import { HEROES } from "@/lib/assets";
+import { CATEGORY_IMAGES } from "@/lib/category-images";
 
 export const metadata: Metadata = {
   title: "Two Sided Grills | Taylor Commercial Grills",
@@ -62,7 +62,7 @@ export default async function GrillsPage() {
         <CategoryHero
           title="Two Sided Grills"
           description="Taylor two-sided grills cook both sides simultaneously, cutting cook time by up to two-thirds. Program time and temperature for up to 99 menu items to ensure food safety and consistency on every ticket."
-          backgroundImage={HEROES.grills}
+          backgroundImage={CATEGORY_IMAGES["two-sided-grills"]}
           gradient="from-[var(--orange-800)] via-[var(--orange-700)] to-[var(--red-800)]"
         />
 

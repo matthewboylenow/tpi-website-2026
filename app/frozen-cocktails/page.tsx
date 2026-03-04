@@ -6,7 +6,7 @@ import { CategoryHero, MachineGrid } from "@/components/category";
 import { ContactSection } from "@/components/home/ContactSection";
 import { BreadcrumbSchema, WebPageSchema } from "@/components/Schema";
 import { getCategoryWithMachines } from "@/lib/data";
-import { HEROES } from "@/lib/assets";
+import { CATEGORY_IMAGES } from "@/lib/category-images";
 
 export const metadata: Metadata = {
   title: "Frozen Cocktail Machines | Commercial Frozen Beverage",
@@ -62,7 +62,7 @@ export default async function FrozenCocktailsPage() {
         <CategoryHero
           title="Frozen Cocktail Machines"
           description="Commercial frozen cocktail and margarita machines built for bars and restaurants running high volume. Consistent pours, low labor, strong margins."
-          backgroundImage={HEROES.cocktails}
+          backgroundImage={CATEGORY_IMAGES["frozen-cocktails"]}
           gradient="from-[var(--amber-800)] via-[var(--orange-700)] to-[var(--orange-900)]"
         />
 

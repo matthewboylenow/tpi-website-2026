@@ -6,7 +6,7 @@ import { CategoryHero, MachineGrid } from "@/components/category";
 import { ContactSection } from "@/components/home/ContactSection";
 import { BreadcrumbSchema, WebPageSchema } from "@/components/Schema";
 import { getCategoryWithMachines } from "@/lib/data";
-import { HEROES } from "@/lib/assets";
+import { CATEGORY_IMAGES } from "@/lib/category-images";
 
 export const metadata: Metadata = {
   title: "Premium Slush Machines | High-Margin Slush Programs",
@@ -62,7 +62,7 @@ export default async function PremiumSlushPage() {
         <CategoryHero
           title="Premium Slush Programs"
           description="Premium slush is one of the highest-margin, lowest-labor programs you can add to your store. Consistent product, minimal training, and customers love it."
-          backgroundImage={HEROES.slush}
+          backgroundImage={CATEGORY_IMAGES["premium-slush"]}
           gradient="from-[var(--blue-600)] via-[var(--cyan-500)] to-[var(--cyan-700)]"
         />
 

@@ -3,10 +3,11 @@ import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Phone, Mail, Calendar, MapPin } from "lucide-react";
+import { Phone, Mail, Calendar } from "lucide-react";
 import { getActiveSalespeople, getCountiesBySalesperson, getCountyMapData } from "@/lib/data";
 import { getSalespersonImage } from "@/lib/assets";
 import { TerritoryMap } from "@/components/TerritoryMap";
+import { CollapsibleTerritories } from "@/components/CollapsibleTerritories";
 
 export const metadata: Metadata = {
   title: "Meet Your Salesperson",
@@ -14,9 +15,17 @@ export const metadata: Metadata = {
     "Connect with your Taylor Products territory salesperson. Our experienced team covers NJ, PA, NY, and DE with personalized service and equipment expertise.",
 };
 
-// Helper type for salesperson with territories
+// State abbreviation → full name mapping
+const stateNames: Record<string, string> = {
+  NJ: "New Jersey",
+  PA: "Pennsylvania",
+  NY: "New York",
+  DE: "Delaware",
+};
+
+// Helper type for salesperson with grouped territories
 type SalespersonWithTerritories = Awaited<ReturnType<typeof getActiveSalespeople>>[0] & {
-  territories: string[];
+  territories: Record<string, string[]>;
 };
 
 export default async function MeetYourSalespersonPage() {
@@ -25,12 +34,20 @@ export default async function MeetYourSalespersonPage() {
     getCountyMapData(),
   ]);
 
-  // Fetch territories for each salesperson
+  // Fetch territories for each salesperson, grouped by state
   const salespeopleWithTerritories: SalespersonWithTerritories[] = await Promise.all(
     salespeople.map(async (person) => {
       const counties = await getCountiesBySalesperson(person.id);
-      // Group counties by state and format as "County, ST"
-      const territories = counties.map((c) => `${c.name}, ${c.state}`);
+      const territories: Record<string, string[]> = {};
+      for (const c of counties) {
+        const stateName = stateNames[c.state] || c.state;
+        if (!territories[stateName]) territories[stateName] = [];
+        territories[stateName].push(c.name);
+      }
+      // Sort counties within each state
+      for (const state of Object.keys(territories)) {
+        territories[state].sort();
+      }
       return {
         ...person,
         territories,
@@ -61,6 +78,31 @@ export default async function MeetYourSalespersonPage() {
                 find the perfect equipment, build profitable programs, and
                 provide ongoing support for your business.
               </p>
+              <p className="text-base text-gray-400 mt-4">
+                Click on the map below to find your salesperson.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Territory Map — moved up, right after hero */}
+        <section className="section bg-[var(--gray-50)]">
+          <div className="container">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl text-[var(--navy-800)] mb-4">
+                Our Service Territory
+              </h2>
+              <p className="text-[var(--gray-600)]">
+                Click on your county to find your salesperson, or scroll down to
+                browse the full team.
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 md:p-8 border border-[var(--gray-200)]">
+              <TerritoryMap
+                counties={mapData.counties}
+                salespeople={mapData.salespeople}
+              />
             </div>
           </div>
         </section>
@@ -72,7 +114,6 @@ export default async function MeetYourSalespersonPage() {
               {salespeopleWithTerritories.map((person) => {
                 const headshotUrl =
                   person.headshotUrl || getSalespersonImage(person.slug);
-                const territories = person.territories;
 
                 return (
                   <div
@@ -119,27 +160,8 @@ export default async function MeetYourSalespersonPage() {
                         </p>
                       )}
 
-                      {/* Territories */}
-                      {territories.length > 0 && (
-                        <div className="mb-6">
-                          <div className="flex items-center gap-2 mb-2">
-                            <MapPin className="w-4 h-4 text-[var(--orange-500)]" />
-                            <h3 className="font-[family-name:var(--font-heading)] font-semibold text-sm text-[var(--gray-700)]">
-                              Territories
-                            </h3>
-                          </div>
-                          <div className="flex flex-wrap gap-2">
-                            {territories.map((territory) => (
-                              <span
-                                key={territory}
-                                className="inline-flex px-3 py-1 bg-[var(--blue-50)] text-[var(--blue-700)] text-xs font-medium rounded-full"
-                              >
-                                {territory}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
+                      {/* Territories — collapsible by state */}
+                      <CollapsibleTerritories territories={person.territories} />
 
                       {/* Contact Info */}
                       <div className="space-y-3 mb-6">
@@ -185,29 +207,6 @@ export default async function MeetYourSalespersonPage() {
                   </div>
                 );
               })}
-            </div>
-          </div>
-        </section>
-
-        {/* Territory Map */}
-        <section className="section bg-[var(--gray-50)]">
-          <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl text-[var(--navy-800)] mb-4">
-                Our Service Territory
-              </h2>
-              <p className="text-[var(--gray-600)]">
-                Taylor Products proudly serves businesses across New Jersey,
-                Pennsylvania, New York, and Delaware with sales, service, and
-                parts support.
-              </p>
-            </div>
-
-            <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-6 md:p-8 border border-[var(--gray-200)]">
-              <TerritoryMap
-                counties={mapData.counties}
-                salespeople={mapData.salespeople}
-              />
             </div>
           </div>
         </section>

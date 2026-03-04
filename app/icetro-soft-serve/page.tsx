@@ -6,7 +6,7 @@ import { CategoryHero, MachineGrid } from "@/components/category";
 import { ContactSection } from "@/components/home/ContactSection";
 import { BreadcrumbSchema, WebPageSchema } from "@/components/Schema";
 import { getCategoryWithMachines } from "@/lib/data";
-import { HEROES } from "@/lib/assets";
+import { CATEGORY_IMAGES } from "@/lib/category-images";
 
 export const metadata: Metadata = {
   title: "Icetro Soft Serve Machines",
@@ -62,7 +62,7 @@ export default async function IcetroPage() {
         <CategoryHero
           title="Icetro Soft Serve Machines"
           description="Icetro soft serve machines deliver solid performance at a lower price point than Taylor. We carry countertop and floor models for operations of all sizes."
-          backgroundImage={HEROES.icetro}
+          backgroundImage={CATEGORY_IMAGES["icetro-soft-serve"]}
         />
 
         <MachineGrid subcategories={subcategories} />

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface CategoryHeroProps {
@@ -14,6 +15,9 @@ export function CategoryHero({
   backgroundImage,
   gradient = "from-[var(--navy-900)] via-[var(--navy-800)] to-[var(--blue-800)]",
 }: CategoryHeroProps) {
+  // Local images (from /homepage-img/) use Next.js Image; external URLs use CSS background
+  const isLocalImage = backgroundImage?.startsWith("/");
+
   return (
     <section className="relative min-h-[40vh] flex items-center overflow-hidden">
       {/* Base dark background */}
@@ -23,7 +27,16 @@ export function CategoryHero({
       )} />
 
       {/* Background Image */}
-      {backgroundImage && (
+      {backgroundImage && isLocalImage ? (
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          className="absolute inset-0 object-cover"
+          sizes="100vw"
+          priority
+        />
+      ) : backgroundImage ? (
         <div
           className="absolute inset-0"
           style={{
@@ -32,7 +45,7 @@ export function CategoryHero({
             backgroundPosition: "center",
           }}
         />
-      )}
+      ) : null}
 
       {/* Dark overlay to ensure text readability */}
       <div className="absolute inset-0 bg-gradient-to-r from-[var(--navy-900)]/90 via-[var(--navy-800)]/80 to-[var(--navy-800)]/60" />

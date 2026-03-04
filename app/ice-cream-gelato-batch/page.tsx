@@ -6,7 +6,7 @@ import { CategoryHero, MachineGrid } from "@/components/category";
 import { ContactSection } from "@/components/home/ContactSection";
 import { BreadcrumbSchema, WebPageSchema } from "@/components/Schema";
 import { getCategoryWithMachines } from "@/lib/data";
-import { HEROES } from "@/lib/assets";
+import { CATEGORY_IMAGES } from "@/lib/category-images";
 
 export const metadata: Metadata = {
   title: "Ice Cream & Gelato Batch Freezers",
@@ -62,7 +62,7 @@ export default async function BatchPage() {
         <CategoryHero
           title="Ice Cream & Gelato Batch Freezers"
           description="Batch freezers from Taylor, Emery Thompson, and Frigomat, plus ISA gelato display cases. Countertop to floor models for small-batch and high-volume production."
-          backgroundImage={HEROES.batch}
+          backgroundImage={CATEGORY_IMAGES["ice-cream-gelato-batch"]}
           gradient="from-[var(--indigo-800)] via-[var(--purple-700)] to-[var(--purple-900)]"
         />
 

@@ -6,7 +6,7 @@ import { CategoryHero, MachineGrid } from "@/components/category";
 import { ContactSection } from "@/components/home/ContactSection";
 import { BreadcrumbSchema, WebPageSchema } from "@/components/Schema";
 import { getCategoryWithMachines } from "@/lib/data";
-import { HEROES } from "@/lib/assets";
+import { CATEGORY_IMAGES } from "@/lib/category-images";
 
 export const metadata: Metadata = {
   title: "Cool Chiller & FCB | Frozen Carbonated Beverages",
@@ -62,7 +62,7 @@ export default async function CoolChillerPage() {
         <CategoryHero
           title="Cool Chiller & FCB"
           description="Taylor FCB machines produce frozen carbonated beverages with consistent texture and temperature. Available in one to four barrel configurations."
-          backgroundImage={HEROES.coolChiller}
+          backgroundImage={CATEGORY_IMAGES["frozen-soda-cool-chiller"]}
           gradient="from-[var(--sky-700)] via-[var(--blue-600)] to-[var(--blue-800)]"
         />
 

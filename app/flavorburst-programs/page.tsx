@@ -6,7 +6,7 @@ import { CategoryHero, MachineGrid } from "@/components/category";
 import { ContactSection } from "@/components/home/ContactSection";
 import { BreadcrumbSchema, WebPageSchema } from "@/components/Schema";
 import { getCategoryWithMachines } from "@/lib/data";
-import { HEROES } from "@/lib/assets";
+import { CATEGORY_IMAGES } from "@/lib/category-images";
 
 export const metadata: Metadata = {
   title: "FlavorBurst Programs | Add Flavors to Soft Serve",
@@ -62,7 +62,7 @@ export default async function FlavorBurstPage() {
         <CategoryHero
           title="FlavorBurst"
           description="FlavorBurst and FlavorBlend add 8+ flavors to any Taylor soft serve or frozen beverage freezer. One vanilla base, over 40 flavor combinations. It's one of the fastest ways to add variety without adding equipment."
-          backgroundImage={HEROES.flavorburst}
+          backgroundImage={CATEGORY_IMAGES["flavorburst-programs"]}
           gradient="from-[var(--green-800)] via-[var(--teal-700)] to-[var(--teal-900)]"
         />
 

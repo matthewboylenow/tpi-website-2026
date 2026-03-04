@@ -6,7 +6,7 @@ import { CategoryHero, MachineGrid } from "@/components/category";
 import { ContactSection } from "@/components/home/ContactSection";
 import { BreadcrumbSchema, WebPageSchema } from "@/components/Schema";
 import { getCategoryWithMachines } from "@/lib/data";
-import { HEROES } from "@/lib/assets";
+import { CATEGORY_IMAGES } from "@/lib/category-images";
 
 export const metadata: Metadata = {
   title: "Milkshake Machines | Taylor Shake Freezers",
@@ -62,7 +62,7 @@ export default async function MilkshakesPage() {
         <CategoryHero
           title="Milkshake Machines"
           description="Taylor shake freezers deliver consistent shakes at volume. We carry single-flavor, two-flavor, and four-flavor configurations."
-          backgroundImage={HEROES.milkshakes}
+          backgroundImage={CATEGORY_IMAGES["milkshakes"]}
           gradient="from-[var(--pink-800)] via-[var(--purple-700)] to-[var(--purple-900)]"
         />
 

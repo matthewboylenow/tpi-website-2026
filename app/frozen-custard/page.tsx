@@ -6,7 +6,7 @@ import { CategoryHero, MachineGrid } from "@/components/category";
 import { ContactSection } from "@/components/home/ContactSection";
 import { BreadcrumbSchema, WebPageSchema } from "@/components/Schema";
 import { getCategoryWithMachines } from "@/lib/data";
-import { HEROES } from "@/lib/assets";
+import { CATEGORY_IMAGES } from "@/lib/category-images";
 
 export const metadata: Metadata = {
   title: "Frozen Custard Machines | Taylor Custard Freezers",
@@ -62,7 +62,7 @@ export default async function FrozenCustardPage() {
         <CategoryHero
           title="Frozen Custard"
           description="Taylor frozen custard freezers for shops producing their own premium custard, Italian ice, and homemade ice cream. A strong add-on to any existing menu."
-          backgroundImage={HEROES.custard}
+          backgroundImage={CATEGORY_IMAGES["frozen-custard"]}
           gradient="from-[var(--yellow-700)] via-[var(--amber-600)] to-[var(--amber-800)]"
         />
 

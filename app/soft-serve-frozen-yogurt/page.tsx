@@ -6,7 +6,7 @@ import { CategoryHero, MachineGrid } from "@/components/category";
 import { ContactSection } from "@/components/home/ContactSection";
 import { BreadcrumbSchema, WebPageSchema } from "@/components/Schema";
 import { getCategoryWithMachines } from "@/lib/data";
-import { HEROES } from "@/lib/assets";
+import { CATEGORY_IMAGES } from "@/lib/category-images";
 
 export const metadata: Metadata = {
   title: "Soft Serve & Frozen Yogurt Machines",
@@ -68,7 +68,7 @@ export default async function SoftServePage() {
         <CategoryHero
           title="Soft Serve & Frozen Yogurt"
           description="Taylor soft serve and frozen yogurt freezers offer the fastest recovery time, fewest parts for cleanup, and lowest maintenance costs in the industry. We carry over 20 models, from compact countertop units to high-capacity floor machines."
-          backgroundImage={HEROES.softServe}
+          backgroundImage={CATEGORY_IMAGES["soft-serve-frozen-yogurt"]}
         />
 
         <MachineGrid subcategories={subcategories} />
