@@ -3,27 +3,27 @@ import { Award, Wrench, TrendingUp, Users } from "lucide-react";
 const values = [
   {
     icon: Users,
-    title: "40 Years in the Business",
+    title: "Family-Owned, Backed by Middleby",
     description:
-      "We've been doing this since 1985. When you call us, you get a real person who knows your equipment and wants to get you back up and running.",
+      "Still family-owned, still the same people answering the phone — now part of the Middleby family. That means more brands under one roof: Taylor, Icetro, Flavor Burst, Emery Thompson, plus TurboChef, Blodgett, and Pitco.",
+  },
+  {
+    icon: TrendingUp,
+    title: "Equipment That Pays You Back",
+    description:
+      "Most machines we sell earn back their cost in 4–7 months. We help you pick the right one and make it profitable — with flexible financing on new and pre-owned equipment so the numbers work from day one.",
   },
   {
     icon: Wrench,
     title: "Red Cape Service",
     description:
-      "Your freezer goes down on a Saturday night. We pick up the phone. Our factory-trained technicians are on it.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Built to Make You Money",
-    description:
-      "Menu planning, staff training, profit calculators. We stick around after the install to make sure the numbers work.",
+      "Factory-certified techs, fully stocked service trucks, and honest 15-minute billing — rare in this business. Direct phone support, a growing knowledge base, and a real person on the other end when your machine goes down.",
   },
   {
     icon: Award,
-    title: "Genuine Taylor Parts & Support",
+    title: "Built in Rockton. Built Right.",
     description:
-      "Factory parts, full warranties, and direct access to the people who know your machine inside and out. No middlemen.",
+      "Taylor machines are made in Rockton, Illinois with nearly 90% American-sourced parts. Every unit is tested and inspected before it ships. The crown on the side stands for something.",
   },
 ];
 
@@ -40,10 +40,10 @@ export function ValueProposition() {
             Why Taylor Products
           </h2>
           <p className="text-[var(--gray-600)] text-lg">
-            We&apos;ve been selling, servicing, and supporting Taylor equipment since 1985.
-            Whether you&apos;re running an ice cream shop, a restaurant, or a chain of
-            convenience stores, we&apos;ll help you pick the right machine and build a
-            program around it that makes real money.
+            Since 1985, we&apos;ve been helping local operators pick the right equipment
+            and build programs that actually make money. Now part of the Middleby family,
+            we carry more brands than ever — with the same family-owned service that got
+            us here.
           </p>
         </div>
 

@@ -49,9 +49,9 @@ const partsFeatures = [
 
 const whyGenuine = [
   {
-    title: "Built to Spec",
+    title: "Engineered for Your Taylor Equipment",
     description:
-      "Genuine parts meet exact factory specifications. They fit, they work, and they last.",
+      "Genuine Taylor parts are engineered and manufactured specifically for Taylor machines — from soft serve parts to slush machine parts to grill parts. No generic substitutes.",
   },
   {
     title: "Protect Your Warranty",
@@ -59,14 +59,14 @@ const whyGenuine = [
       "Authentic parts keep your warranty intact. Generic parts can void it.",
   },
   {
-    title: "Longer Equipment Life",
+    title: "Efficiency and Food Safety",
     description:
-      "Quality parts mean less wear on your machine and a longer lifespan.",
+      "Genuine parts preserve your equipment's efficiency and spec — critical for food safety and keeping your operation in compliance.",
   },
   {
-    title: "Peace of Mind",
+    title: "Backed by Certified Technicians",
     description:
-      "Your equipment runs the way it was designed to. No guesswork.",
+      "Every Taylor-certified tech meets stringent factory guidelines for training, warranties, and installation — so the right part gets installed the right way.",
   },
 ];
 
@@ -170,11 +170,14 @@ export default function GenuinePartsPage() {
                   className="font-[family-name:var(--font-heading)] font-bold text-3xl sm:text-4xl mb-6"
                   style={{ color: "var(--navy-800)" }}
                 >
-                  Why Use Genuine Taylor Parts?
+                  Why Taylor Genuine Parts?
                 </h2>
                 <p className="text-[var(--gray-600)] text-lg mb-8">
-                  Generic parts might cost less up front, but they usually cost
-                  more over time. Here&apos;s why we only sell genuine.
+                  Genuine Taylor parts are engineered and manufactured specifically
+                  for your Taylor equipment. When you need a replacement part, look
+                  only to the brand that knows your machine best — so your operation
+                  runs at peak performance, with the efficiency and food safety you
+                  can&apos;t afford to compromise.
                 </p>
                 <div className="space-y-6">
                   {whyGenuine.map((item) => (
@@ -236,24 +239,26 @@ export default function GenuinePartsPage() {
                     className="font-[family-name:var(--font-heading)] font-bold text-2xl md:text-3xl mb-4"
                     style={{ color: "white" }}
                   >
-                    Need Installation Help?
+                    Installed by Taylor-Certified Techs
                   </h2>
                   <p className="text-blue-100 mb-6">
-                    Our factory-certified technicians can install parts for you.
-                    Right tools, right training, done right.
+                    Our technicians have earned Taylor certification — meeting
+                    stringent factory guidelines for training, warranties, and
+                    installation and maintenance procedures. They can identify and
+                    resolve problems on the spot.
                   </p>
                   <ul className="space-y-2 text-white mb-6">
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-[var(--orange-400)]" />
-                      Taylor-certified technicians
+                      Exclusive access to special tools
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-[var(--orange-400)]" />
-                      Factory-direct technical support
+                      Proper factory documentation
                     </li>
                     <li className="flex items-center gap-2">
                       <CheckCircle className="w-4 h-4 text-[var(--orange-400)]" />
-                      Specialized tools and equipment
+                      Direct factory technical support
                     </li>
                   </ul>
                   <Link href="/red-cape-service">

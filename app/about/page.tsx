@@ -16,7 +16,7 @@ import {
 export const metadata: Metadata = {
   title: "About Taylor Products",
   description:
-    "Taylor Products is a family-owned foodservice equipment distributor serving NJ, PA, NY, and DE since 1985. Learn about our commitment to service and customer success.",
+    "Taylor Products has partnered with foodservice operators across NJ, PA, NY, and DE since 1985. Part of the Middleby family — carrying Taylor, Icetro, Emery Thompson, Flavor Burst, TurboChef, Blodgett, Pitco and more.",
 };
 
 export default function AboutPage() {
@@ -25,7 +25,7 @@ export default function AboutPage() {
       {/* JSON-LD Structured Data */}
       <WebPageSchema
         title="About Taylor Products"
-        description="Taylor Products is a family-owned foodservice equipment distributor serving NJ, PA, NY, and DE since 1985."
+        description="Taylor Products has partnered with foodservice operators across NJ, PA, NY, and DE since 1985. Part of the Middleby family."
         url="https://taylorproducts.net/about"
       />
       <LocalBusinessSchema location="exton" />
@@ -48,9 +48,12 @@ export default function AboutPage() {
               </h1>
               <div className="w-20 h-1 bg-[var(--orange-500)] rounded-full mb-6" />
               <p className="text-lg text-gray-300 leading-relaxed">
-                We&apos;re an authorized Taylor Company distributor covering New Jersey,
-                Pennsylvania, New York, and Delaware. We sell the equipment, service the
-                equipment, and help you build a program around it that makes money.
+                We do more than distribute equipment — we help businesses grow and
+                stay running. For decades, we&apos;ve partnered with operators across
+                our territory to deliver industry-leading foodservice solutions,
+                specializing in soft serve, frozen beverages, and high-performance
+                cooking equipment. As part of the Middleby family, we&apos;ve
+                expanded our capabilities while staying hands-on and easy to work with.
               </p>
             </div>
           </div>
@@ -61,25 +64,29 @@ export default function AboutPage() {
           <div className="container">
             <div className="max-w-4xl mx-auto">
               <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl text-[var(--navy-800)] mb-8">
-                What We Do
+                What We&apos;ve Always Supported
               </h2>
               <div className="prose prose-lg max-w-none text-[var(--gray-700)] space-y-6">
                 <p>
-                  We sell Taylor soft serve, frozen beverage, and grilling equipment
-                  to operators of all sizes, from single-location ice cream shops to
-                  national QSR chains. We also carry FlavorBurst, Icetro, Emery
-                  Thompson, Frigomat, and ISA products.
+                  We provide sales and service for <strong>Taylor</strong>,{" "}
+                  <strong>Icetro</strong>, <strong>Emery Thompson</strong>, and{" "}
+                  <strong>Flavor Burst</strong> — brands trusted by operators who
+                  demand performance, consistency, and reliability.
                 </p>
                 <p>
-                  Our factory-trained technicians, sales team, and parts department
-                  all work out of our two locations in Exton, PA and Edison, NJ.
-                  When your equipment goes down, we have 24/7 emergency support and
-                  one of the fastest response times in the region through our Red
-                  Cape Service program.
+                  As part of the Middleby family, we now proudly support a broader
+                  range of industry-leading kitchen equipment, including{" "}
+                  <strong>TurboChef</strong>, <strong>Blodgett</strong>,{" "}
+                  <strong>Follett</strong>, <strong>Star</strong>,{" "}
+                  <strong>Joe Tap</strong>, <strong>Pitco</strong>, and{" "}
+                  <strong>Middleby Marshall</strong> — strengthening our ability to
+                  support full kitchen operations.
                 </p>
                 <p>
-                  We currently serve thousands of operators across New Jersey,
-                  Pennsylvania, New York, and Delaware.
+                  Beyond equipment, we offer complete support — from consultation
+                  and installation to training and ongoing service — out of our
+                  two locations in Exton, PA and Edison, NJ, covering operators
+                  across New Jersey, Pennsylvania, New York, and Delaware.
                 </p>
               </div>
             </div>
@@ -93,33 +100,37 @@ export default function AboutPage() {
               <h2 className="font-[family-name:var(--font-heading)] font-bold text-3xl text-[var(--navy-800)] mb-4">
                 How We Work
               </h2>
+              <p className="text-[var(--gray-600)] text-lg">
+                Support the customer and support the machine. That&apos;s the whole job.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white rounded-xl p-8 shadow-sm border border-[var(--gray-200)] text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[var(--blue-500)] text-white mb-6">
-                  <TrendingUp className="w-8 h-8" />
+                  <Wrench className="w-8 h-8" />
                 </div>
                 <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-3">
-                  We Help You Make Money
+                  Fast, Reliable Service
                 </h3>
                 <p className="text-[var(--gray-600)]">
-                  We don&apos;t just drop off a machine. We help you plan your menu,
-                  train your staff, and figure out pricing that actually works for
-                  your operation.
+                  Factory-trained technicians, fully stocked service vans, and a deep
+                  knowledge base. Parts and repairs that keep downtime short and your
+                  operation running at full capacity.
                 </p>
               </div>
 
               <div className="bg-white rounded-xl p-8 shadow-sm border border-[var(--gray-200)] text-center">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-xl bg-[var(--blue-500)] text-white mb-6">
-                  <Wrench className="w-8 h-8" />
+                  <TrendingUp className="w-8 h-8" />
                 </div>
                 <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-3">
-                  Red Cape Service
+                  Family Values, Forward Thinking
                 </h3>
                 <p className="text-[var(--gray-600)]">
-                  Fully-equipped service vans, factory-trained technicians, and a
-                  team that picks up the phone when your equipment is down.
+                  We still operate with the mindset of a family business — responsive,
+                  accountable, and invested in your success — while embracing digital
+                  tools and a growing knowledge base to serve today&apos;s operators.
                 </p>
               </div>
 
@@ -128,10 +139,12 @@ export default function AboutPage() {
                   <Award className="w-8 h-8" />
                 </div>
                 <h3 className="font-[family-name:var(--font-heading)] font-semibold text-lg text-[var(--navy-800)] mb-3">
-                  Factory Equipment and Parts Only
+                  End-to-End Support
                 </h3>
                 <p className="text-[var(--gray-600)]">
-                  We sell Taylor machines and genuine Taylor parts. No off-brand substitutes.
+                  Consultation, installation, training, ongoing service. One partner
+                  across sales, parts, and repair — so you&apos;re not stitching
+                  together help from three different places.
                 </p>
               </div>
             </div>
@@ -265,11 +278,12 @@ export default function AboutPage() {
               className="font-[family-name:var(--font-heading)] font-bold text-2xl md:text-3xl mb-4"
               style={{ color: 'white' }}
             >
-              Talk to Us
+              Let&apos;s Build Something Together
             </h2>
             <p className="text-blue-100 mb-8 max-w-2xl mx-auto">
-              Looking for equipment, need service, or want to see what a program
-              could look like for your operation? Give us a call.
+              We&apos;re proud to support the businesses that serve our communities
+              every day. Partner with a team that&apos;s responsive, reliable, and
+              easy to do business with.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link href="/meet-your-salesperson">

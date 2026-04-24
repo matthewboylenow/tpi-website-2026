@@ -95,9 +95,10 @@ export default function RedCapeServicePage() {
                 className="text-lg leading-relaxed max-w-2xl"
                 style={{ color: "rgba(255, 255, 255, 0.9)" }}
               >
-                Factory-trained technicians, 24/7 emergency support, and a parts
-                department that keeps your equipment running. That&apos;s what Red
-                Cape means.
+                The finest equipment is only half the job. The other half is the
+                service, staff training, and support behind it. The Red Cape®
+                Commitment is superior equipment, powerful programs, and heroic
+                support — built to send your profits soaring.
               </p>
               <div className="flex flex-wrap gap-4 mt-8">
                 <a href="tel:610-268-0500">
@@ -147,7 +148,8 @@ export default function RedCapeServicePage() {
                 What You Get
               </h2>
               <p className="text-[var(--gray-600)] text-lg">
-                Red Cape isn&apos;t a slogan. It&apos;s how we operate.
+                Best-in-class customer service, staff training, and the support
+                that keeps your operation performing at its best.
               </p>
             </div>
 
@@ -191,10 +193,12 @@ export default function RedCapeServicePage() {
                   The Red Cape Commitment
                 </h2>
                 <p className="text-[var(--gray-600)] text-lg mb-8">
-                  The Red Cape® Commitment means superior equipment backed by real
-                  support. If your business relocates, the Taylor network of more
-                  than 6,500 factory-trained service technicians means you&apos;ll have
-                  coverage wherever you go.
+                  Superior equipment, powerful programs, and heroic support — all
+                  backed by the broader Taylor network of more than 6,500
+                  factory-trained service technicians. Wherever your business
+                  relocates, you stay covered, with first-rate service, business-
+                  building solutions, and the latest insight on market and
+                  consumer trends to keep you performing at your best.
                 </p>
                 <ul className="space-y-4">
                   {commitments.map((item) => (

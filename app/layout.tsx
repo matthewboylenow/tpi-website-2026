@@ -22,7 +22,7 @@ const inter = Inter({
 
 // Default metadata values
 const DEFAULT_TITLE = "Taylor Products | Foodservice Equipment Distributor | NJ, PA, NY, DE";
-const DEFAULT_DESCRIPTION = "Taylor Products is a family-owned foodservice equipment distributor covering NJ, Eastern & Central PA, NYC, Long Island, and Delaware. Taylor soft serve machines, Icetro, grills, and more.";
+const DEFAULT_DESCRIPTION = "Taylor Products is a foodservice equipment distributor covering NJ, Eastern & Central PA, NYC, Long Island, and Delaware. Part of the Middleby family — Taylor soft serve, Icetro, grills, TurboChef, Blodgett, Pitco, and more.";
 
 export async function generateMetadata(): Promise<Metadata> {
   let settings: Record<string, string> = {};

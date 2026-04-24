@@ -20,7 +20,7 @@ const DEFAULT_SETTINGS: SiteSettings = {
   site_og_image_url: "",
   homepage_meta_title: "Taylor Products | Premium Foodservice Equipment",
   homepage_meta_description:
-    "Taylor Products is a family-owned distributor of Taylor soft serve machines, frozen beverage equipment, and commercial grills serving NJ, PA, NY, and DE.",
+    "Taylor Products is a foodservice equipment distributor serving NJ, PA, NY, and DE. Part of the Middleby family — Taylor soft serve, Icetro, grills, TurboChef, Blodgett, Pitco, and more.",
 };
 
 export default function SettingsPage() {

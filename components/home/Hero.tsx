@@ -23,61 +23,66 @@ interface HeroSlide {
   };
   backgroundImage: string;
   overlayColor?: string;
+  foregroundImage?: {
+    src: string;
+    alt: string;
+  };
 }
 
 const slides: HeroSlide[] = [
   {
-    title: "The Machines Behind Your Favorite Frozen Treats",
+    subtitle: "1926 – 2026",
+    title: "100 Years of Taylor. Still Building the Best.",
     description:
-      "We sell, install, and service Taylor equipment for ice cream shops, restaurants, and convenience stores across New York, New Jersey, Pennsylvania, and Delaware.",
+      "A century of machines that hold up and pay for themselves. We're marking the milestone with special pricing and exclusive offers on popular models — your salesperson can walk you through what's available.",
     cta: {
+      text: "Meet Your Salesperson",
+      href: "/meet-your-salesperson",
+    },
+    secondaryCta: {
       text: "Browse Equipment",
       href: "/soft-serve-frozen-yogurt",
     },
-    secondaryCta: {
-      text: "Help Me Choose",
+    backgroundImage: "https://www.taylor-company.com/wp-content/uploads/2023/05/SoftServe_Header_2560x1418.jpg",
+    overlayColor: "from-black/75 via-black/55 to-black/20",
+    foregroundImage: {
+      src: "/hero/taylor-100-logo.png",
+      alt: "Taylor Company 100 Years Anniversary",
+    },
+  },
+  {
+    subtitle: "Machine Finder",
+    title: "Find the Perfect Machine for Your Business",
+    description:
+      "Answer a few quick questions and we'll recommend the right equipment for your menu, your volume, and your budget. Built for operators — no sales pitch, just a smart starting point.",
+    cta: {
+      text: "Start the Finder",
       href: "https://finder.taylorproducts.net/wizard",
       external: true,
     },
-    backgroundImage: "https://www.taylor-company.com/wp-content/uploads/2023/05/SoftServe_Header_2560x1418.jpg",
-    overlayColor: "from-black/70 via-black/50 to-transparent",
-  },
-  {
-    title: "Frozen Custard & Batch Ice Cream",
-    subtitle: "Premium Quality",
-    description:
-      "From small batch artisan gelato to high-volume custard production, we have the equipment to match your vision.",
-    cta: {
-      text: "See Batch Freezers",
-      href: "/frozen-custard",
+    secondaryCta: {
+      text: "Talk to a Salesperson",
+      href: "/meet-your-salesperson",
     },
     backgroundImage: "https://www.taylor-company.com/wp-content/uploads/2023/05/CustardBatch_Header_2560x1418.jpg",
     overlayColor: "from-black/70 via-black/50 to-transparent",
   },
   {
-    title: "Slushies, Shakes & Frozen Drinks",
-    subtitle: "Cool Profits",
-    description:
-      "High-margin frozen beverages that keep customers coming back. Fast recovery, consistent quality, every pour.",
-    cta: {
-      text: "View Beverage Equipment",
-      href: "/premium-slush",
-    },
-    backgroundImage: "https://www.taylor-company.com/wp-content/uploads/2023/05/Slushie_Header_2560x1418.jpg",
-    overlayColor: "from-black/70 via-black/50 to-transparent",
-  },
-  {
-    title: "Need Parts? Order Online 24/7",
     subtitle: "Genuine Taylor Parts",
+    title: "Keep Your Machine Running Smoothly",
     description:
-      "Shop our online parts store for fast shipping and authentic components. The right part, when you need it.",
+      "Order OEM parts online 24/7/365. Authentic components, fast shipping, and direct factory support when you need to get back up and running.",
     cta: {
-      text: "Shop Parts Store",
+      text: "Shop Parts Now",
       href: "https://parts.taylorproducts.net",
       external: true,
     },
-    backgroundImage: "https://www.taylor-company.com/wp-content/uploads/2023/05/Acessories_Header_2560x1418.jpg",
-    overlayColor: "from-black/70 via-black/50 to-transparent",
+    secondaryCta: {
+      text: "Red Cape Service",
+      href: "/red-cape-service",
+    },
+    backgroundImage: "/hero/parts-oem.jpg",
+    overlayColor: "from-black/80 via-black/60 to-black/30",
   },
 ];
 
@@ -156,7 +161,45 @@ export function Hero() {
       </div>
 
       <div className="container relative z-10 py-20">
+        {/* Foreground Image (e.g. Taylor 100 logo) — right side on desktop */}
+        {slide.foregroundImage && (
+          <div
+            className={cn(
+              "hidden lg:block absolute right-8 xl:right-16 top-1/2 -translate-y-1/2 w-[380px] xl:w-[460px] transition-all duration-500",
+              isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"
+            )}
+          >
+            <Image
+              src={slide.foregroundImage.src}
+              alt={slide.foregroundImage.alt}
+              width={600}
+              height={600}
+              className="w-full h-auto drop-shadow-2xl"
+              priority
+            />
+          </div>
+        )}
+
         <div className="max-w-2xl">
+          {/* Foreground Image — inline above title on mobile/tablet */}
+          {slide.foregroundImage && (
+            <div
+              className={cn(
+                "lg:hidden mb-6 transition-all duration-500",
+                isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"
+              )}
+            >
+              <Image
+                src={slide.foregroundImage.src}
+                alt={slide.foregroundImage.alt}
+                width={400}
+                height={400}
+                className="w-48 sm:w-56 h-auto drop-shadow-2xl"
+                priority
+              />
+            </div>
+          )}
+
           {/* Subtitle Badge */}
           {slide.subtitle && (
             <div
