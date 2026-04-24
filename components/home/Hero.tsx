@@ -32,9 +32,9 @@ interface HeroSlide {
 const slides: HeroSlide[] = [
   {
     subtitle: "1926 – 2026",
-    title: "100 Years of Taylor. Still Building the Best.",
+    title: "It's Been a Really Good 100 Years.",
     description:
-      "A century of machines that hold up and pay for themselves. We're marking the milestone with special pricing and exclusive offers on popular models — your salesperson can walk you through what's available.",
+      "Taylor Company 100 Year Anniversary — celebrating with exclusive offers and pricing on popular models. Contact us to learn more!",
     cta: {
       text: "Meet Your Salesperson",
       href: "/meet-your-salesperson",
@@ -54,7 +54,7 @@ const slides: HeroSlide[] = [
     subtitle: "Machine Finder",
     title: "Find the Perfect Machine for Your Business",
     description:
-      "Answer a few quick questions and we'll recommend the right equipment for your menu, your volume, and your budget. Built for operators — no sales pitch, just a smart starting point.",
+      "Our interactive wizard walks you through a few simple questions to identify the ideal Taylor equipment for your operation — whether you're expanding your menu, improving service speed, or creating new profit centers. Let's simplify your search together.",
     cta: {
       text: "Start the Finder",
       href: "https://finder.taylorproducts.net/wizard",
@@ -71,7 +71,7 @@ const slides: HeroSlide[] = [
     subtitle: "Genuine Taylor Parts",
     title: "Keep Your Machine Running Smoothly",
     description:
-      "Order OEM parts online 24/7/365. Authentic components, fast shipping, and direct factory support when you need to get back up and running.",
+      "We're excited to announce the launch of our brand new Taylor Products e-commerce parts website. Order genuine OEM parts 24/7/365 — quickly and easily.",
     cta: {
       text: "Shop Parts Now",
       href: "https://parts.taylorproducts.net",
@@ -161,26 +161,18 @@ export function Hero() {
       </div>
 
       <div className="container relative z-10 py-20">
-        {/* Foreground Image (e.g. Taylor 100 logo) — right side on desktop */}
-        {slide.foregroundImage && (
+        <div
+          className={cn(
+            slide.foregroundImage &&
+              "lg:grid lg:grid-cols-12 lg:gap-8 lg:items-center"
+          )}
+        >
           <div
             className={cn(
-              "hidden lg:block absolute right-8 xl:right-16 top-1/2 -translate-y-1/2 w-[380px] xl:w-[460px] transition-all duration-500",
-              isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"
+              "max-w-2xl",
+              slide.foregroundImage && "lg:col-span-7 lg:max-w-none"
             )}
           >
-            <Image
-              src={slide.foregroundImage.src}
-              alt={slide.foregroundImage.alt}
-              width={600}
-              height={600}
-              className="w-full h-auto drop-shadow-2xl"
-              priority
-            />
-          </div>
-        )}
-
-        <div className="max-w-2xl">
           {/* Foreground Image — inline above title on mobile/tablet */}
           {slide.foregroundImage && (
             <div
@@ -291,6 +283,26 @@ export function Hero() {
                 </Link>
               ))}
           </div>
+        </div>
+
+          {/* Foreground Image — dedicated right column on desktop */}
+          {slide.foregroundImage && (
+            <div
+              className={cn(
+                "hidden lg:flex lg:col-span-5 lg:items-center lg:justify-center transition-all duration-500",
+                isTransitioning ? "opacity-0 scale-95" : "opacity-100 scale-100"
+              )}
+            >
+              <Image
+                src={slide.foregroundImage.src}
+                alt={slide.foregroundImage.alt}
+                width={600}
+                height={600}
+                className="w-full max-w-[460px] h-auto drop-shadow-2xl"
+                priority
+              />
+            </div>
+          )}
         </div>
 
         {/* Slide Navigation */}
